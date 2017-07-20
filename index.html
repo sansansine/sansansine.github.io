@@ -253,6 +253,125 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/vue-awesome-swiper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/vue-awesome-swiper/" itemprop="url">vue-awesome-swiper</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T11:37:20+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vue轮播图插件：vue-awesome-swiper使用"><a href="#Vue轮播图插件：vue-awesome-swiper使用" class="headerlink" title="Vue轮播图插件：vue-awesome-swiper使用"></a>Vue轮播图插件：vue-awesome-swiper使用</h1><hr>
+<h2 id="Use-Setup"><a href="#Use-Setup" class="headerlink" title="Use Setup"></a>Use Setup</h2><blockquote>
+<p>npm install vue-awesome-swiper –save</p>
+</blockquote>
+<h2 id="main-js-import"><a href="#main-js-import" class="headerlink" title="main.js-import"></a>main.js-import</h2><blockquote>
+<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>Vue.use(VueAwesomeSwiper)</p>
+</blockquote>
+<h2 id="vue页面中声明参数"><a href="#vue页面中声明参数" class="headerlink" title=".vue页面中声明参数"></a>.vue页面中声明参数</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import &#123; swiper, swiperSlide &#125; from <span class="string">'vue-awesome-swiper'</span></div><div class="line">export default&#123;</div><div class="line">  <span class="symbol">name:</span> <span class="string">'one'</span>,</div><div class="line">  <span class="symbol">components:</span> &#123;</div><div class="line">    swiper,</div><div class="line">    swiperSlide</div><div class="line">  &#125;,</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="regexp">//</span> <span class="symbol">currentDate:</span> new Date(),</div><div class="line">      <span class="symbol">items:</span> [<span class="string">'../static/banner1.jpg'</span>, <span class="string">'../static/banner2.jpg'</span>, <span class="string">'../static/banner3.jpg'</span>],</div><div class="line">      <span class="symbol">swiperOption:</span> &#123;</div><div class="line">        <span class="symbol">autoplay:</span> <span class="number">3000</span>,</div><div class="line">        <span class="symbol">pagination:</span> <span class="string">'.swiper-pagination'</span>,</div><div class="line">        <span class="symbol">slidesPerView:</span> <span class="string">'auto'</span>,</div><div class="line">        <span class="symbol">centeredSlides:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">paginationClickable:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">onSlideChangeEnd:</span> swiper =&gt; &#123;</div><div class="line">          this.page = swiper.realIndex + <span class="number">1</span></div><div class="line">          this.index = swiper.realIndex</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">swiperSlides:</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">computed:</span> &#123;</div><div class="line">    swiper () &#123;</div><div class="line">      <span class="keyword">return</span> this.$refs.mySwiper.swiper</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted () &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/06/Using-vue-js-to-build-the-first-simple-website/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -525,7 +644,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
