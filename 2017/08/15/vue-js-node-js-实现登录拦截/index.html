@@ -97,17 +97,17 @@
 
 
 
-<meta name="description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta name="description" content="源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：12345678910111213import">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js+node.js 实现登录拦截">
 <meta property="og:url" content="http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/index.html">
 <meta property="og:site_name" content="sansan.blog">
-<meta property="og:description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta property="og:description" content="源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：12345678910111213import">
 <meta property="og:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
-<meta property="og:updated_time" content="2017-08-16T03:04:20.000Z">
+<meta property="og:updated_time" content="2017-08-16T06:04:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js+node.js 实现登录拦截">
-<meta name="twitter:description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta name="twitter:description" content="源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：12345678910111213import">
 <meta name="twitter:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
 
 
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T18:06:19+08:00">
                 2017-08-15
@@ -325,7 +325,7 @@
       
 
       
-        <h1 id="axios-vuex-node-js实现登录拦截"><a href="#axios-vuex-node-js实现登录拦截" class="headerlink" title="axios+vuex+node.js实现登录拦截"></a>axios+vuex+node.js实现登录拦截</h1><hr>
+        <hr>
 <p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
 <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="1、搭建Vue前端项目"><a href="#1、搭建Vue前端项目" class="headerlink" title="1、搭建Vue前端项目"></a>1、搭建Vue前端项目</h3><p><img src="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png" alt="使用Vue-cli脚手架"></p>
 <h3 id="2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><a href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入" class="headerlink" title="2、 npm安装element-ui、Vuex、axios等依赖和组件并引入"></a>2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</h3><blockquote>
@@ -340,6 +340,22 @@
 </blockquote>
 <h3 id="2、在Vue项目下新建文件夹service做服务器"><a href="#2、在Vue项目下新建文件夹service做服务器" class="headerlink" title="2、在Vue项目下新建文件夹service做服务器"></a>2、在Vue项目下新建文件夹service做服务器</h3><p>1.新建db.js连接数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  mysql: &#123;</div><div class="line">      host: 'localhost',</div><div class="line">      user: 'root',</div><div class="line">      password: '123456',</div><div class="line">      database:'vogue'</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>2.新建app.js作为express服务器入口<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">const userApi = <span class="keyword">require</span>(<span class="string">'./api/userApi'</span>);</div><div class="line">const fs = <span class="keyword">require</span>(<span class="string">'fs'</span>);</div><div class="line">const path = <span class="keyword">require</span>(<span class="string">'path'</span>);</div><div class="line">const bodyParser = <span class="keyword">require</span>(<span class="string">'body-parser'</span>);</div><div class="line">const express = <span class="keyword">require</span>(<span class="string">'express'</span>);</div><div class="line">const app = express();</div><div class="line"></div><div class="line">app.use(bodyParser.json());</div><div class="line">app.use(bodyParser.urlencoded(&#123;<span class="symbol">extended:</span> <span class="literal">false</span>&#125;));</div><div class="line"></div><div class="line"><span class="regexp">//</span> 设置响应头</div><div class="line">app.all(<span class="string">'*'</span>, function(req, res, <span class="keyword">next</span>) &#123;</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</div><div class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>,<span class="string">'x-requested-with,content-type,Access-Control-Allow-Origin'</span>);</div><div class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>)</div><div class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</div><div class="line">    <span class="keyword">next</span>();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="regexp">//</span>注册api路由</div><div class="line">app.use(<span class="string">'/api/user'</span>, userApi);</div><div class="line"></div><div class="line"><span class="regexp">//</span> 监听端口</div><div class="line">app.listen(<span class="number">3000</span>);</div><div class="line">console.log(<span class="string">'success listen at port:3000......'</span>);</div></pre></td></tr></table></figure></p>
+<p>3.新建sqlMap.js作为SQL语句映射文件供api逻辑调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var sqlMap = &#123;</div><div class="line">    // 用户</div><div class="line">    user: &#123;</div><div class="line">        add: 'select * from user where name = ? AND pwd = ?'</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">module.exports = sqlMap;</div></pre></td></tr></table></figure></p>
+<p>4.新建userApi.js作为前端调用接口<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">var models = require('../db/db');</div><div class="line">var express = require('express');</div><div class="line">var router = express.Router();</div><div class="line">var mysql = require('mysql');</div><div class="line">var $sql = require('../db/sqlMap');</div><div class="line"></div><div class="line">// 连接数据库</div><div class="line">var conn = mysql.createConnection(models.mysql);</div><div class="line"></div><div class="line">conn.connect();</div><div class="line">var jsonWrite = function(res, ret) &#123;</div><div class="line">    if(typeof ret === 'undefined') &#123;</div><div class="line">        res.json(&#123;</div><div class="line">            code: '1',</div><div class="line">            msg: '操作失败'</div><div class="line">        &#125;);</div><div class="line">    &#125; else &#123;</div><div class="line">        res.json(ret);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 增加用户接口</div><div class="line">router.post('/addUser', (req, res) =&gt; &#123;</div><div class="line">    var sql = $sql.user.add;</div><div class="line">    var params = req.body;</div><div class="line">    console.log(params);</div><div class="line">    var success = false;</div><div class="line">    conn.query(sql, [params.name, params.pwd], function(err, result) &#123;</div><div class="line">      console.log(result);</div><div class="line">        if (err) &#123;</div><div class="line">          console.log('err');</div><div class="line">        &#125;else if (result.length&lt;=0) &#123;</div><div class="line">          success = false;</div><div class="line">          console.log('fail');</div><div class="line">        &#125;else &#123;</div><div class="line">          success = true;</div><div class="line">        &#125;</div><div class="line">        jsonWrite(res, success);</div><div class="line"></div><div class="line">    &#125;)</div><div class="line">&#125;);</div><div class="line">// 增加用户接口</div><div class="line">router.get('/addUser', (req, res) =&gt; &#123;</div><div class="line">     res.send('retrunJson');</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = router;</div></pre></td></tr></table></figure></p>
+<p>5.进入service目录下安装相关依赖</p>
+<blockquote>
+<p>npm install  mysql body-parser</p>
+</blockquote>
+<h2 id="跨域声明"><a href="#跨域声明" class="headerlink" title="跨域声明"></a>跨域声明</h2><p><strong> 在Vue项目下找到文件configindex.js，添加：</strong><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">proxyTable:</span> &#123;</div><div class="line">        <span class="string">'/api'</span>: &#123;</div><div class="line">            <span class="symbol">target:</span> <span class="string">'http://127.0.0.1:3000/api/'</span>,</div><div class="line">            <span class="symbol">changeOrigin:</span> <span class="literal">true</span>,<span class="regexp">//true</span>允许跨域</div><div class="line">            <span class="symbol">pathRewrite:</span> &#123;</div><div class="line">                <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="登录测试"><a href="#登录测试" class="headerlink" title="登录测试"></a>登录测试</h2><p><strong> 在service目录下启动后台：</strong></p>
+<blockquote>
+<p>nodemon app.js</p>
+</blockquote>
+<p><strong> 启动Vue项目： </strong></p>
+<blockquote>
+<p>npm run dev</p>
+</blockquote>
+<p><del>访问<a href="http://localhost:8080/#/" target="_blank" rel="external">http://localhost:8080/#/</a> 输入并登陆</del></p>
 
       
     </div>
@@ -433,10 +449,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -457,7 +473,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -522,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#axios-vuex-node-js实现登录拦截"><span class="nav-number">1.</span> <span class="nav-text">axios+vuex+node.js实现登录拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端"><span class="nav-number">1.1.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、搭建Vue前端项目"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、搭建Vue前端项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、新建login-vue单页"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、新建login.vue单页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台"><span class="nav-number">1.2.</span> <span class="nav-text">后台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、安装express"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、安装express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在Vue项目下新建文件夹service做服务器"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、在Vue项目下新建文件夹service做服务器</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端"><span class="nav-number">1.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、搭建Vue前端项目"><span class="nav-number">1.1.</span> <span class="nav-text">1、搭建Vue前端项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><span class="nav-number">1.2.</span> <span class="nav-text">2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、新建login-vue单页"><span class="nav-number">1.3.</span> <span class="nav-text">3、新建login.vue单页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台"><span class="nav-number">2.</span> <span class="nav-text">后台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、安装express"><span class="nav-number">2.1.</span> <span class="nav-text">1、安装express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在Vue项目下新建文件夹service做服务器"><span class="nav-number">2.2.</span> <span class="nav-text">2、在Vue项目下新建文件夹service做服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域声明"><span class="nav-number">3.</span> <span class="nav-text">跨域声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录测试"><span class="nav-number">4.</span> <span class="nav-text">登录测试</span></a></li></ol></div>
             
 
           </div>
@@ -554,7 +570,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
