@@ -1,0 +1,715 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue.js+node.js 实现登录拦截">
+<meta property="og:url" content="http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta property="og:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
+<meta property="og:updated_time" content="2017-08-16T03:04:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue.js+node.js 实现登录拦截">
+<meta name="twitter:description" content="axios+vuex+node.js实现登录拦截 源码地址：https://github.com/sansansine/vogue.git 前端1、搭建Vue前端项目 2、 npm安装element-ui、Vuex、axios等依赖和组件并引入 npm i element-ui -Snpm install vuex –savenpm install axios   main.js中组件和依赖引入：">
+<meta name="twitter:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/"/>
+
+
+
+
+
+  <title>vue.js+node.js 实现登录拦截 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue.js+node.js 实现登录拦截</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T18:06:19+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="axios-vuex-node-js实现登录拦截"><a href="#axios-vuex-node-js实现登录拦截" class="headerlink" title="axios+vuex+node.js实现登录拦截"></a>axios+vuex+node.js实现登录拦截</h1><hr>
+<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="1、搭建Vue前端项目"><a href="#1、搭建Vue前端项目" class="headerlink" title="1、搭建Vue前端项目"></a>1、搭建Vue前端项目</h3><p><img src="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png" alt="使用Vue-cli脚手架"></p>
+<h3 id="2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><a href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入" class="headerlink" title="2、 npm安装element-ui、Vuex、axios等依赖和组件并引入"></a>2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</h3><blockquote>
+<p>npm i element-ui -S<br>npm install vuex –save<br>npm install axios</p>
+</blockquote>
+<p><strong> main.js中组件和依赖引入：</strong><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import Vue from <span class="string">'vue'</span></div><div class="line">import ElementUI from <span class="string">'element-ui'</span></div><div class="line">import VueAwesomeSwiper from <span class="string">'vue-awesome-swiper'</span></div><div class="line">import <span class="string">'../theme/index.css'</span></div><div class="line">import App from <span class="string">'./App'</span></div><div class="line">import router from <span class="string">'./router'</span></div><div class="line">import Vuex from <span class="string">'vuex'</span></div><div class="line">import store from <span class="string">'./vuex/store.js'</span></div><div class="line">import axios from <span class="string">'axios'</span></div><div class="line"></div><div class="line">Vue.use(ElementUI)</div><div class="line">Vue.use(VueAwesomeSwiper)</div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure></p>
+<h3 id="3、新建login-vue单页"><a href="#3、新建login-vue单页" class="headerlink" title="3、新建login.vue单页"></a>3、新建login.vue单页</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="login"&gt;</div><div class="line">    &lt;el-form  :model="loginForm" :rules="rules" ref="loginForm" label-width="80px" &gt;</div><div class="line">      &lt;h3 class="login-head"&gt;登录&lt;/h3&gt;</div><div class="line">      &lt;el-form-item prop="name"&gt;</div><div class="line">        &lt;el-input  v-model="loginForm.name" placeholder="用户名"&gt;&lt;/el-input&gt;</div><div class="line">      &lt;/el-form-item&gt;</div><div class="line">      &lt;el-form-item prop="pwd"&gt;</div><div class="line">        &lt;el-input v-model="loginForm.pwd" placeholder="密码"&gt;&lt;/el-input&gt;</div><div class="line">      &lt;/el-form-item&gt;</div><div class="line">      &lt;el-button type="primary" class="login-btn" @click="submitForm('loginForm')"&gt;提交&lt;/el-button&gt;</div><div class="line">    &lt;/el-form&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">import &#123; mapActions &#125; from <span class="string">'vuex'</span></div><div class="line">import &#123; USER_SIGNIN &#125; from <span class="string">'../vuex/modules/user'</span></div><div class="line">import api from <span class="string">'../fetch/axios.js'</span></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="symbol">loginForm:</span> &#123;</div><div class="line">        <span class="symbol">name:</span> <span class="string">''</span>,</div><div class="line">        <span class="symbol">pwd:</span> <span class="string">''</span></div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">rules:</span> &#123;</div><div class="line">        <span class="symbol">name:</span> [</div><div class="line">          &#123;<span class="symbol">required:</span> <span class="literal">true</span>, <span class="symbol">message:</span> <span class="string">'用户名必填'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;</div><div class="line">        ],</div><div class="line">        <span class="symbol">pwd:</span> [</div><div class="line">          &#123;<span class="symbol">required:</span> <span class="literal">true</span>, <span class="symbol">message:</span> <span class="string">'请输入密码'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;,</div><div class="line">          &#123;<span class="symbol">min:</span> <span class="number">6</span>, <span class="symbol">max:</span> <span class="number">16</span>, <span class="symbol">message:</span> <span class="string">'密码在6到16位之间'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">methods:</span> &#123;</div><div class="line">    ...mapActions([USER_SIGNIN]),</div><div class="line">    submitForm (formName) &#123;</div><div class="line">      this.$refs[formName].validate((valid) =&gt; &#123;</div><div class="line">        <span class="keyword">if</span> (valid) &#123;</div><div class="line">          console.log(<span class="string">'val'</span>)</div><div class="line">          let opt = this.loginForm</div><div class="line">          api.Login(opt)</div><div class="line">              .<span class="keyword">then</span>(res =&gt; &#123;</div><div class="line">                <span class="keyword">if</span> (res) &#123;</div><div class="line">                  this.$message(&#123;</div><div class="line">                    <span class="symbol">type:</span> <span class="string">'success'</span>,</div><div class="line">                    <span class="symbol">message:</span> <span class="string">'登录成功'</span></div><div class="line">                  &#125;)</div><div class="line">                  this.USER_SIGNIN(this.loginForm)</div><div class="line">                  this.$router.replace(<span class="string">'/one'</span>)</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                  <span class="regexp">//</span> element-ui消息提示</div><div class="line">                  this.$message(&#123;</div><div class="line">                    <span class="symbol">type:</span> <span class="string">'info'</span>,</div><div class="line">                    <span class="symbol">message:</span> <span class="string">'密码错误！'</span></div><div class="line">                  &#125;)</div><div class="line">                &#125;</div><div class="line">              &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          console.log(<span class="string">'not val'</span>)</div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">  .login&#123;</div><div class="line">    <span class="symbol">width:</span> <span class="number">40</span>%;</div><div class="line">    <span class="symbol">margin:</span> <span class="number">5</span>% <span class="number">25</span>% <span class="number">5</span>% <span class="number">25</span>%;</div><div class="line">    <span class="symbol">border:</span> <span class="number">1</span>px solid <span class="comment">#f9dba4;</span></div><div class="line">    box-<span class="symbol">shadow:</span> <span class="number">0</span> <span class="number">2</span>px <span class="number">2</span>px <span class="number">0</span> <span class="comment">#f3daae;</span></div><div class="line">    <span class="symbol">padding:</span> <span class="number">0</span> <span class="number">60</span>px <span class="number">20</span>px <span class="number">60</span>px;</div><div class="line">  &#125;</div><div class="line">  .login-head&#123;</div><div class="line">    <span class="symbol">margin:</span> <span class="number">30</span>px 0px <span class="number">20</span>px 0px;</div><div class="line">    text-<span class="symbol">align:</span> center;</div><div class="line">    <span class="symbol">background:</span> orange;</div><div class="line">    <span class="symbol">padding:</span> <span class="number">8</span>px <span class="number">15</span>px;</div><div class="line">    <span class="symbol">color:</span> <span class="comment">#fff;</span></div><div class="line">  &#125;</div><div class="line">  .login-btn&#123;</div><div class="line">    <span class="symbol">width:</span> <span class="number">120</span>px;</div><div class="line">    margin-<span class="symbol">left:</span> <span class="number">165</span>px;</div><div class="line">    <span class="symbol">padding:</span> <span class="number">8</span>px <span class="number">15</span>px;</div><div class="line">    border-<span class="symbol">radius:</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  .el-form-item__content &#123;</div><div class="line">    margin-<span class="symbol">left:</span> <span class="number">0</span> !important;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><h3 id="1、安装express"><a href="#1、安装express" class="headerlink" title="1、安装express"></a>1、安装express</h3><blockquote>
+<p>npm install -g express<br>npm install -g express-generator</p>
+</blockquote>
+<h3 id="2、在Vue项目下新建文件夹service做服务器"><a href="#2、在Vue项目下新建文件夹service做服务器" class="headerlink" title="2、在Vue项目下新建文件夹service做服务器"></a>2、在Vue项目下新建文件夹service做服务器</h3><p>1.新建db.js连接数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  mysql: &#123;</div><div class="line">      host: 'localhost',</div><div class="line">      user: 'root',</div><div class="line">      password: '123456',</div><div class="line">      database:'vogue'</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.新建app.js作为express服务器入口<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">const userApi = <span class="keyword">require</span>(<span class="string">'./api/userApi'</span>);</div><div class="line">const fs = <span class="keyword">require</span>(<span class="string">'fs'</span>);</div><div class="line">const path = <span class="keyword">require</span>(<span class="string">'path'</span>);</div><div class="line">const bodyParser = <span class="keyword">require</span>(<span class="string">'body-parser'</span>);</div><div class="line">const express = <span class="keyword">require</span>(<span class="string">'express'</span>);</div><div class="line">const app = express();</div><div class="line"></div><div class="line">app.use(bodyParser.json());</div><div class="line">app.use(bodyParser.urlencoded(&#123;<span class="symbol">extended:</span> <span class="literal">false</span>&#125;));</div><div class="line"></div><div class="line"><span class="regexp">//</span> 设置响应头</div><div class="line">app.all(<span class="string">'*'</span>, function(req, res, <span class="keyword">next</span>) &#123;</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</div><div class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>,<span class="string">'x-requested-with,content-type,Access-Control-Allow-Origin'</span>);</div><div class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>)</div><div class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</div><div class="line">    <span class="keyword">next</span>();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="regexp">//</span>注册api路由</div><div class="line">app.use(<span class="string">'/api/user'</span>, userApi);</div><div class="line"></div><div class="line"><span class="regexp">//</span> 监听端口</div><div class="line">app.listen(<span class="number">3000</span>);</div><div class="line">console.log(<span class="string">'success listen at port:3000......'</span>);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/" rel="next" title=" Introduce the Semantic UI in Vue-cli">
+                <i class="fa fa-chevron-left"></i>  Introduce the Semantic UI in Vue-cli
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#axios-vuex-node-js实现登录拦截"><span class="nav-number">1.</span> <span class="nav-text">axios+vuex+node.js实现登录拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端"><span class="nav-number">1.1.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、搭建Vue前端项目"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、搭建Vue前端项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、新建login-vue单页"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、新建login.vue单页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台"><span class="nav-number">1.2.</span> <span class="nav-text">后台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、安装express"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、安装express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在Vue项目下新建文件夹service做服务器"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、在Vue项目下新建文件夹service做服务器</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>sansan.blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-16T03:04:20.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>三三</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js+node.js 实现登录拦截</title>
+    <link href="http://yoursite.com/2017/08/15/vue-js-node-js-%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA/"/>
+    <id>http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/</id>
+    <published>2017-08-15T10:06:19.000Z</published>
+    <updated>2017-08-16T03:04:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="axios-vuex-node-js实现登录拦截"><a href="#axios-vuex-node-js实现登录拦截" class="headerlink" title="axios+vuex+node.js实现登录拦截"></a>axios+vuex+node.js实现登录拦截</h1><hr>
+<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="1、搭建Vue前端项目"><a href="#1、搭建Vue前端项目" class="headerlink" title="1、搭建Vue前端项目"></a>1、搭建Vue前端项目</h3><p><img src="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png" alt="使用Vue-cli脚手架"></p>
+<h3 id="2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><a href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入" class="headerlink" title="2、 npm安装element-ui、Vuex、axios等依赖和组件并引入"></a>2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</h3><blockquote>
+<p>npm i element-ui -S<br>npm install vuex –save<br>npm install axios</p>
+</blockquote>
+<p><strong> main.js中组件和依赖引入：</strong><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import Vue from <span class="string">'vue'</span></div><div class="line">import ElementUI from <span class="string">'element-ui'</span></div><div class="line">import VueAwesomeSwiper from <span class="string">'vue-awesome-swiper'</span></div><div class="line">import <span class="string">'../theme/index.css'</span></div><div class="line">import App from <span class="string">'./App'</span></div><div class="line">import router from <span class="string">'./router'</span></div><div class="line">import Vuex from <span class="string">'vuex'</span></div><div class="line">import store from <span class="string">'./vuex/store.js'</span></div><div class="line">import axios from <span class="string">'axios'</span></div><div class="line"></div><div class="line">Vue.use(ElementUI)</div><div class="line">Vue.use(VueAwesomeSwiper)</div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure></p>
+<h3 id="3、新建login-vue单页"><a href="#3、新建login-vue单页" class="headerlink" title="3、新建login.vue单页"></a>3、新建login.vue单页</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="login"&gt;</div><div class="line">    &lt;el-form  :model="loginForm" :rules="rules" ref="loginForm" label-width="80px" &gt;</div><div class="line">      &lt;h3 class="login-head"&gt;登录&lt;/h3&gt;</div><div class="line">      &lt;el-form-item prop="name"&gt;</div><div class="line">        &lt;el-input  v-model="loginForm.name" placeholder="用户名"&gt;&lt;/el-input&gt;</div><div class="line">      &lt;/el-form-item&gt;</div><div class="line">      &lt;el-form-item prop="pwd"&gt;</div><div class="line">        &lt;el-input v-model="loginForm.pwd" placeholder="密码"&gt;&lt;/el-input&gt;</div><div class="line">      &lt;/el-form-item&gt;</div><div class="line">      &lt;el-button type="primary" class="login-btn" @click="submitForm('loginForm')"&gt;提交&lt;/el-button&gt;</div><div class="line">    &lt;/el-form&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">import &#123; mapActions &#125; from <span class="string">'vuex'</span></div><div class="line">import &#123; USER_SIGNIN &#125; from <span class="string">'../vuex/modules/user'</span></div><div class="line">import api from <span class="string">'../fetch/axios.js'</span></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="symbol">loginForm:</span> &#123;</div><div class="line">        <span class="symbol">name:</span> <span class="string">''</span>,</div><div class="line">        <span class="symbol">pwd:</span> <span class="string">''</span></div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">rules:</span> &#123;</div><div class="line">        <span class="symbol">name:</span> [</div><div class="line">          &#123;<span class="symbol">required:</span> <span class="literal">true</span>, <span class="symbol">message:</span> <span class="string">'用户名必填'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;</div><div class="line">        ],</div><div class="line">        <span class="symbol">pwd:</span> [</div><div class="line">          &#123;<span class="symbol">required:</span> <span class="literal">true</span>, <span class="symbol">message:</span> <span class="string">'请输入密码'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;,</div><div class="line">          &#123;<span class="symbol">min:</span> <span class="number">6</span>, <span class="symbol">max:</span> <span class="number">16</span>, <span class="symbol">message:</span> <span class="string">'密码在6到16位之间'</span>, <span class="symbol">trigger:</span> <span class="string">'blur'</span>&#125;</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">methods:</span> &#123;</div><div class="line">    ...mapActions([USER_SIGNIN]),</div><div class="line">    submitForm (formName) &#123;</div><div class="line">      this.$refs[formName].validate((valid) =&gt; &#123;</div><div class="line">        <span class="keyword">if</span> (valid) &#123;</div><div class="line">          console.log(<span class="string">'val'</span>)</div><div class="line">          let opt = this.loginForm</div><div class="line">          api.Login(opt)</div><div class="line">              .<span class="keyword">then</span>(res =&gt; &#123;</div><div class="line">                <span class="keyword">if</span> (res) &#123;</div><div class="line">                  this.$message(&#123;</div><div class="line">                    <span class="symbol">type:</span> <span class="string">'success'</span>,</div><div class="line">                    <span class="symbol">message:</span> <span class="string">'登录成功'</span></div><div class="line">                  &#125;)</div><div class="line">                  this.USER_SIGNIN(this.loginForm)</div><div class="line">                  this.$router.replace(<span class="string">'/one'</span>)</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                  <span class="regexp">//</span> element-ui消息提示</div><div class="line">                  this.$message(&#123;</div><div class="line">                    <span class="symbol">type:</span> <span class="string">'info'</span>,</div><div class="line">                    <span class="symbol">message:</span> <span class="string">'密码错误！'</span></div><div class="line">                  &#125;)</div><div class="line">                &#125;</div><div class="line">              &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          console.log(<span class="string">'not val'</span>)</div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">  .login&#123;</div><div class="line">    <span class="symbol">width:</span> <span class="number">40</span>%;</div><div class="line">    <span class="symbol">margin:</span> <span class="number">5</span>% <span class="number">25</span>% <span class="number">5</span>% <span class="number">25</span>%;</div><div class="line">    <span class="symbol">border:</span> <span class="number">1</span>px solid <span class="comment">#f9dba4;</span></div><div class="line">    box-<span class="symbol">shadow:</span> <span class="number">0</span> <span class="number">2</span>px <span class="number">2</span>px <span class="number">0</span> <span class="comment">#f3daae;</span></div><div class="line">    <span class="symbol">padding:</span> <span class="number">0</span> <span class="number">60</span>px <span class="number">20</span>px <span class="number">60</span>px;</div><div class="line">  &#125;</div><div class="line">  .login-head&#123;</div><div class="line">    <span class="symbol">margin:</span> <span class="number">30</span>px 0px <span class="number">20</span>px 0px;</div><div class="line">    text-<span class="symbol">align:</span> center;</div><div class="line">    <span class="symbol">background:</span> orange;</div><div class="line">    <span class="symbol">padding:</span> <span class="number">8</span>px <span class="number">15</span>px;</div><div class="line">    <span class="symbol">color:</span> <span class="comment">#fff;</span></div><div class="line">  &#125;</div><div class="line">  .login-btn&#123;</div><div class="line">    <span class="symbol">width:</span> <span class="number">120</span>px;</div><div class="line">    margin-<span class="symbol">left:</span> <span class="number">165</span>px;</div><div class="line">    <span class="symbol">padding:</span> <span class="number">8</span>px <span class="number">15</span>px;</div><div class="line">    border-<span class="symbol">radius:</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  .el-form-item__content &#123;</div><div class="line">    margin-<span class="symbol">left:</span> <span class="number">0</span> !important;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><h3 id="1、安装express"><a href="#1、安装express" class="headerlink" title="1、安装express"></a>1、安装express</h3><blockquote>
+<p>npm install -g express<br>npm install -g express-generator</p>
+</blockquote>
+<h3 id="2、在Vue项目下新建文件夹service做服务器"><a href="#2、在Vue项目下新建文件夹service做服务器" class="headerlink" title="2、在Vue项目下新建文件夹service做服务器"></a>2、在Vue项目下新建文件夹service做服务器</h3><p>1.新建db.js连接数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  mysql: &#123;</div><div class="line">      host: 'localhost',</div><div class="line">      user: 'root',</div><div class="line">      password: '123456',</div><div class="line">      database:'vogue'</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.新建app.js作为express服务器入口<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">const userApi = <span class="keyword">require</span>(<span class="string">'./api/userApi'</span>);</div><div class="line">const fs = <span class="keyword">require</span>(<span class="string">'fs'</span>);</div><div class="line">const path = <span class="keyword">require</span>(<span class="string">'path'</span>);</div><div class="line">const bodyParser = <span class="keyword">require</span>(<span class="string">'body-parser'</span>);</div><div class="line">const express = <span class="keyword">require</span>(<span class="string">'express'</span>);</div><div class="line">const app = express();</div><div class="line"></div><div class="line">app.use(bodyParser.json());</div><div class="line">app.use(bodyParser.urlencoded(&#123;<span class="symbol">extended:</span> <span class="literal">false</span>&#125;));</div><div class="line"></div><div class="line"><span class="regexp">//</span> 设置响应头</div><div class="line">app.all(<span class="string">'*'</span>, function(req, res, <span class="keyword">next</span>) &#123;</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</div><div class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>,<span class="string">'x-requested-with,content-type,Access-Control-Allow-Origin'</span>);</div><div class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>)</div><div class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</div><div class="line">    <span class="keyword">next</span>();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="regexp">//</span>注册api路由</div><div class="line">app.use(<span class="string">'/api/user'</span>, userApi);</div><div class="line"></div><div class="line"><span class="regexp">//</span> 监听端口</div><div class="line">app.listen(<span class="number">3000</span>);</div><div class="line">console.log(<span class="string">'success listen at port:3000......'</span>);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;axios-vuex-node-js实现登录拦截&quot;&gt;&lt;a href=&quot;#axios-vuex-node-js实现登录拦截&quot; class=&quot;headerlink&quot; title=&quot;axios+vuex+node.js实现登录拦截&quot;&gt;&lt;/a&gt;axios+vuex+nod
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title> Introduce the Semantic UI in Vue-cli</title>
+    <link href="http://yoursite.com/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/"/>
+    <id>http://yoursite.com/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/</id>
+    <published>2017-08-11T03:27:42.000Z</published>
+    <updated>2017-08-16T02:15:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在Vue项目中引入Semantic-UI"><a href="#在Vue项目中引入Semantic-UI" class="headerlink" title="在Vue项目中引入Semantic-UI"></a>在Vue项目中引入Semantic-UI</h1><hr>
+<p><a href="https://github.com/sansansine/semanui.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/semanui.git</a></p>
+<p>1.jQuery install</p>
+<blockquote>
+<p>npm install –save jquery</p>
+</blockquote>
+<p>2.webpack.dev.config.js添加如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// plugins 区块内</div><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">  $              : "jquery",</div><div class="line">  jquery         : "jquery",</div><div class="line">  jQuery         : "jquery",</div><div class="line">  "window.jQuery": "jquery"</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>3.引入jQuery需要填的坑</p>
+<ul>
+<li><p>webpack.base.conf.js文件添加：</p>
+<blockquote>
+<p>var webpack = require(‘webpack’)</p>
+</blockquote>
+</li>
+<li><p>main.js里导入jQuery:</p>
+<blockquote>
+<p>import ‘jquery’</p>
+</blockquote>
+</li>
+<li><p>.eslintrc.js文件中添加：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">env:</span> &#123;</div><div class="line">  <span class="regexp">//</span> 原有</div><div class="line">  <span class="symbol">browser:</span> <span class="literal">true</span>,</div><div class="line">  <span class="regexp">//</span> 添加</div><div class="line">  <span class="symbol">jquery:</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4.安装 semantic-ui-css</p>
+<blockquote>
+<p>npm install semantic-ui-css –save</p>
+</blockquote>
+<p>5.在 webpack.dev.config.js中添加<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    new webpack.ProvidePlugin(&#123;</div><div class="line">      ...</div><div class="line">      // Semantic-UI</div><div class="line">      semantic     : 'semantic-ui-css',</div><div class="line">      Semantic     : 'semantic-ui-css',</div><div class="line">      'semantic-ui': 'semantic-ui-css'</div><div class="line">    &#125;),</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
+<p>6.在main.js中引入 css 和 js 文件<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import semantic from <span class="string">'../node_modules/semantic-ui-css/semantic.min.js'</span></div><div class="line">import <span class="string">'../node_modules/semantic-ui-css/semantic.min.css'</span></div></pre></td></tr></table></figure></p>
+<p>7.finally test it!(add a new .vue)<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="semantic-component"&gt;</div><div class="line">    &lt;div class="ui selection dropdown semanticDropDown"&gt;</div><div class="line">      &lt;input type="hidden" name="gender" v-model="selected"&gt;</div><div class="line">      &lt;i class="dropdown icon"&gt;&lt;/i&gt;</div><div class="line">      &lt;div class="default text"&gt;Gender&lt;/div&gt;</div><div class="line">      &lt;div class="menu"&gt;</div><div class="line">        &lt;div class="item" :data-value="item.Value"</div><div class="line">             v-for="item in items"</div><div class="line">             @click="changeSelection(item)"&gt;</div><div class="line">          &#123;&#123; item.Gender &#125;&#125;</div><div class="line">        &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;pre&gt;&#123;&#123; JSON.stringify(selectedItem) &#125;&#125;&lt;/pre&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    data () &#123;</div><div class="line">      return &#123;</div><div class="line">        items: [</div><div class="line">          &#123;Gender: 'Male', Value: 1&#125;,</div><div class="line">          &#123;Gender: 'Female', Value: 0&#125;</div><div class="line">        ],</div><div class="line">        selected: '',</div><div class="line">        selecteditem: &#123;&#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">      changeSelection (item) &#123;</div><div class="line">        this.selectedItem = item</div><div class="line">        this.selected = item.Value</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    mounted () &#123;</div><div class="line">      this.selecteditem = &#123;&#125;</div><div class="line">      $('.semanticDropDown').dropdown()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style&gt;&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p><del>Semantic-UI引入完成</del></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;在Vue项目中引入Semantic-UI&quot;&gt;&lt;a href=&quot;#在Vue项目中引入Semantic-UI&quot; class=&quot;headerlink&quot; title=&quot;在Vue项目中引入Semantic-UI&quot;&gt;&lt;/a&gt;在Vue项目中引入Semantic-UI&lt;/h1&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue-awesome-swiper</title>
+    <link href="http://yoursite.com/2017/07/20/vue-awesome-swiper/"/>
+    <id>http://yoursite.com/2017/07/20/vue-awesome-swiper/</id>
+    <published>2017-07-20T03:37:20.000Z</published>
+    <updated>2017-08-11T03:32:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue轮播图插件：vue-awesome-swiper使用"><a href="#Vue轮播图插件：vue-awesome-swiper使用" class="headerlink" title="Vue轮播图插件：vue-awesome-swiper使用"></a>Vue轮播图插件：vue-awesome-swiper使用</h1><hr>
+<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
+<h2 id="1、Use-Setup"><a href="#1、Use-Setup" class="headerlink" title="1、Use Setup"></a>1、Use Setup</h2><blockquote>
+<p>npm install vue-awesome-swiper –save</p>
+</blockquote>
+<h2 id="2、main-js-import"><a href="#2、main-js-import" class="headerlink" title="2、main.js-import"></a>2、main.js-import</h2><blockquote>
+<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>Vue.use(VueAwesomeSwiper)</p>
+</blockquote>
+<h2 id="3、-vue页面中声明参数"><a href="#3、-vue页面中声明参数" class="headerlink" title="3、.vue页面中声明参数"></a>3、.vue页面中声明参数</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import &#123; swiper, swiperSlide &#125; from <span class="string">'vue-awesome-swiper'</span></div><div class="line">export default&#123;</div><div class="line">  <span class="symbol">name:</span> <span class="string">'one'</span>,</div><div class="line">  <span class="symbol">components:</span> &#123;</div><div class="line">    swiper,</div><div class="line">    swiperSlide</div><div class="line">  &#125;,</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="regexp">//</span> <span class="symbol">currentDate:</span> new Date(),</div><div class="line">      <span class="symbol">items:</span> [<span class="string">'../static/banner1.jpg'</span>, <span class="string">'../static/banner2.jpg'</span>, <span class="string">'../static/banner3.jpg'</span>],</div><div class="line">      <span class="symbol">swiperOption:</span> &#123;</div><div class="line">        <span class="symbol">autoplay:</span> <span class="number">3000</span>,</div><div class="line">        <span class="symbol">pagination:</span> <span class="string">'.swiper-pagination'</span>,</div><div class="line">        <span class="symbol">slidesPerView:</span> <span class="string">'auto'</span>,</div><div class="line">        <span class="symbol">centeredSlides:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">paginationClickable:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">onSlideChangeEnd:</span> swiper =&gt; &#123;</div><div class="line">          this.page = swiper.realIndex + <span class="number">1</span></div><div class="line">          this.index = swiper.realIndex</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">swiperSlides:</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">computed:</span> &#123;</div><div class="line">    swiper () &#123;</div><div class="line">      <span class="keyword">return</span> this.$refs.mySwiper.swiper</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted () &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Vue轮播图插件：vue-awesome-swiper使用&quot;&gt;&lt;a href=&quot;#Vue轮播图插件：vue-awesome-swiper使用&quot; class=&quot;headerlink&quot; title=&quot;Vue轮播图插件：vue-awesome-swiper使用&quot;&gt;&lt;/a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Using vue.js to build the first simple website</title>
+    <link href="http://yoursite.com/2017/07/06/Using-vue-js-to-build-the-first-simple-website/"/>
+    <id>http://yoursite.com/2017/07/06/Using-vue-js-to-build-the-first-simple-website/</id>
+    <published>2017-07-06T02:22:29.000Z</published>
+    <updated>2017-07-14T01:53:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue-js入门-简单网页搭建"><a href="#Vue-js入门-简单网页搭建" class="headerlink" title="Vue.js入门-简单网页搭建"></a>Vue.js入门-简单网页搭建</h1><hr>
+<h2 id="1、Vue-js安装"><a href="#1、Vue-js安装" class="headerlink" title="1、Vue.js安装"></a>1、Vue.js安装</h2><blockquote>
+<p>$ npm install vue</p>
+</blockquote>
+<h2 id="2、创建第一个项目"><a href="#2、创建第一个项目" class="headerlink" title="2、创建第一个项目"></a>2、创建第一个项目</h2><h3 id="使用官方命令行工具，快速搭建大型单页应用"><a href="#使用官方命令行工具，快速搭建大型单页应用" class="headerlink" title="使用官方命令行工具，快速搭建大型单页应用"></a>使用官方命令行工具，快速搭建大型单页应用</h3><blockquote>
+<p>#全局安装vue-cli<br>$ npm install –global vue-cli</p>
+<p>#创建一个基于webpack模板的新项目<br>$ vue init webpack project-name</p>
+<p>#默认配置，回车即可</p>
+</blockquote>
+<h2 id="3、进入项目，安装并运行"><a href="#3、进入项目，安装并运行" class="headerlink" title="3、进入项目，安装并运行"></a>3、进入项目，安装并运行</h2><blockquote>
+<p>$ cd project-name<br>$ npm install<br>$ npm run dev</p>
+</blockquote>
+<p>  <del>一个最简单的项目搭建完成啦</del></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Vue-js入门-简单网页搭建&quot;&gt;&lt;a href=&quot;#Vue-js入门-简单网页搭建&quot; class=&quot;headerlink&quot; title=&quot;Vue.js入门-简单网页搭建&quot;&gt;&lt;/a&gt;Vue.js入门-简单网页搭建&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;1、Vue-js
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome To Sansan’s Blog</title>
+    <link href="http://yoursite.com/2017/07/06/hello-world/"/>
+    <id>http://yoursite.com/2017/07/06/hello-world/</id>
+    <published>2017-07-06T01:41:10.000Z</published>
+    <updated>2017-07-06T02:29:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>“从一到一百，一千，一亿，无穷集合中，只有一个三三”</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“从一到一百，一千，一亿，无穷集合中，只有一个三三”&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

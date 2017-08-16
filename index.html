@@ -83,6 +83,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
 
 
 
@@ -200,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -210,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -253,6 +255,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/15/vue-js-node-js-实现登录拦截/" itemprop="url">vue.js+node.js 实现登录拦截</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T18:06:19+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          axios+vuex+node.js实现登录拦截
+源码地址：https://github.com/sansansine/vogue.git
+前端1、搭建Vue前端项目
+2、 npm安装element-ui、Vuex、axios等依赖和组件并引入
+npm i element-ui -Snpm inst
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/15/vue-js-node-js-实现登录拦截/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,7 +406,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T11:27:42+08:00">
                 2017-08-11
@@ -321,39 +445,21 @@
       
         
           
-            <h1 id="在Vue项目中引入Semantic-UI"><a href="#在Vue项目中引入Semantic-UI" class="headerlink" title="在Vue项目中引入Semantic-UI"></a>在Vue项目中引入Semantic-UI</h1><hr>
-<p><a href="https://github.com/sansansine/semanui.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/semanui.git</a></p>
-<p>1.jQuery install</p>
-<blockquote>
-<p>npm install –save jquery</p>
-</blockquote>
-<p>2.webpack.dev.config.js添加如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// plugins 区块内</div><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">  $              : "jquery",</div><div class="line">  jquery         : "jquery",</div><div class="line">  jQuery         : "jquery",</div><div class="line">  "window.jQuery": "jquery"</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>3.引入jQuery需要填的坑</p>
-<ul>
-<li><p>webpack.base.conf.js文件添加：</p>
-<blockquote>
-<p>var webpack = require(‘webpack’)</p>
-</blockquote>
-</li>
-<li><p>main.js里导入jQuery:</p>
-<blockquote>
-<p>import ‘jquery’</p>
-</blockquote>
-</li>
-<li><p>.eslintrc.js文件中添加：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">env:</span> &#123;</div><div class="line">  <span class="regexp">//</span> 原有</div><div class="line">  <span class="symbol">browser:</span> <span class="literal">true</span>,</div><div class="line">  <span class="regexp">//</span> 添加</div><div class="line">  <span class="symbol">jquery:</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>4.安装 semantic-ui-css</p>
-<blockquote>
-<p>npm install semantic-ui-css –save</p>
-</blockquote>
-<p>5.在 webpack.dev.config.js中添加<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    new webpack.ProvidePlugin(&#123;</div><div class="line">      ...</div><div class="line">      // Semantic-UI</div><div class="line">      semantic     : 'semantic-ui-css',</div><div class="line">      Semantic     : 'semantic-ui-css',</div><div class="line">      'semantic-ui': 'semantic-ui-css'</div><div class="line">    &#125;),</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
-<p>6.在main.js中引入 css 和 js 文件<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import semantic from <span class="string">'../node_modules/semantic-ui-css/semantic.min.js'</span></div><div class="line">import <span class="string">'../node_modules/semantic-ui-css/semantic.min.css'</span></div></pre></td></tr></table></figure></p>
-<p>7.finally test it!(add a new .vue)<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="semantic-component"&gt;</div><div class="line">    &lt;div class="ui selection dropdown semanticDropDown"&gt;</div><div class="line">      &lt;input type="hidden" name="gender" v-model="selected"&gt;</div><div class="line">      &lt;i class="dropdown icon"&gt;&lt;/i&gt;</div><div class="line">      &lt;div class="default text"&gt;Gender&lt;/div&gt;</div><div class="line">      &lt;div class="menu"&gt;</div><div class="line">        &lt;div class="item" :data-value="item.Value"</div><div class="line">             v-for="item in items"</div><div class="line">             @click="changeSelection(item)"&gt;</div><div class="line">          &#123;&#123; item.Gender &#125;&#125;</div><div class="line">        &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;pre&gt;&#123;&#123; JSON.stringify(selectedItem) &#125;&#125;&lt;/pre&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    data () &#123;</div><div class="line">      return &#123;</div><div class="line">        items: [</div><div class="line">          &#123;Gender: 'Male', Value: 1&#125;,</div><div class="line">          &#123;Gender: 'Female', Value: 0&#125;</div><div class="line">        ],</div><div class="line">        selected: '',</div><div class="line">        selecteditem: &#123;&#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">      changeSelection (item) &#123;</div><div class="line">        this.selectedItem = item</div><div class="line">        this.selected = item.Value</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    mounted () &#123;</div><div class="line">      this.selecteditem = &#123;&#125;</div><div class="line">      $('.semanticDropDown').dropdown()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style&gt;&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p><del>Semantic-UI引入完成</del></p>
+          在Vue项目中引入Semantic-UI
+源码地址：https://github.com/sansansine/semanui.git
+1.jQuery install
 
-          
+npm install –save jquery
+
+2.webpack.dev.config.js添加如下1234567// p
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -424,7 +530,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T11:37:20+08:00">
                 2017-07-20
@@ -463,17 +569,21 @@
       
         
           
-            <h1 id="Vue轮播图插件：vue-awesome-swiper使用"><a href="#Vue轮播图插件：vue-awesome-swiper使用" class="headerlink" title="Vue轮播图插件：vue-awesome-swiper使用"></a>Vue轮播图插件：vue-awesome-swiper使用</h1><hr>
-<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
-<h2 id="1、Use-Setup"><a href="#1、Use-Setup" class="headerlink" title="1、Use Setup"></a>1、Use Setup</h2><blockquote>
-<p>npm install vue-awesome-swiper –save</p>
-</blockquote>
-<h2 id="2、main-js-import"><a href="#2、main-js-import" class="headerlink" title="2、main.js-import"></a>2、main.js-import</h2><blockquote>
-<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>Vue.use(VueAwesomeSwiper)</p>
-</blockquote>
-<h2 id="3、-vue页面中声明参数"><a href="#3、-vue页面中声明参数" class="headerlink" title="3、.vue页面中声明参数"></a>3、.vue页面中声明参数</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import &#123; swiper, swiperSlide &#125; from <span class="string">'vue-awesome-swiper'</span></div><div class="line">export default&#123;</div><div class="line">  <span class="symbol">name:</span> <span class="string">'one'</span>,</div><div class="line">  <span class="symbol">components:</span> &#123;</div><div class="line">    swiper,</div><div class="line">    swiperSlide</div><div class="line">  &#125;,</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="regexp">//</span> <span class="symbol">currentDate:</span> new Date(),</div><div class="line">      <span class="symbol">items:</span> [<span class="string">'../static/banner1.jpg'</span>, <span class="string">'../static/banner2.jpg'</span>, <span class="string">'../static/banner3.jpg'</span>],</div><div class="line">      <span class="symbol">swiperOption:</span> &#123;</div><div class="line">        <span class="symbol">autoplay:</span> <span class="number">3000</span>,</div><div class="line">        <span class="symbol">pagination:</span> <span class="string">'.swiper-pagination'</span>,</div><div class="line">        <span class="symbol">slidesPerView:</span> <span class="string">'auto'</span>,</div><div class="line">        <span class="symbol">centeredSlides:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">paginationClickable:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">onSlideChangeEnd:</span> swiper =&gt; &#123;</div><div class="line">          this.page = swiper.realIndex + <span class="number">1</span></div><div class="line">          this.index = swiper.realIndex</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">swiperSlides:</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">computed:</span> &#123;</div><div class="line">    swiper () &#123;</div><div class="line">      <span class="keyword">return</span> this.$refs.mySwiper.swiper</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted () &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          Vue轮播图插件：vue-awesome-swiper使用
+源码地址：https://github.com/sansansine/vogue.git
+1、Use Setup
+npm install vue-awesome-swiper –save
 
-          
+2、main.js-import
+import V
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/20/vue-awesome-swiper/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -544,7 +654,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T10:22:29+08:00">
                 2017-07-06
@@ -583,21 +693,21 @@
       
         
           
-            <h1 id="Vue-js入门-简单网页搭建"><a href="#Vue-js入门-简单网页搭建" class="headerlink" title="Vue.js入门-简单网页搭建"></a>Vue.js入门-简单网页搭建</h1><hr>
-<h2 id="1、Vue-js安装"><a href="#1、Vue-js安装" class="headerlink" title="1、Vue.js安装"></a>1、Vue.js安装</h2><blockquote>
-<p>$ npm install vue</p>
-</blockquote>
-<h2 id="2、创建第一个项目"><a href="#2、创建第一个项目" class="headerlink" title="2、创建第一个项目"></a>2、创建第一个项目</h2><h3 id="使用官方命令行工具，快速搭建大型单页应用"><a href="#使用官方命令行工具，快速搭建大型单页应用" class="headerlink" title="使用官方命令行工具，快速搭建大型单页应用"></a>使用官方命令行工具，快速搭建大型单页应用</h3><blockquote>
-<p>#全局安装vue-cli<br>$ npm install –global vue-cli</p>
-<p>#创建一个基于webpack模板的新项目<br>$ vue init webpack project-name</p>
-<p>#默认配置，回车即可</p>
-</blockquote>
-<h2 id="3、进入项目，安装并运行"><a href="#3、进入项目，安装并运行" class="headerlink" title="3、进入项目，安装并运行"></a>3、进入项目，安装并运行</h2><blockquote>
-<p>$ cd project-name<br>$ npm install<br>$ npm run dev</p>
-</blockquote>
-<p>  <del>一个最简单的项目搭建完成啦</del></p>
+          Vue.js入门-简单网页搭建
+1、Vue.js安装
+$ npm install vue
 
-          
+2、创建第一个项目使用官方命令行工具，快速搭建大型单页应用
+#全局安装vue-cli$ npm install –global vue-cli
+#创建一个基于webpack模板的新项目$ vue init w
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/06/Using-vue-js-to-build-the-first-simple-website/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -668,7 +778,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T09:41:10+08:00">
                 2017-07-06
@@ -707,9 +817,16 @@
       
         
           
-            <p>“从一到一百，一千，一亿，无穷集合中，只有一个三三”</p>
+          “从一到一百，一千，一亿，无穷集合中，只有一个三三”
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/06/hello-world/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -787,8 +904,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -799,6 +916,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -862,7 +986,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
