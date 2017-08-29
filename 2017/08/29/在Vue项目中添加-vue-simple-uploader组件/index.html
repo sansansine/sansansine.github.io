@@ -82,6 +82,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
 
@@ -95,16 +97,18 @@
 
 
 
-<meta name="description" content="Vue轮播图插件：vue-awesome-swiper使用 源码地址：https://github.com/sansansine/vogue.git 1、Use Setup npm install vue-awesome-swiper –save  2、main.js-import import VueAwesomeSwiper from ‘vue-awesome-swiper’Vue.use(V">
+<meta name="description" content="源码地址：https://github.com/sansansine/semanui.git 1、搭建Vue前端项目 2、vue-simple-uploader安装 npm install vue-simple-uploader -save_scroll  3、在main.js中引入组件 import uploader from ‘vue-simple-uploader’Vue.use(uplo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-awesome-swiper">
-<meta property="og:url" content="http://yoursite.com/2017/07/20/vue-awesome-swiper/index.html">
+<meta property="og:title" content="在Vue项目中添加 vue-simple-uploader组件">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/在Vue项目中添加-vue-simple-uploader组件/index.html">
 <meta property="og:site_name" content="sansan.blog">
-<meta property="og:description" content="Vue轮播图插件：vue-awesome-swiper使用 源码地址：https://github.com/sansansine/vogue.git 1、Use Setup npm install vue-awesome-swiper –save  2、main.js-import import VueAwesomeSwiper from ‘vue-awesome-swiper’Vue.use(V">
-<meta property="og:updated_time" content="2017-08-11T03:32:51.000Z">
+<meta property="og:description" content="源码地址：https://github.com/sansansine/semanui.git 1、搭建Vue前端项目 2、vue-simple-uploader安装 npm install vue-simple-uploader -save_scroll  3、在main.js中引入组件 import uploader from ‘vue-simple-uploader’Vue.use(uplo">
+<meta property="og:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
+<meta property="og:updated_time" content="2017-08-29T06:39:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-awesome-swiper">
-<meta name="twitter:description" content="Vue轮播图插件：vue-awesome-swiper使用 源码地址：https://github.com/sansansine/vogue.git 1、Use Setup npm install vue-awesome-swiper –save  2、main.js-import import VueAwesomeSwiper from ‘vue-awesome-swiper’Vue.use(V">
+<meta name="twitter:title" content="在Vue项目中添加 vue-simple-uploader组件">
+<meta name="twitter:description" content="源码地址：https://github.com/sansansine/semanui.git 1、搭建Vue前端项目 2、vue-simple-uploader安装 npm install vue-simple-uploader -save_scroll  3、在main.js中引入组件 import uploader from ‘vue-simple-uploader’Vue.use(uplo">
+<meta name="twitter:image" content="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/20/vue-awesome-swiper/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/在Vue项目中添加-vue-simple-uploader组件/"/>
 
 
 
 
 
-  <title>vue-awesome-swiper | sansan.blog</title>
+  <title>在Vue项目中添加 vue-simple-uploader组件 | sansan.blog</title>
   
 
 
@@ -257,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/vue-awesome-swiper/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/在Vue项目中添加-vue-simple-uploader组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="三三">
@@ -274,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue-awesome-swiper</h1>
+          <h1 class="post-title" itemprop="name headline">在Vue项目中添加 vue-simple-uploader组件</h1>
         
 
         <div class="post-meta">
@@ -286,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T11:37:20+08:00">
-                2017-07-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T14:27:58+08:00">
+                2017-08-29
               </time>
             
 
@@ -321,15 +325,20 @@
       
 
       
-        <h1 id="Vue轮播图插件：vue-awesome-swiper使用"><a href="#Vue轮播图插件：vue-awesome-swiper使用" class="headerlink" title="Vue轮播图插件：vue-awesome-swiper使用"></a>Vue轮播图插件：vue-awesome-swiper使用</h1><hr>
-<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
-<h2 id="1、Use-Setup"><a href="#1、Use-Setup" class="headerlink" title="1、Use Setup"></a>1、Use Setup</h2><blockquote>
-<p>npm install vue-awesome-swiper –save</p>
+        <hr>
+<p><a href="https://github.com/sansansine/semanui.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/semanui.git</a></p>
+<h2 id="1、搭建Vue前端项目"><a href="#1、搭建Vue前端项目" class="headerlink" title="1、搭建Vue前端项目"></a>1、搭建Vue前端项目</h2><p><img src="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png" alt="使用Vue-cli脚手架"></p>
+<h2 id="2、vue-simple-uploader安装"><a href="#2、vue-simple-uploader安装" class="headerlink" title="2、vue-simple-uploader安装"></a>2、vue-simple-uploader安装</h2><blockquote>
+<p>npm install vue-simple-uploader -save_scroll</p>
 </blockquote>
-<h2 id="2、main-js-import"><a href="#2、main-js-import" class="headerlink" title="2、main.js-import"></a>2、main.js-import</h2><blockquote>
-<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>Vue.use(VueAwesomeSwiper)</p>
+<h2 id="3、在main-js中引入组件"><a href="#3、在main-js中引入组件" class="headerlink" title="3、在main.js中引入组件"></a>3、在main.js中引入组件</h2><blockquote>
+<p>import uploader from ‘vue-simple-uploader’<br>Vue.use(uploader)</p>
 </blockquote>
-<h2 id="3、-vue页面中声明参数"><a href="#3、-vue页面中声明参数" class="headerlink" title="3、.vue页面中声明参数"></a>3、.vue页面中声明参数</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import &#123; swiper, swiperSlide &#125; from <span class="string">'vue-awesome-swiper'</span></div><div class="line">export default&#123;</div><div class="line">  <span class="symbol">name:</span> <span class="string">'one'</span>,</div><div class="line">  <span class="symbol">components:</span> &#123;</div><div class="line">    swiper,</div><div class="line">    swiperSlide</div><div class="line">  &#125;,</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="regexp">//</span> <span class="symbol">currentDate:</span> new Date(),</div><div class="line">      <span class="symbol">items:</span> [<span class="string">'../static/banner1.jpg'</span>, <span class="string">'../static/banner2.jpg'</span>, <span class="string">'../static/banner3.jpg'</span>],</div><div class="line">      <span class="symbol">swiperOption:</span> &#123;</div><div class="line">        <span class="symbol">autoplay:</span> <span class="number">3000</span>,</div><div class="line">        <span class="symbol">pagination:</span> <span class="string">'.swiper-pagination'</span>,</div><div class="line">        <span class="symbol">slidesPerView:</span> <span class="string">'auto'</span>,</div><div class="line">        <span class="symbol">centeredSlides:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">paginationClickable:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">onSlideChangeEnd:</span> swiper =&gt; &#123;</div><div class="line">          this.page = swiper.realIndex + <span class="number">1</span></div><div class="line">          this.index = swiper.realIndex</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="symbol">swiperSlides:</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="symbol">computed:</span> &#123;</div><div class="line">    swiper () &#123;</div><div class="line">      <span class="keyword">return</span> this.$refs.mySwiper.swiper</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted () &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4、新建up-vue单页"><a href="#4、新建up-vue单页" class="headerlink" title="4、新建up.vue单页"></a>4、新建up.vue单页</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;uploader :options="options" class="uploader-example"&gt;</div><div class="line">    &lt;uploader-unsupport&gt;&lt;/uploader-unsupport&gt;</div><div class="line">    &lt;uploader-drop&gt;</div><div class="line">      &lt;p&gt;Drop files here to upload or&lt;/p&gt;</div><div class="line">      &lt;uploader-btn&gt;select files&lt;/uploader-btn&gt;</div><div class="line">      &lt;uploader-btn :attrs="attrs"&gt;select images&lt;/uploader-btn&gt;</div><div class="line">      &lt;uploader-btn :directory="true"&gt;select folder&lt;/uploader-btn&gt;</div><div class="line">    &lt;/uploader-drop&gt;</div><div class="line">    &lt;uploader-list&gt;&lt;/uploader-list&gt;</div><div class="line">  &lt;/uploader&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="symbol">options:</span> &#123;</div><div class="line">          <span class="symbol">target:</span> <span class="string">'//localhost:3000/upload'</span>,</div><div class="line">          <span class="symbol">testChunks:</span> <span class="literal">false</span></div><div class="line">        &#125;,</div><div class="line">        <span class="symbol">attrs:</span> &#123;</div><div class="line">          <span class="symbol">accept:</span> <span class="string">'image/*'</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">  .uploader-example &#123;</div><div class="line">    <span class="symbol">width:</span> <span class="number">880</span>px;</div><div class="line">    <span class="symbol">padding:</span> <span class="number">15</span>px;</div><div class="line">    <span class="symbol">margin:</span> <span class="number">40</span>px auto <span class="number">0</span>;</div><div class="line">    font-<span class="symbol">size:</span> <span class="number">12</span>px;</div><div class="line">    box-<span class="symbol">shadow:</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);</div><div class="line">  &#125;</div><div class="line">  .uploader-example .uploader-btn &#123;</div><div class="line">    margin-<span class="symbol">right:</span> <span class="number">4</span>px;</div><div class="line">  &#125;</div><div class="line">  .uploader-example .uploader-list &#123;</div><div class="line">    max-<span class="symbol">height:</span> <span class="number">440</span>px;</div><div class="line">    <span class="symbol">overflow:</span> auto;</div><div class="line">    overflow-<span class="symbol">x:</span> hidden;</div><div class="line">    overflow-<span class="symbol">y:</span> auto;</div><div class="line">  &#125;</div><div class="line">  .uploader-file-name &#123;</div><div class="line">    text-<span class="symbol">align:</span> left;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="5、使用express搭建Node-js后台"><a href="#5、使用express搭建Node-js后台" class="headerlink" title="5、使用express搭建Node.js后台"></a>5、使用express搭建Node.js后台</h2><p><a href="https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js" target="_blank" rel="external">参考地址：https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js
+</a></p>
 
       
     </div>
@@ -366,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/06/Using-vue-js-to-build-the-first-simple-website/" rel="next" title="Using vue.js to build the first simple website">
-                <i class="fa fa-chevron-left"></i> Using vue.js to build the first simple website
+              <a href="/2017/08/25/git-常用命令复习/" rel="next" title="git 常用命令复习">
+                <i class="fa fa-chevron-left"></i> git 常用命令复习
               </a>
             
           </div>
@@ -375,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/11/Introduce-the-Semantic-UI-in-Vue-cli/" rel="prev" title=" Introduce the Semantic UI in Vue-cli">
-                 Introduce the Semantic UI in Vue-cli <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -516,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue轮播图插件：vue-awesome-swiper使用"><span class="nav-number">1.</span> <span class="nav-text">Vue轮播图插件：vue-awesome-swiper使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Use-Setup"><span class="nav-number">1.1.</span> <span class="nav-text">1、Use Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、main-js-import"><span class="nav-number">1.2.</span> <span class="nav-text">2、main.js-import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-vue页面中声明参数"><span class="nav-number">1.3.</span> <span class="nav-text">3、.vue页面中声明参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、搭建Vue前端项目"><span class="nav-number">1.</span> <span class="nav-text">1、搭建Vue前端项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、vue-simple-uploader安装"><span class="nav-number">2.</span> <span class="nav-text">2、vue-simple-uploader安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在main-js中引入组件"><span class="nav-number">3.</span> <span class="nav-text">3、在main.js中引入组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、新建up-vue单页"><span class="nav-number">4.</span> <span class="nav-text">4、新建up.vue单页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、使用express搭建Node-js后台"><span class="nav-number">5.</span> <span class="nav-text">5、使用express搭建Node.js后台</span></a></li></ol></div>
             
 
           </div>
