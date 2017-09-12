@@ -49,28 +49,15 @@
   </entry>
   
   <entry>
-    <title>git 常用命令复习</title>
-    <link href="http://yoursite.com/2017/08/25/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0/"/>
-    <id>http://yoursite.com/2017/08/25/git-常用命令复习/</id>
-    <published>2017-08-25T09:00:20.000Z</published>
-    <updated>2017-08-25T09:00:20.000Z</updated>
+    <title>使用Vue.js实现登录拦截</title>
+    <link href="http://yoursite.com/2017/08/12/%E4%BD%BF%E7%94%A8Vue-js%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA/"/>
+    <id>http://yoursite.com/2017/08/12/使用Vue-js实现登录拦截/</id>
+    <published>2017-08-12T08:59:50.000Z</published>
+    <updated>2017-09-12T09:28:11.000Z</updated>
     
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vue.js+node.js 实现登录拦截</title>
-    <link href="http://yoursite.com/2017/08/15/vue-js-node-js-%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA/"/>
-    <id>http://yoursite.com/2017/08/15/vue-js-node-js-实现登录拦截/</id>
-    <published>2017-08-15T10:06:19.000Z</published>
-    <updated>2017-08-16T06:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
+    <content type="html"><![CDATA[<p><img src="/2017/08/12/使用Vue-js实现登录拦截/vue-lanjie.png" alt="logo"></p>
+<p><strong>Vue.js做前台，node.js做后端，应用Vuex、axios实现的简单登录拦截</strong></p>
+<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a><br><a id="more"></a></p>
 <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="1、搭建Vue前端项目"><a href="#1、搭建Vue前端项目" class="headerlink" title="1、搭建Vue前端项目"></a>1、搭建Vue前端项目</h3><p><img src="http://ot0rfbzcd.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-16%20%E4%B8%8A%E5%8D%889.18.05.png" alt="使用Vue-cli脚手架"></p>
 <h3 id="2、-npm安装element-ui、Vuex、axios等依赖和组件并引入"><a href="#2、-npm安装element-ui、Vuex、axios等依赖和组件并引入" class="headerlink" title="2、 npm安装element-ui、Vuex、axios等依赖和组件并引入"></a>2、 npm安装element-ui、Vuex、axios等依赖和组件并引入</h3><blockquote>
 <p>npm i element-ui -S<br>npm install vuex –save<br>npm install axios</p>
@@ -104,8 +91,9 @@
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/sansansine/vogue.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址：https://github.com/sansansine/vogue.git&lt;/a&gt;&lt;/p
+      &lt;p&gt;&lt;img src=&quot;/2017/08/12/使用Vue-js实现登录拦截/vue-lanjie.png&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vue.js做前台，node.js做后端，应用Vuex、axios实现的简单登录拦截&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sansansine/vogue.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址：https://github.com/sansansine/vogue.git&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -163,14 +151,15 @@
   </entry>
   
   <entry>
-    <title>vue-awesome-swiper</title>
-    <link href="http://yoursite.com/2017/07/20/vue-awesome-swiper/"/>
-    <id>http://yoursite.com/2017/07/20/vue-awesome-swiper/</id>
+    <title>Vue轮播图插件vue-awesome-swiper的使用</title>
+    <link href="http://yoursite.com/2017/07/20/Vue%E8%BD%AE%E6%92%AD%E5%9B%BE%E6%8F%92%E4%BB%B6vue-awesome-swiper%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/07/20/Vue轮播图插件vue-awesome-swiper的使用/</id>
     <published>2017-07-20T03:37:20.000Z</published>
-    <updated>2017-08-11T03:32:51.000Z</updated>
+    <updated>2017-09-12T09:38:16.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Vue轮播图插件：vue-awesome-swiper使用"><a href="#Vue轮播图插件：vue-awesome-swiper使用" class="headerlink" title="Vue轮播图插件：vue-awesome-swiper使用"></a>Vue轮播图插件：vue-awesome-swiper使用</h1><hr>
-<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a></p>
+    <content type="html"><![CDATA[<p><img src="/2017/07/20/Vue轮播图插件vue-awesome-swiper的使用/vue-awesome-swiper.png" alt="logo"></p>
+<p><strong>Vue轮播图插件vue-awesome-swiper的引入和简单使用</strong></p>
+<p><a href="https://github.com/sansansine/vogue.git" target="_blank" rel="external">源码地址：https://github.com/sansansine/vogue.git</a><br><a id="more"></a></p>
 <h2 id="1、Use-Setup"><a href="#1、Use-Setup" class="headerlink" title="1、Use Setup"></a>1、Use Setup</h2><blockquote>
 <p>npm install vue-awesome-swiper –save</p>
 </blockquote>
@@ -182,7 +171,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Vue轮播图插件：vue-awesome-swiper使用&quot;&gt;&lt;a href=&quot;#Vue轮播图插件：vue-awesome-swiper使用&quot; class=&quot;headerlink&quot; title=&quot;Vue轮播图插件：vue-awesome-swiper使用&quot;&gt;&lt;/a
+      &lt;p&gt;&lt;img src=&quot;/2017/07/20/Vue轮播图插件vue-awesome-swiper的使用/vue-awesome-swiper.png&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vue轮播图插件vue-awesome-swiper的引入和简单使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sansansine/vogue.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址：https://github.com/sansansine/vogue.git&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -194,9 +185,9 @@
     <link href="http://yoursite.com/2017/07/06/Using-vue-js-to-build-the-first-simple-website/"/>
     <id>http://yoursite.com/2017/07/06/Using-vue-js-to-build-the-first-simple-website/</id>
     <published>2017-07-06T02:22:29.000Z</published>
-    <updated>2017-07-14T01:53:33.000Z</updated>
+    <updated>2017-09-12T09:13:45.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Vue-js入门-简单网页搭建"><a href="#Vue-js入门-简单网页搭建" class="headerlink" title="Vue.js入门-简单网页搭建"></a>Vue.js入门-简单网页搭建</h1><hr>
+    <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="1、Vue-js安装"><a href="#1、Vue-js安装" class="headerlink" title="1、Vue.js安装"></a>1、Vue.js安装</h2><blockquote>
 <p>$ npm install vue</p>
 </blockquote>
@@ -213,28 +204,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Vue-js入门-简单网页搭建&quot;&gt;&lt;a href=&quot;#Vue-js入门-简单网页搭建&quot; class=&quot;headerlink&quot; title=&quot;Vue.js入门-简单网页搭建&quot;&gt;&lt;/a&gt;Vue.js入门-简单网页搭建&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;1、Vue-js
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome To Sansan’s Blog</title>
-    <link href="http://yoursite.com/2017/07/06/hello-world/"/>
-    <id>http://yoursite.com/2017/07/06/hello-world/</id>
-    <published>2017-07-06T01:41:10.000Z</published>
-    <updated>2017-07-06T02:29:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>“从一到一百，一千，一亿，无穷集合中，只有一个三三”</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;“从一到一百，一千，一亿，无穷集合中，只有一个三三”&lt;/p&gt;
-
+      Vue.js入门-第一个Vue项目：按照官网教程，使用Vue-cli脚手架搭建的一个Vue单页
     
     </summary>
     
