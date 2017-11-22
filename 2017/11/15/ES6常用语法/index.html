@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/15/ES6常用语法/index.html">
 <meta property="og:site_name" content="sansan.blog">
 <meta property="og:description" content="总结的es6常用的一些常用的语法和比es5优越的方面，可能只是es6新特性的10%-20%，但是开发上占了80%左右的。">
-<meta property="og:updated_time" content="2017-11-15T09:28:00.000Z">
+<meta property="og:updated_time" content="2017-11-15T09:49:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6常用语法">
 <meta name="twitter:description" content="总结的es6常用的一些常用的语法和比es5优越的方面，可能只是es6新特性的10%-20%，但是开发上占了80%左右的。">
@@ -324,7 +324,7 @@
 
       
         <p><strong>总结的es6常用的一些常用的语法和比es5优越的方面，可能只是es6新特性的10%-20%，但是开发上占了80%左右的。</strong><br><a id="more"></a></p>
-<h1 id="1、”let”-vs-“var”、”const”"><a href="#1、”let”-vs-“var”、”const”" class="headerlink" title="1、”let”  vs  “var”、”const”"></a>1、”let”  vs  “var”、”const”</h1><p>let有块级作用域的的区分概念;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//相当于声明了一个全局的i变量。</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="1、”let”-vs-“var”、”const”"><a href="#1、”let”-vs-“var”、”const”" class="headerlink" title="1、”let”  vs  “var”、”const”"></a>1、”let”  vs  “var”、”const”</h1><p>let有块级作用域的的区分概念(只在let命令所在的代码块内有效);<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//相当于声明了一个全局的i变量。</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//j只在这个for循环有效，如果在循环外调用就会报错</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++)&#123;</div><div class="line">    <span class="built_in">console</span>.log(j)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>const初始化赋值之后就不能再改变赋值,用在引用插件，库，或者模块化开发上,在开发上可以由于重名而带来的异常<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> url = required(<span class="string">'httpUrl'</span>);</div></pre></td></tr></table></figure></p>
 <h1 id="2、arrow-function"><a href="#2、arrow-function" class="headerlink" title="2、arrow function"></a>2、arrow function</h1><p>  当使用箭头函数时，函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。（比如上面提到的实例，setTimeout里面的this，原本指向window，但是使用的箭头函数，就指向ecDo这个对象）<br>原因是箭头函数没有this，它的this是继承外面的，因此内部的this就是外层代码块的this；而ES5的函数里的this是使用时所在的对象。</p>
@@ -408,6 +408,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/11/15/ES6-学习笔记/" rel="prev" title="ES6  学习笔记">
+                ES6  学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -478,7 +482,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -95,21 +95,16 @@
 
 
 
-<meta name="description" content="由于现在的工作是前端，毕业设计之后半年都没有写过Java，但又不想就此荒废掉，便趁空隙复习并学习一下如今比较常用的SSM框架，整合三大框架并简单应用。">
+<meta name="description" content="ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java复习--SSM框架">
-<meta property="og:url" content="http://yoursite.com/2017/09/15/java复习-SSM框架/index.html">
+<meta property="og:title" content="ES6  学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/11/15/ES6-学习笔记/index.html">
 <meta property="og:site_name" content="sansan.blog">
-<meta property="og:description" content="由于现在的工作是前端，毕业设计之后半年都没有写过Java，但又不想就此荒废掉，便趁空隙复习并学习一下如今比较常用的SSM框架，整合三大框架并简单应用。">
-<meta property="og:image" content="http://yoursite.com/2017/09/15/java复习-SSM框架/JavaReview.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/15/java复习-SSM框架/environment.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/15/java复习-SSM框架/javaVersion.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/15/java复习-SSM框架/tomcat.png">
-<meta property="og:updated_time" content="2017-09-20T02:49:01.000Z">
+<meta property="og:description" content="ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
+<meta property="og:updated_time" content="2017-11-16T01:51:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java复习--SSM框架">
-<meta name="twitter:description" content="由于现在的工作是前端，毕业设计之后半年都没有写过Java，但又不想就此荒废掉，便趁空隙复习并学习一下如今比较常用的SSM框架，整合三大框架并简单应用。">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/15/java复习-SSM框架/JavaReview.png">
+<meta name="twitter:title" content="ES6  学习笔记">
+<meta name="twitter:description" content="ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
 
 
 
@@ -137,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/15/java复习-SSM框架/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/15/ES6-学习笔记/"/>
 
 
 
 
 
-  <title>java复习--SSM框架 | sansan.blog</title>
+  <title>ES6  学习笔记 | sansan.blog</title>
   
 
 
@@ -262,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/java复习-SSM框架/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/ES6-学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="三三">
@@ -279,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java复习--SSM框架</h1>
+          <h1 class="post-title" itemprop="name headline">ES6  学习笔记</h1>
         
 
         <div class="post-meta">
@@ -291,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T09:16:16+08:00">
-                2017-09-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T17:42:06+08:00">
+                2017-11-15
               </time>
             
 
@@ -326,14 +321,11 @@
       
 
       
-        <p><img src="/2017/09/15/java复习-SSM框架/JavaReview.png" alt="logo"><br><strong>由于现在的工作是前端，毕业设计之后半年都没有写过Java，但又不想就此荒废掉，便趁空隙复习并学习一下如今比较常用的SSM框架，整合三大框架并简单应用。</strong><br><a id="more"></a></p>
-<h1 id="1、SSM的基本概念"><a href="#1、SSM的基本概念" class="headerlink" title="1、SSM的基本概念"></a>1、SSM的基本概念</h1><p>SSM是由Spring、SpringMVC、MyBatis三大框架构成</p>
-<ol>
-<li>Spring<br>Spring由Rod Johnson创建，是为解决业务逻辑层和其他各层的松耦合问题，Spring是一个分层的JavaSE/EEfull-stack(一站式) 轻量级开源框架。简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。</li>
-<li>SpringMVC<br>Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建 Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用Spring进行WEB开发时，可以选择使用Spring的SpringMVC框架或集成其他MVC开发框架，如Struts1，Struts2等。</li>
-<li>MyBatics<br>MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。<h1 id="2、环境搭建（MAC）"><a href="#2、环境搭建（MAC）" class="headerlink" title="2、环境搭建（MAC）"></a>2、环境搭建（MAC）</h1>1.安装JDK<br>去官网下载Mac专用的JDK并安装，然后在命令行使用<strong>open .bash_profile</strong>打开.bash_profile文件，配置环境变量如下：<br><img src="/2017/09/15/java复习-SSM框架/environment.png" alt="environment"><br>在命令行使用<strong>source .bash_profile</strong>使得修改立即生效，环境变量配置完成后，在终端输入java -version，若有如下<br><img src="/2017/09/15/java复习-SSM框架/javaVersion.png" alt="version"><br>版本号信息出现即为安装成功。<br>2.下载eclipse for Java EE<br>官网下载，直接解压即可<br>3.修改eclipse里面默认的mac的jdk<br>Eclipse -&gt; preferences -&gt; java -&gt; installed JRES 修改为我们下载的JDK地址即可<br>4.安装tomcat<br>官网下载，并配置环境（和配置JDK环境变量类似）<br><img src="/2017/09/15/java复习-SSM框架/tomcat.png" alt="tomcat"><br>然后在终端进入Tomcat的bin目录下执行 sh startup.sh启动Tomcat，在浏览器输入<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 若能进入Tomcat页面即为安装成功。<br>最后在eclipse中配置Tomcat：eclipse -&gt; preferences -&gt; Server -&gt; Runtime Environments -&gt; add配置Tomcat安装目录 -&gt; 新建Server<h1 id="3、SSM框架整合"><a href="#3、SSM框架整合" class="headerlink" title="3、SSM框架整合"></a>3、SSM框架整合</h1>1.新建Web项目<br>2.引入SSM需要的JAR包</li>
-</ol>
-
+        <p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// ES5</span></div><div class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h1 id="1、let"><a href="#1、let" class="headerlink" title="1、let"></a>1、let</h1><p>1.1 表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div></pre></td></tr></table></figure></p>
+<p>1.2 不存在变量提升<br>var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；<br>let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。<br>1.3 暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错；<br>“暂时性死区”也意味着typeof不再是一个百分之百安全的操作.暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。<br>1.3 不允许重复声明<br>let不允许在相同作用域内，重复声明同一个变量,因此，不能在函数内部重新声明参数<br>1.4 块级作用域<br>ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景：  第一种场景，内层变量可能会覆盖外层变量；第二种场景，用来计数的循环变量泄露为全局变量；<br>ES6 允许块级作用域的任意嵌套，内层作用域可以定义外层作用域的同名变量，外层作用域无法读取内层作用域的变量，块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要。<br>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>本质上，块级作用域是一个语句，将多个操作封装在一起，没有返回值，但是，在块级作用域以外，没有办法得到t的值，因为块级作用域不返回值，除非t是全局变量。现在有一个提案，使得块级作用域可以变为表达式，也就是说可以返回值，办法就是在块级作用域之前加上do，使它变为do表达式，然后就会返回内部最后执行的表达式的值。<br>ES6 的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="keyword">do</span> &#123;</div><div class="line">  <span class="keyword">let</span> t = f();</div><div class="line">  t * t + <span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h1 id="2、const"><a href="#2、const" class="headerlink" title="2、const"></a>2、const</h1>
       
     </div>
 
@@ -369,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/13/简单理解Javascript闭包/" rel="next" title="简单理解Javascript闭包">
-                <i class="fa fa-chevron-left"></i> 简单理解Javascript闭包
+              <a href="/2017/11/15/ES6常用语法/" rel="next" title="ES6常用语法">
+                <i class="fa fa-chevron-left"></i> ES6常用语法
               </a>
             
           </div>
@@ -379,8 +371,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/20/前端小知识点/" rel="prev" title="前端小知识点">
-                前端小知识点 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/22/JS随笔/" rel="prev" title="JS随笔">
+                JS随笔 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -519,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、SSM的基本概念"><span class="nav-number">1.</span> <span class="nav-text">1、SSM的基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、环境搭建（MAC）"><span class="nav-number">2.</span> <span class="nav-text">2、环境搭建（MAC）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、SSM框架整合"><span class="nav-number">3.</span> <span class="nav-text">3、SSM框架整合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、let"><span class="nav-number">1.</span> <span class="nav-text">1、let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、const"><span class="nav-number">2.</span> <span class="nav-text">2、const</span></a></li></ol></div>
             
 
           </div>
