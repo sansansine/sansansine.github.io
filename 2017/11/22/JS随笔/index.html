@@ -82,6 +82,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
 
@@ -103,7 +105,7 @@
 <meta property="og:description" content="在阅读博客过程中的JavaScript疑惑记录">
 <meta property="og:image" content="http://yoursite.com/2017/11/22/JS随笔/js.png">
 <meta property="og:image" content="http://yoursite.com/2017/11/22/JS随笔/mask.png">
-<meta property="og:updated_time" content="2017-11-22T06:27:13.000Z">
+<meta property="og:updated_time" content="2017-12-28T07:07:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS随笔">
 <meta name="twitter:description" content="在阅读博客过程中的JavaScript疑惑记录">
@@ -325,17 +327,54 @@
 
       
         <p><strong>在阅读博客过程中的JavaScript疑惑记录</strong><br><a id="more"></a></p>
-<p>#1、javascript执行机制<br><strong>javascript是一门单线程语言，在最新的HTML5中提出了Web-Worker，但javascript是单线程这一核心仍未改变。所以一切javascript版的”多线程”都是用单线程模拟出来的</strong><br>1.js任务：同步任务（当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染）、<br>         异步任务（加载图片音乐之类占用资源大耗时久的任务，就是异步任务）<br><img src="/2017/11/22/JS随笔/js.png" alt="执行机制"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = [];</div><div class="line">$.ajax(&#123;</div><div class="line">    <span class="attr">url</span>:www.javascript.com,</div><div class="line">    <span class="attr">data</span>:data,</div><div class="line">    <span class="attr">success</span>:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'发送成功!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'代码执行结束'</span>);</div><div class="line"><span class="comment">//ajax进入Event Table，注册回调函数success</span></div><div class="line"><span class="comment">//执行console.log('代码执行结束')</span></div><div class="line"><span class="comment">//ajax事件完成，回调函数success进入Event Queue</span></div><div class="line"><span class="comment">//主线程从Event Queue读取回调函数success并执行</span></div></pre></td></tr></table></figure></p>
-<p>2.setTimeout(在指定的毫秒数后调用函数或计算表达式)(异步)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'延时3秒'</span>);</div><div class="line">&#125;,<span class="number">3000</span>)</div></pre></td></tr></table></figure></p>
+<h1 id="js立即执行函数的写法"><a href="#js立即执行函数的写法" class="headerlink" title="js立即执行函数的写法"></a>js立即执行函数的写法</h1><p>立即执行函数其实就是直接调用匿名函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">    &#125;()</div><div class="line">); </div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;)(); </div><div class="line"></div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;(); </div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">2</span>);</div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
+<h1 id="javascript执行机制"><a href="#javascript执行机制" class="headerlink" title="javascript执行机制"></a>javascript执行机制</h1><p><strong>javascript是一门单线程语言，在最新的HTML5中提出了Web-Worker，但javascript是单线程这一核心仍未改变。所以一切javascript版的”多线程”都是用单线程模拟出来的</strong></p>
+<ol>
+<li>js任务：</li>
+</ol>
+<ul>
+<li>同步任务（当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染）、</li>
+<li>异步任务（加载图片音乐之类占用资源大耗时久的任务，就是异步任务）</li>
+</ul>
+<p><img src="/2017/11/22/JS随笔/js.png" alt="执行机制"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = [];</div><div class="line">$.ajax(&#123;</div><div class="line">    <span class="attr">url</span>:www.javascript.com,</div><div class="line">    <span class="attr">data</span>:data,</div><div class="line">    <span class="attr">success</span>:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'发送成功!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'代码执行结束'</span>);</div><div class="line"><span class="comment">//ajax进入Event Table，注册回调函数success</span></div><div class="line"><span class="comment">//执行console.log('代码执行结束')</span></div><div class="line"><span class="comment">//ajax事件完成，回调函数success进入Event Queue</span></div><div class="line"><span class="comment">//主线程从Event Queue读取回调函数success并执行</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>setTimeout(在指定的毫秒数后调用函数或计算表达式)(异步)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'延时3秒'</span>);</div><div class="line">&#125;,<span class="number">3000</span>)</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，意思就是不用再等多少秒了，只要主线程执行栈内的同步任务全部执行完成，栈为空就马上执行。<br>3.setInterval<br><strong>可按照指定的周期（以毫秒计）来调用函数或计算表达式,setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭.</strong><br>对于执行顺序来说，setInterval会每隔指定的时间将注册的函数置入Event Queue，如果前面的任务耗时太久，那么同样需要等待<br>4.Promise与process.nextTick(callback)<br><strong>Promise就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理</strong><br><strong>process.nextTick(callback)在事件循环的下一次循环中调用 callback 回调函数</strong><br>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval<br>micro-task(微任务)：Promise，process.nextTick<br><img src="/2017/11/22/JS随笔/mask.png" alt="mask"></p>
-<p>#2、javascript预解析<br><strong>预解析是把带有var和function关键字的事先声明，但不会赋值</strong><br>1.变量声明提前；<br>2.函数声明优先于变量声明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">a();</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">10</span>)</div><div class="line">&#125;   </div><div class="line">alert(a);</div><div class="line">a=<span class="number">6</span>;</div><div class="line">a(); </div><div class="line"><span class="comment">//刚开始，a就是function a()&#123;alert(10)&#125; ，就会看到这个函数</span></div><div class="line"><span class="comment">//alert(10)</span></div><div class="line"><span class="comment">//alert(3)</span></div><div class="line"><span class="comment">//报错，a已经不是函数</span></div></pre></td></tr></table></figure></p>
+<h1 id="javascript预解析"><a href="#javascript预解析" class="headerlink" title="javascript预解析"></a>javascript预解析</h1><p><strong>预解析是把带有var和function关键字的事先声明，但不会赋值</strong></p>
+<ul>
+<li>var：只要是通过var定义的，不管是变量，还是函数，都是先赋值undefined，如果是变量，也不管变量有没有赋值，在预解析阶段，都是会被赋值为undefined；</li>
+<li>function：function进行预解析的时候，不仅是声明而且还定义（define）了，但是它存储的数据的那个空间里面存储的是代码是字符串，没有任何意义；</li>
+</ul>
+<p>1.变量声明提前；<br>2.function优先于var<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">a();</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">10</span>)</div><div class="line">&#125;   </div><div class="line">alert(a);</div><div class="line">a=<span class="number">6</span>;</div><div class="line">a(); </div><div class="line"><span class="comment">//刚开始，a就是function a()&#123;alert(10)&#125; ，就会看到这个函数</span></div><div class="line"><span class="comment">//alert(10)</span></div><div class="line"><span class="comment">//alert(3)</span></div><div class="line"><span class="comment">//报错，a已经不是函数</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">a();</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="keyword">var</span> a=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">10</span>)</div><div class="line">&#125; ;  </div><div class="line">alert(a);</div><div class="line">a=<span class="number">6</span>;</div><div class="line">a();</div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure>
+<p>3.声明式函数与赋值式函数，区别在于：在JS的预编译期，声明式函数将会先被提取出来，然后才按顺序执行js代码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">f();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//声明式函数</span></div><div class="line"> alert(<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line">f1();</div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//赋值式函数</span></div><div class="line"> alert(<span class="number">2</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>作用域：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(a);</div><div class="line">    <span class="keyword">var</span> a=<span class="number">3</span></div><div class="line">&#125;</div><div class="line">aa();</div><div class="line"><span class="comment">//underfind  在aa函数里面，有var a=3，那么在aa作用域里面，就是把a这个变量声明提前，但是不会赋值，所以是underfind</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">    alert(a);</div><div class="line">    <span class="keyword">var</span> a=<span class="number">3</span></div><div class="line">&#125;</div><div class="line">aa(<span class="number">5</span>);</div><div class="line">alert(a)</div><div class="line"><span class="comment">//5,0   在函数体内，参数a的优先级高于变量a</span></div></pre></td></tr></table></figure>
 <p>数据排列：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">num</span>(<span class="params">n,m</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(n);</div><div class="line">    <span class="keyword">if</span>(n&lt;m)&#123;</div><div class="line">        num(n+<span class="number">1</span>,m);</div><div class="line">        <span class="built_in">console</span>.log(n);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">num(<span class="number">2</span>,<span class="number">5</span>)  <span class="comment">//2345432</span></div></pre></td></tr></table></figure></p>
 <p>其它：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line"> &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);</div><div class="line"><span class="comment">//这个大家就要小心一点了，答案是5    55555</span></div><div class="line"><span class="comment">//在setTimeout执行之前，for循环早就执行完了，i的值早已经是5了，所以一开始是执行，最后面的console.log(i);</span></div><div class="line"><span class="comment">//在for循环的时候一下子自定义5个setTimeout，大概一秒后，就是输出55555</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123; <span class="comment">// j = i</span></div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(j);</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line"> &#125;)(i);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i); </div><div class="line"><span class="comment">//这里的解析和上面基本一样，只是用闭包来记录每一次循环的i,</span></div><div class="line"><span class="comment">//所以答案是5     01234</span></div></pre></td></tr></table></figure>
 <p>let的局部作用域：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line"> &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);</div><div class="line"><span class="comment">//结果是  报错   01234</span></div></pre></td></tr></table></figure></p>
+<h1 id="JS异常"><a href="#JS异常" class="headerlink" title="JS异常"></a>JS异常</h1><p>Javascript执行过程：</p>
+<ol>
+<li>当前代码块将作为一个任务压入任务队列中，JS线程会不断地从任务队列中提取任务执行。</li>
+<li>当任务执行过程中出现异常，且异常没有捕获处理，则会一直沿着调用栈一层层向外抛出，最终终止当前任务的执行。</li>
+<li>JS线程会<b>继续</b>从任务队列中提取下一个任务继续执行。</li>
+</ol>
+<p>对于 Javascript 而言，我们面对的仅仅只是异常，异常的出现不会直接导致 JS 引擎崩溃，最多只会使当前执行的任务终止。</p>
+<p><b>脚本错误一般分为两种：语法错误(SyntaxError)，运行时错误。几种异常监控的处理方式：</b></p>
+<ul>
+<li><b>try-catch 异常处理</b><br>通过给代码块进行 try-catch 进行包装后，当代码块发生出错时 catch 将能捕捉到错误的信息，页面也将可以继续执行。但try-catch只能捕获捉到<b>运行时非异步错误</b>，对于语法错误和异步错误就捕捉不到。</li>
+<li><b>window.onerror 异常处理</b><br>window.onerror 捕获异常能力比 try-catch 稍微强点，无论是异步还是非异步错误，onerror 都能捕获到运行时错误,对于语法错误还是无能为力.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">msg, url, row, col, error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我知道错误了'</span>);</div><div class="line">  <span class="built_in">console</span>.log(&#123;</div><div class="line">    msg,  url,  row, col, error</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div><div class="line">error;<span class="comment">/* 运行时同步错误 */</span></div><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">msg, url, row, col, error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我知道异步错误了'</span>);</div><div class="line">  <span class="built_in">console</span>.log(&#123;</div><div class="line">    msg,  url,  row, col, error</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  error;</div><div class="line">&#125;);<span class="comment">/* 异步错误 */</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1、 对于 onerror 这种全局捕获，最好写在所有 JS 脚本的前面，因为你无法保证你写的代码是否出错，如果写在后面，一旦发生错误的话是不会被 onerror 捕获到的<br>2、 onerror 是无法捕获到网络异常的错误</p>
+<p><b>在实际的使用过程中，onerror 主要是来捕获预料之外的错误，而 try-catch 则是用来在可预见情况下监控特定的错误，两者结合使用更加高效。</b></p>
+<ul>
+<li>Promise 错误<br>通过 Promise 可以帮助我们解决异步回调异常的问题，但是一旦 Promise 实例抛出异常而你没有用 catch 去捕获的话，onerror 或 try-catch 也无能为力，无法捕捉到错误<br>在写 Promise 实例的时候养成最后写上 catch 函数是个好习惯，如果你的应用用到很多的 Promise 实例的话，最好添加一个 Promise 全局异常捕获事件 unhandledrejection。</li>
+</ul>
+<h1 id="window-load-、window-onload-function-、-document-ready-和windo、和document的区别"><a href="#window-load-、window-onload-function-、-document-ready-和windo、和document的区别" class="headerlink" title="$(window).load()、window.onload=function(){}、$(document).ready()和windo、和document的区别"></a>$(window).load()、window.onload=function(){}、$(document).ready()和windo、和document的区别</h1><p>1、$(window).load() 和window.onload=function(){}是页面中的所有元素（包括图片、flash）等都加载完毕后，才能执行；$(document).ready() 是页面中的DOM元素加载完成后便可执行。<br>2、$(window).load()和window.onload=function(){}不同的是，前者可以和$(document).ready()一样，可以同时加载多个函数。<br>3、window代表的是浏览器窗口，即可视的浏览器窗口；document代表的是整个页面的dom元素；即document只是window的一个属性；<br>4、两者的区别在页面有滚动条时可以直观的显示出来，当出现滚动条时，$(window).height和$(document).height是不相等的，$(document).height比$(window).height大，因为window的高度始终都是可见的浏览器窗口的高度，而document的高度则是整个页面的dom元素的高度，即超出一屏幕了。<br>5、当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素不是通过ajax回调填充的情况下，使用$(window).load()即可。<br>6、当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素是通过ajax回调填充的情况下，使用$(window).load()会出现有时有效，有时无效的情况.</p>
 
       
     </div>
@@ -382,6 +421,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/11/23/Vue-生命周期的理解/" rel="prev" title="Vue实例和生命周期的理解">
+                Vue实例和生命周期的理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -427,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -443,7 +495,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -500,6 +552,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js立即执行函数的写法"><span class="nav-number">1.</span> <span class="nav-text">js立即执行函数的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript执行机制"><span class="nav-number">2.</span> <span class="nav-text">javascript执行机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript预解析"><span class="nav-number">3.</span> <span class="nav-text">javascript预解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS异常"><span class="nav-number">4.</span> <span class="nav-text">JS异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#window-load-、window-onload-function-、-document-ready-和windo、和document的区别"><span class="nav-number">5.</span> <span class="nav-text">$(window).load()、window.onload=function(){}、$(document).ready()和windo、和document的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -516,7 +584,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

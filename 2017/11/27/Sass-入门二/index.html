@@ -1,0 +1,786 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="阅读Sass官方文档记录二">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass 入门二">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/Sass-入门二/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="阅读Sass官方文档记录二">
+<meta property="og:updated_time" content="2017-12-01T02:53:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass 入门二">
+<meta name="twitter:description" content="阅读Sass官方文档记录二">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/27/Sass-入门二/"/>
+
+
+
+
+
+  <title>Sass 入门二 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/27/Sass-入门二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Sass 入门二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T17:15:56+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>阅读Sass官方文档记录二</b><br><a id="more"></a></p>
+<h1 id="1、Sass特色"><a href="#1、Sass特色" class="headerlink" title="1、Sass特色"></a>1、Sass特色</h1><ol>
+<li>完全兼容 CSS3</li>
+<li>在 CSS 基础上增加变量、嵌套 (nesting)、混合 (mixins) 等功能</li>
+<li>通过函数进行颜色值与属性值的运算</li>
+<li>提供控制指令 (control directives)等高级功能</li>
+<li>自定义输出格式</li>
+</ol>
+<h1 id="2、语法格式"><a href="#2、语法格式" class="headerlink" title="2、语法格式"></a>2、语法格式</h1><ol>
+<li>SCSS：仅在 CSS3 语法的基础上进行拓展，所有 CSS3 语法在 SCSS 中都是通用的，同时加入 Sass 的特色功能</li>
+<li>Sass：它使用 “缩进” 代替 “花括号” 表示属性属于某个选择器，用 “换行” 代替 “分号” 分隔属性<br>任何一种格式可以直接 导入 (@import) 到另一种格式中使用，或者通过 sass-convert 命令行工具转换成另一种格式<blockquote>
+<p>Convert Sass to SCSS<br>Convert SCSS to Sass</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="3、CSS-功能拓展"><a href="#3、CSS-功能拓展" class="headerlink" title="3、CSS 功能拓展"></a>3、CSS 功能拓展</h1><ol>
+<li><p>父选择器 &amp;<br>在嵌套 CSS 规则时，有时也需要直接使用嵌套外层的父选择器，例如，当给某个元素设定 hover 样式时，或者当 body 元素有某个 classname 时，可以用 &amp; 代表嵌套规则外层的父选择器。<br>&amp; 必须作为选择器的第一个字符，其后可以跟随后缀生成复合的选择器</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="attribute">color</span>: black;</div><div class="line">  &amp;-sidebar &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid; &#125;</div><div class="line">&#125;<span class="comment">/*编译后*/</span></div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="attribute">color</span>: black; &#125;</div><div class="line"><span class="selector-id">#main-sidebar</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid; &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性嵌套<br>有些 CSS 属性遵循相同的命名空间 (namespace)，比如 font-family, font-size, font-weight 都以 font 作为属性的命名空间。为了便于管理这样的属性，同时也为了避免了重复输入，Sass 允许将属性嵌套在命名空间中</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.funky</span> &#123;</div><div class="line">  <span class="attribute">font</span>: <span class="number">20px</span>/<span class="number">24px</span> &#123;</div><div class="line">    family: fantasy;</div><div class="line">    weight: bold;</div><div class="line">  &#125;</div><div class="line">&#125;<span class="comment">/*编译后*/</span></div><div class="line"><span class="selector-class">.funky</span> &#123;</div><div class="line">  <span class="attribute">font</span>: <span class="number">20px</span>/<span class="number">24px</span>;</div><div class="line">    <span class="attribute">font-family</span>: fantasy;</div><div class="line">    <span class="attribute">font-weight</span>: bold; &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>占位符选择器 %foo<br>占位符选择器(Placeholder Selector)是以%而不是.作为开始符的选择器. 它自身不会出现在编译后的CSS文件中, 只会出现在@extend了它的那些选择器中.<br><b>当我们不可能用到icon这个类时使用,CSS中不会出现.icon类!</b></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">%<span class="attribute">icon</span> &#123;</div><div class="line">  <span class="attribute">transition</span>: background-color ease .<span class="number">2s</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> .<span class="number">5em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.error-icon</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> %icon;</div><div class="line">  <span class="comment">/* error specific styles... */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.info-icon</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> %icon;</div><div class="line">  <span class="comment">/* info specific styles... */</span></div><div class="line">&#125;<span class="comment">/*编译后 */</span></div><div class="line"><span class="selector-class">.error-icon</span>, <span class="selector-class">.info-icon</span> &#123;</div><div class="line">  <span class="attribute">transition</span>: background-color ease .<span class="number">2s</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> .<span class="number">5em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.error-icon</span> &#123;</div><div class="line">  <span class="comment">/* error specific styles... */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.info-icon</span> &#123;</div><div class="line">  <span class="comment">/* info specific styles... */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>注释 /<em> </em>/ 与 //<br>Sass 支持标准的 CSS 多行注释 /<em> </em>/，以及单行注释 //，前者会 被完整输出到编译后的 CSS 文件中，而后者则不会<br>将 ! 作为多行注释的第一个字符表示在压缩输出模式下保留这条注释并输出到 CSS 文件中，通常用于添加版权信息<br>插值语句 (interpolation) 也可写进多行注释中输出变量值：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$version</span>: <span class="string">"1.2.3"</span>;</div><div class="line"><span class="comment">/* This CSS is generated by My Snazzy Framework version #&#123;$version&#125;. */</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="4、SassScript"><a href="#4、SassScript" class="headerlink" title="4、SassScript"></a>4、SassScript</h1><ol>
+<li><p>变量 $<br>变量支持块级作用域，嵌套规则内定义的变量只能在嵌套规则内使用（局部变量），不在嵌套规则内定义的变量则可在任何地方使用（全局变量）<br>将局部变量转换为全局变量可以添加 <b>!global</b>声明</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$width</span>: <span class="number">5em</span>;</div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="variable">$width</span>: <span class="number">5em</span> !global;</div><div class="line">  <span class="attribute">width</span>: <span class="variable">$width</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="variable">$width</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据类型</p>
+<ol>
+<li>数字，1, 2, 13, 10px</li>
+<li>字符串，有引号字符串与无引号字符串，”foo”, ‘bar’, baz,sans-serif,bold</li>
+<li>颜色，blue, #04a3f9, rgba(255,0,0,0.5)</li>
+<li>布尔型，true, false</li>
+<li>空值，null</li>
+<li>数组 (list)，用空格或逗号作分隔符，1.5em 1em 0 2em, Helvetica, Arial, sans-serif( Sass 如何处理 CSS 中 margin: 10px 15px 0 0 或者 font-face: Helvetica, Arial, sans-serif 这样通过空格或者逗号分隔的一系列的值);<br>Sass list functions 赋予了数组更多新功能：nth 函数可以直接访问数组中的某一项；join 函数可以将多个数组连接在一起；append 函数可以在数组中添加新值；而 @each 指令能够遍历数组中的每一项</li>
+<li>maps, 相当于 JavaScript 的 object，(key1: value1, key2: value2)</li>
+</ol>
+</li>
+<li>运算<br>所有数据类型均支持相等运算 == 或 !=<ol>
+<li>数字运算<br>SassScript 支持数字的加减乘除、取整等运算 (+, -, *, /, %)，如果必要会在不同单位间转换值；关系运算 &lt;, &gt;, &lt;=, &gt;= 也可用于数字运算<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1in</span> + <span class="number">8pt</span>;</div><div class="line">&#125;<span class="comment">/*b编译后*/</span></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1.111in</span>; &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>（1）、/ 在 CSS 中通常起到分隔数字的用途，SassScript 作为 CSS 语言的拓展当然也支持这个功能，同时也赋予了 / 除法运算的功能<br>以下三种情况 / 将被视为除法运算符号：如果值，或值的一部分，是变量或者函数的返回值；如果值被圆括号包裹；如果值是算数表达式的一部分<br>如果需要使用变量，同时又要确保 / 不做除法运算而是完整地编译到 CSS 文件中，只需要用 #{} 插值语句将变量包裹:<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="variable">$font-size</span>: <span class="number">12px</span>;</div><div class="line">  <span class="variable">$line-height</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">font</span>: #&#123;<span class="variable">$font-size</span>&#125;/#&#123;<span class="variable">$line-height</span>&#125;;</div><div class="line">&#125;<span class="comment">/*编译后*/</span></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">30px</span>; &#125;</div></pre></td></tr></table></figure></p>
+<p>（2）、颜色值运算<br>颜色值的运算是分段计算进行的，也就是分别计算红色，绿色，以及蓝色的值：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#010203</span> + <span class="number">#040506</span>;</div><div class="line">&#125;<span class="comment">/*01 + 04 = 05 02 + 05 = 07 03 + 06 = 09*/</span></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#050709</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（3）、字符串运算 </p>
+<ul>
+<li>可用于连接字符串<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">cursor</span>: e + -resize;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">cursor</span>: e-resize; &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>(4)、布尔运算<br>SassScript 支持布尔型的 and or 以及 not 运算<br>(5)、插值语句 #{}<br>通过 #{} 插值语句可以在选择器或属性名中使用变量：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$name</span>: foo;</div><div class="line"><span class="variable">$attr</span>: border;</div><div class="line"><span class="selector-tag">p</span>.#&#123;<span class="variable">$name</span>&#125; &#123;</div><div class="line">  #&#123;<span class="variable">$attr</span>&#125;-<span class="attribute">color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="4、-Rules-与指令"><a href="#4、-Rules-与指令" class="headerlink" title="4、@-Rules 与指令"></a>4、@-Rules 与指令</h1><ol>
+<li>@import<br>通常，@import 寻找 Sass 文件并将其导入，但在以下情况下，@import 仅作为普通的 CSS 语句，不会导入任何 Sass 文件。</li>
+</ol>
+<ul>
+<li>文件拓展名是 .css；</li>
+<li>文件名以 http:// 开头；</li>
+<li>文件名是 url()；</li>
+<li><p>@import 包含 media queries。<br>如果不在上述情况内，文件的拓展名是 .scss 或 .sass，则导入成功。没有指定拓展名，Sass 将会试着寻找文件名相同，拓展名为 .scss 或 .sass 的文件并将其导入。</p>
+<ol>
+<li><p>分音<br>如果需要导入 SCSS 或者 Sass 文件，但又不希望将其编译为 CSS，只需要在文件名前添加下划线，这样会告诉 Sass 不要编译这些文件，但导入语句中却不需要添加下划线：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将文件命名为 _colors.scss</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"colors"</span>;<span class="comment">//导入的其实是 _colors.scss 文件</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>@media<br>Sass 中 @media 指令与 CSS 中用法一样，只是增加了一点额外的功能：允许其在 CSS 规则中嵌套。如果 @media 嵌套在 CSS 规则内，编译时，@media 将被编译到文件的最外层，包含嵌套的父选择器。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="5、-extend"><a href="#5、-extend" class="headerlink" title="5、@extend"></a>5、@extend</h1><p>将.error 下的所有样式继承给 .seriousError，border-width: 3px; 是单独给 .seriousError 设定特殊样式，这样，使用 .seriousError 的地方可以不再使用 .error</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/24/Sass-入门一/" rel="next" title="Sass 入门一">
+                <i class="fa fa-chevron-left"></i> Sass 入门一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/30/sketch实用插件记录/" rel="prev" title="sketch实用插件记录">
+                sketch实用插件记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、Sass特色"><span class="nav-number">1.</span> <span class="nav-text">1、Sass特色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、语法格式"><span class="nav-number">2.</span> <span class="nav-text">2、语法格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、CSS-功能拓展"><span class="nav-number">3.</span> <span class="nav-text">3、CSS 功能拓展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、SassScript"><span class="nav-number">4.</span> <span class="nav-text">4、SassScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、-Rules-与指令"><span class="nav-number">5.</span> <span class="nav-text">4、@-Rules 与指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、-extend"><span class="nav-number">6.</span> <span class="nav-text">5、@extend</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>

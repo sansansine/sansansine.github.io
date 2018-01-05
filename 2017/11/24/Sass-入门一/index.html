@@ -1,0 +1,785 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="第一次接触Sass，阅读官方文档时的简单记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass 入门一">
+<meta property="og:url" content="http://yoursite.com/2017/11/24/Sass-入门一/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="第一次接触Sass，阅读官方文档时的简单记录">
+<meta property="og:updated_time" content="2017-12-01T01:51:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass 入门一">
+<meta name="twitter:description" content="第一次接触Sass，阅读官方文档时的简单记录">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/24/Sass-入门一/"/>
+
+
+
+
+
+  <title>Sass 入门一 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/Sass-入门一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Sass 入门一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T15:10:44+08:00">
+                2017-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>第一次接触Sass，阅读官方文档时的简单记录</b><br><a id="more"></a></p>
+<h1 id="1、-安装-mac"><a href="#1、-安装-mac" class="headerlink" title="1、 安装(mac)"></a>1、 安装(mac)</h1><ol>
+<li><p>Ruby安装<br>Linux和Mac已自带Ruby，不用再安装</p>
+<blockquote>
+<p>ruby -v //验证ruby安装成功</p>
+</blockquote>
+</li>
+<li><p>Sass安装</p>
+<blockquote>
+<p>sudo gem install sass<br>sass -v //验证Sass安装成功</p>
+</blockquote>
+</li>
+<li><p>Sass编译</p>
+<blockquote>
+<p>sass input.scss output.css //单文件转换命令<br>sass –watch input.scss:output.css //单文件监听命令<br>sass –watch app/sass:public/stylesheets //如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：</p>
+</blockquote>
+</li>
+<li><p>webstorm下设置sass自动编译<br><a href="https://www.cnblogs.com/cshi/p/5622650.html" target="_blank" rel="external">webstorm下设置sass</a><br><b>注意：在webstorm下文件后缀为.scss</b></p>
+</li>
+</ol>
+<h1 id="2、Sass的变量"><a href="#2、Sass的变量" class="headerlink" title="2、Sass的变量"></a>2、Sass的变量</h1><p>sass让人们受益的一个重要特性就是它为css引入了变量</p>
+<ol>
+<li><p>变量声明<br>如果变量定义在了规则块外边，那么在这个样式表中都可以像 nav规则块那样引用它；<br>如果变量定义在了nav的{ }规则块内，那么它只能在nav规则块内使用。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$nav-color</span>: <span class="number">#F90</span>;</div><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">  <span class="variable">$width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="variable">$width</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$nav-color</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">nav</span> &#123;<span class="comment">//编译后</span></div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#F90</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量引用<br>凡是css属性的标准值可存在的地方，变量就可以使用。css生成时，变量会被它们的值所替代。之后，如果你需要一个不同的值，只需要改变这个变量的值，则所有引用此变量的地方生成的值都会随之改变</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$highlight-color</span>: <span class="number">#F90</span>;</div><div class="line"><span class="variable">$highlight-border</span>: <span class="number">1px</span> solid <span class="variable">$highlight-color</span>;</div><div class="line"><span class="selector-class">.selected</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="variable">$highlight-border</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.selected</span> &#123;<span class="comment">//编译后</span></div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#F90</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量名用中划线还是下划线分隔<br><b>Sass兼容两种方式</b></p>
+</li>
+</ol>
+<h1 id="3、Sass嵌套"><a href="#3、Sass嵌套" class="headerlink" title="3、Sass嵌套"></a>3、Sass嵌套</h1><p><b>css中重复写选择器是非常恼人的,sass在输出css时会把这些嵌套规则处理好，避免重复书写</b><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#content</span> &#123;</div><div class="line">  <span class="selector-tag">article</span> &#123;</div><div class="line">    <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</div><div class="line">    p &#123; margin-bottom: <span class="number">1.4em</span> &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="number">#c</span>ontent aside &#123; background-color: <span class="number">#EEE</span> &#125;</div><div class="line">&#125;</div><div class="line"> /* 编译后 */</div><div class="line"><span class="number">#c</span>ontent article h1 &#123; color: <span class="number">#333</span> &#125;</div><div class="line"><span class="number">#c</span>ontent article p &#123; margin-bottom: <span class="number">1.4em</span> &#125;</div><div class="line"><span class="number">#c</span>ontent aside &#123; background-color: <span class="number">#EEE</span> &#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>父选择器的标识符&amp;<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">article</span> <span class="selector-tag">a</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  &amp;:hover &#123; <span class="attribute">color</span>: red &#125;</div><div class="line">&#125;/*编译后*/</div><div class="line">article a &#123; color: blue &#125;</div><div class="line">article a:hover &#123; color: red &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>群组选择器的嵌套</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span> &#123;<span class="attribute">margin-bottom</span>: .<span class="number">8em</span>&#125;</div><div class="line">&#125;/*编译后*/</div><div class="line">.container h1, .container h2, .container h3 &#123; margin-bottom: .<span class="number">8em</span> &#125;</div><div class="line">nav, aside &#123;</div><div class="line">  a &#123;color: blue&#125;</div><div class="line">&#125;/*编译后*/</div><div class="line">nav a, aside a &#123;color: blue&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>子组合选择器和同层组合选择器：&gt;、+和~<br>子组合选择器&gt;:选择一个元素的<b>直接</b>子元素<br>同层相邻组合选择器+:选择<b>紧接<b>在另一个元素后的元素，而且二者有相同的父元素<br>同层全体组合选择器~:选择<b>所有</b>跟在一个元素后的同层元素,不管它们之间隔了多少其他元素</b></b></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">article</span> &gt; <span class="selector-tag">section</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#125; //只会选择article下紧跟着的子元素中命中section选择器的元素</div><div class="line">header + p &#123; font-size: <span class="number">1.1em</span> &#125; //选择header元素后紧跟的p元素</div><div class="line">article ~ article &#123; border-top: <span class="number">1px</span> dashed <span class="number">#ccc</span> &#125; //选择所有跟在article后的同层article元素</div></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套属性</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">  <span class="attribute">border</span>: &#123;</div><div class="line">  style: solid;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ccc</span>;</div><div class="line">  &#125;</div><div class="line">&#125;<span class="comment">/*编译后*/</span></div><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">  <span class="attribute">border-style</span>: solid;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">1px</span>;</div><div class="line">  <span class="attribute">border-color</span>: <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#123;</div><div class="line">  left: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="3、导入SASS文件"><a href="#3、导入SASS文件" class="headerlink" title="3、导入SASS文件"></a>3、导入SASS文件</h1><p>sass的@import规则在生成css文件时把相关文件导入进来,当你@import一个局部文件时，还可以不写文件的全名，即省略文件名开头的下划线h和后缀。</p>
+<ol>
+<li>使用SASS部分文件<br>sass局部文件的文件名以下划线开头。这样，sass就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入</li>
+<li>默认变量值<br>一般情况下，你反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值;<br>!default:如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值</li>
+<li>嵌套导入<br>sass允许@import命令写在css规则内<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">aside</span> &#123;</div><div class="line"><span class="attribute">background</span>: blue;</div><div class="line"><span class="attribute">color</span>: white;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.blue-theme</span> &#123;@<span class="keyword">import</span> <span class="string">"blue-theme"</span>&#125;/*得到如下：*/</div><div class="line">.blue-theme &#123;</div><div class="line"><span class="selector-tag">aside</span> &#123;</div><div class="line"> <span class="attribute">background</span>: blue;</div><div class="line"> <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>被导入的局部文件中定义的所有变量和混合器，也会在这个规则范围内生效。这些变量和混合器不会全局有效，这样我们就可以通过嵌套导入只对站点中某一特定区域运用某种颜色主题或其他通过变量配置的样式。</p>
+<ol>
+<li>原生的CSS导入<br>由于sass兼容原生的css，所以它也支持原生的CSS@import。可以把原始的css文件改名为.scss后缀，即可直接导入<h1 id="4、静默注释"><a href="#4、静默注释" class="headerlink" title="4、静默注释"></a>4、静默注释</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#333</span>; <span class="comment">// 这种注释内容不会出现在生成的css文件中</span></div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>; <span class="comment">/* 这种注释内容会出现在生成的css文件中 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">color</span> <span class="comment">/* 这块注释内容不会出现在生成的css中 */</span>: <span class="number">#333</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1</span>; <span class="comment">/* 这块注释内容也不会出现在生成的css中 */</span> 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="5、混合器"><a href="#5、混合器" class="headerlink" title="5、混合器"></a>5、混合器</h1><p>混合器使用@mixin标识符定义，这个标识符给一大段样式赋予一个名字，然后就可以在你的样式表中通过@include来使用这个混合器。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> rounded-corners &#123;</div><div class="line">  -moz-<span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">  -webkit-<span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line">notice &#123;</div><div class="line">  <span class="attribute">background-color</span>: green;</div><div class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#00aa00</span>;</div><div class="line">  @<span class="keyword">include</span> rounded-corners;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>何时使用混合器<br>在不停地重复一段样式，那就应该把这段样式构造成优良的混合器</li>
+<li>混合器中的CSS规则<br>混合器中不仅可以包含属性，也可以包含css规则，包含选择器和选择器中的属性</li>
+<li><p>给混合器传参</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> link-colors(<span class="variable">$normal</span>, <span class="variable">$hover</span>, <span class="variable">$visited</span>) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$normal</span>;</div><div class="line">  &amp;:hover &#123; <span class="attribute">color</span>: <span class="variable">$hover</span>; &#125;</div><div class="line">  &amp;:visited &#123; <span class="attribute">color</span>: <span class="variable">$visited</span>; &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span> &#123;</div><div class="line">  @<span class="keyword">include</span> link-colors(blue, red, green);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Sass最终生成的是：</span></div><div class="line"></div><div class="line"><span class="selector-tag">a</span> &#123; <span class="attribute">color</span>: blue; &#125;</div><div class="line"><span class="selector-tag">a</span>:hover &#123; <span class="attribute">color</span>: red; &#125;</div><div class="line"><span class="selector-tag">a</span>:visited &#123; <span class="attribute">color</span>: green; &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数值<br>为了在@include混合器时不必传入所有的参数，我们可以给参数指定一个默认值。参数默认值使用$name: default-value的声明形式，默认值可以是任何有效的css属性值，甚至是其他参数的引用</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> link-colors(</div><div class="line">    <span class="variable">$normal</span>,</div><div class="line">    <span class="variable">$hover</span>: <span class="variable">$normal</span>,</div><div class="line">    <span class="variable">$visited</span>: <span class="variable">$normal</span></div><div class="line">  )</div><div class="line">&#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$normal</span>;</div><div class="line">  &amp;:hover &#123; <span class="attribute">color</span>: <span class="variable">$hover</span>; &#125;</div><div class="line">  &amp;:visited &#123; <span class="attribute">color</span>: <span class="variable">$visited</span>; &#125;</div><div class="line">&#125;<span class="comment">//@include link-colors(red) $hover和$visited也会被自动赋值为red</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="6、使用选择器继承来精简CSS"><a href="#6、使用选择器继承来精简CSS" class="headerlink" title="6、使用选择器继承来精简CSS"></a>6、使用选择器继承来精简CSS</h1><p>选择器继承是说一个选择器可以继承为另一个选择器定义的所有样式。这个通过@extend语法实现<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过选择器继承继承样式</span></div><div class="line"><span class="selector-class">.error</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.error</span> <span class="selector-tag">a</span>&#123;  <span class="comment">//应用到.seriousError a</span></div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span><span class="selector-class">.error</span> &#123; <span class="comment">//应用到hl.seriousError</span></div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2rem</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.seriousError</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> .error;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</div><div class="line">&#125;<span class="comment">//.seriousError不仅会继承.error自身的所有样式，任何跟.error有关的组合选择器样式也会被.seriousError以组合选择器的形式继承</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>跟混合器相比，继承生成的css代码相对更少。因为继承仅仅是<b>重复选择器</b>，而不会重复属性，所以使用继承往往比混合器生成的css体积更小。如果你非常关心你站点的速度，请牢记这一点。</li>
+<li>继承遵从css层叠的规则。当两个不同的css规则应用到同一个html元素上时，并且这两个不同的css规则对同一属性的修饰存在不同的值，css层叠规则会决定应用哪个样式。相当直观：通常权重更高的选择器胜出，如果权重相同，定义在后边的规则胜出。<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因为继承只会在生成css时复制选择器，而不会复制大段的css属性。但是如果你不小心，可能会让生成的css中包含大量的选择器复制<br>避免这种情况出现的最好方法就是不要在css规则中使用后代选择器（比如.foo .bar）去继承css规则</b></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/24/sketch知识点合集/" rel="next" title="sketch知识点合集">
+                <i class="fa fa-chevron-left"></i> sketch知识点合集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/Sass-入门二/" rel="prev" title="Sass 入门二">
+                Sass 入门二 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、-安装-mac"><span class="nav-number">1.</span> <span class="nav-text">1、 安装(mac)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、Sass的变量"><span class="nav-number">2.</span> <span class="nav-text">2、Sass的变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、Sass嵌套"><span class="nav-number">3.</span> <span class="nav-text">3、Sass嵌套</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、导入SASS文件"><span class="nav-number">4.</span> <span class="nav-text">3、导入SASS文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、静默注释"><span class="nav-number">5.</span> <span class="nav-text">4、静默注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、混合器"><span class="nav-number">6.</span> <span class="nav-text">5、混合器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、使用选择器继承来精简CSS"><span class="nav-number">7.</span> <span class="nav-text">6、使用选择器继承来精简CSS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>

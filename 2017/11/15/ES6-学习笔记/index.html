@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/15/ES6-学习笔记/index.html">
 <meta property="og:site_name" content="sansan.blog">
 <meta property="og:description" content="ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
-<meta property="og:updated_time" content="2017-11-16T01:51:32.000Z">
+<meta property="og:updated_time" content="2017-12-01T01:55:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6  学习笔记">
 <meta name="twitter:description" content="ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
@@ -321,11 +321,44 @@
       
 
       
-        <p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// ES5</span></div><div class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h1 id="1、let"><a href="#1、let" class="headerlink" title="1、let"></a>1、let</h1><p>1.1 表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div></pre></td></tr></table></figure></p>
-<p>1.2 不存在变量提升<br>var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；<br>let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。<br>1.3 暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错；<br>“暂时性死区”也意味着typeof不再是一个百分之百安全的操作.暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。<br>1.3 不允许重复声明<br>let不允许在相同作用域内，重复声明同一个变量,因此，不能在函数内部重新声明参数<br>1.4 块级作用域<br>ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景：  第一种场景，内层变量可能会覆盖外层变量；第二种场景，用来计数的循环变量泄露为全局变量；<br>ES6 允许块级作用域的任意嵌套，内层作用域可以定义外层作用域的同名变量，外层作用域无法读取内层作用域的变量，块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要。<br>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>本质上，块级作用域是一个语句，将多个操作封装在一起，没有返回值，但是，在块级作用域以外，没有办法得到t的值，因为块级作用域不返回值，除非t是全局变量。现在有一个提案，使得块级作用域可以变为表达式，也就是说可以返回值，办法就是在块级作用域之前加上do，使它变为do表达式，然后就会返回内部最后执行的表达式的值。<br>ES6 的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="keyword">do</span> &#123;</div><div class="line">  <span class="keyword">let</span> t = f();</div><div class="line">  t * t + <span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h1 id="2、const"><a href="#2、const" class="headerlink" title="2、const"></a>2、const</h1>
+        <p><b>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</b><br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// ES5</span></div><div class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h1 id="1、let"><a href="#1、let" class="headerlink" title="1、let"></a>1、let</h1><ol>
+<li><p>表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>不存在变量提升<br>var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；<br>let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p>
+</li>
+<li>暂时性死区<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错；<br>“暂时性死区”也意味着typeof不再是一个百分之百安全的操作.暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
+<ol>
+<li>不允许重复声明<br>let不允许在相同作用域内，重复声明同一个变量,因此，不能在函数内部重新声明参数</li>
+<li>块级作用域<br>ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景：  第一种场景，内层变量可能会覆盖外层变量；第二种场景，用来计数的循环变量泄露为全局变量；<br>ES6 允许块级作用域的任意嵌套，内层作用域可以定义外层作用域的同名变量，外层作用域无法读取内层作用域的变量，块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要。<br>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>本质上，块级作用域是一个语句，将多个操作封装在一起，没有返回值，但是，在块级作用域以外，没有办法得到t的值，因为块级作用域不返回值，除非t是全局变量。现在有一个提案，使得块级作用域可以变为表达式，也就是说可以返回值，办法就是在块级作用域之前加上do，使它变为do表达式，然后就会返回内部最后执行的表达式的值。<br>ES6 的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="keyword">do</span> &#123;</div><div class="line">  <span class="keyword">let</span> t = f();</div><div class="line">  t * t + <span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="2、const-声明一个只读的常量-一旦声明，常量的值就不能改变"><a href="#2、const-声明一个只读的常量-一旦声明，常量的值就不能改变" class="headerlink" title="2、const(声明一个只读的常量,一旦声明，常量的值就不能改变)"></a>2、const(声明一个只读的常量,一旦声明，常量的值就不能改变)</h1><p><strong>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动</strong></p>
+<ol>
+<li>const一旦声明变量，就必须立即初始化；</li>
+<li>const也与let一样只在声明所在的块级作用域内有效，同样存在暂时性死区，只能在声明的位置后面使用；</li>
+<li>const也与let一样不可重复声明；</li>
+<li>但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制.<br><strong>ES5 只有两种声明变量的方法：var、function；ES6 除了添加let和const命令，还有两种声明变量的方法：import、class，所以，ES6 一共有 6 种声明变量的方法</strong></li>
+</ol>
+<h1 id="3、顶层对象"><a href="#3、顶层对象" class="headerlink" title="3、顶层对象"></a>3、顶层对象</h1><ol>
+<li>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。ES5之中，顶层对象的属性与全局变量是等价的。</li>
+<li>ES6 为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</li>
+</ol>
+<h1 id="4、global-对象"><a href="#4、global-对象" class="headerlink" title="4、global 对象"></a>4、global 对象</h1><p>在语言标准的层面，引入global作为顶层对象。也就是说，在所有环境下，global都是存在的，都可以从它拿到顶层对象</p>
+<h1 id="5、数组的结构赋值"><a href="#5、数组的结构赋值" class="headerlink" title="5、数组的结构赋值"></a>5、数组的结构赋值</h1><p><strong>事实上，只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值/strong&gt;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];<span class="comment">/*等价*/</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure></strong></p>
+<ol>
+<li>解构赋值允许指定默认值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]; <span class="comment">// x='a', y='b'</span></div><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>, <span class="literal">undefined</span>]; <span class="comment">// x='a', y='b</span></div><div class="line"><span class="keyword">let</span> [x = <span class="number">1</span>] = [<span class="literal">null</span>];<span class="comment">/*如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。*/</span></div><div class="line">x <span class="comment">// null</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><b>如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到的时候，才会求值。</b></p>
+<ol>
+<li>对象的解构赋值</li>
+</ol>
+
       
     </div>
 
@@ -445,7 +478,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -511,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、let"><span class="nav-number">1.</span> <span class="nav-text">1、let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、const"><span class="nav-number">2.</span> <span class="nav-text">2、const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、let"><span class="nav-number">1.</span> <span class="nav-text">1、let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、const-声明一个只读的常量-一旦声明，常量的值就不能改变"><span class="nav-number">2.</span> <span class="nav-text">2、const(声明一个只读的常量,一旦声明，常量的值就不能改变)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、顶层对象"><span class="nav-number">3.</span> <span class="nav-text">3、顶层对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、global-对象"><span class="nav-number">4.</span> <span class="nav-text">4、global 对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、数组的结构赋值"><span class="nav-number">5.</span> <span class="nav-text">5、数组的结构赋值</span></a></li></ol></div>
             
 
           </div>
@@ -534,7 +567,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

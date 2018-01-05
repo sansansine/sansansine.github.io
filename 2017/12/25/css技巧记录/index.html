@@ -1,0 +1,746 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="title: css技巧记录date: 2017-12-25 16:00:07 tags:1、 使用CSS复位在不同的浏览器上保持一致的样式风格12345* &amp;#123;  box-sizing: border-box;//box-sizing管理CSS盒模型布局  margin: 0;  padding: 0;&amp;#125; 2、 使用 :not() 选择器来决定表单是否显示边框1234/* 添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css技巧记录">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/css技巧记录/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="title: css技巧记录date: 2017-12-25 16:00:07 tags:1、 使用CSS复位在不同的浏览器上保持一致的样式风格12345* &amp;#123;  box-sizing: border-box;//box-sizing管理CSS盒模型布局  margin: 0;  padding: 0;&amp;#125; 2、 使用 :not() 选择器来决定表单是否显示边框1234/* 添">
+<meta property="og:updated_time" content="2018-01-05T02:13:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css技巧记录">
+<meta name="twitter:description" content="title: css技巧记录date: 2017-12-25 16:00:07 tags:1、 使用CSS复位在不同的浏览器上保持一致的样式风格12345* &amp;#123;  box-sizing: border-box;//box-sizing管理CSS盒模型布局  margin: 0;  padding: 0;&amp;#125; 2、 使用 :not() 选择器来决定表单是否显示边框1234/* 添">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/25/css技巧记录/"/>
+
+
+
+
+
+  <title>css技巧记录 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/css技巧记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css技巧记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T16:35:56+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: css技巧记录<br>date: 2017-12-25 16:00:07</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>1、 使用CSS复位<br>在不同的浏览器上保持一致的样式风格<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">  box-sizing: border-box;//box-sizing管理CSS盒模型布局</div><div class="line">  margin: 0;</div><div class="line">  padding: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2、 使用 :not() 选择器来决定表单是否显示边框<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 添加边框 */</span></div><div class="line"><span class="selector-class">.nav</span> <span class="selector-tag">li</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:last-child)</span> &#123;</div><div class="line">  <span class="attribute">border-right</span>: <span class="number">1px</span> solid <span class="number">#666</span>;</div><div class="line">&#125;<span class="comment">/* .nav li + li或者 .nav li:first-child ~ li  */</span></div></pre></td></tr></table></figure></p>
+<p>3、 为 body 元素添加行高(在body里面同一行高)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">1.5</span>;</div><div class="line">&#125;<span class="comment">/* 不必为每一个 &lt;p&gt;，&lt;h*&gt; 元素逐一添加 line-height，直接添加到 body 元素 ,文本元素可以很容易地继承 body 的样式*/</span></div></pre></td></tr></table></figure></p>
+<p>4、 垂直居中任何元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: center;  </div><div class="line">  <span class="attribute">-ms-flex-align</span>: center;  </div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">  <span class="attribute">display</span>: -webkit-flex;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5、 逗号分隔列表<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:last-child)</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">","</span>;</div><div class="line">&#125;<span class="comment">/* 使列表的每项都由逗号分隔 */</span></div></pre></td></tr></table></figure></p>
+<p>6、 使用负的 nth-child 来选择元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 使用负的 nth-child 可以选择 1 至 n 个元素 */</span></div><div class="line"><span class="comment">/* 方法一 */</span></div><div class="line"><span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 选择第 1 至第 3 个元素并显示出来 */</span></div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(-n+3)</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 方法二 */</span></div><div class="line"><span class="comment">/* 选择第 1 至第 3 个元素并显示出来 */</span></div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:nth-child(-n+3))</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>7、 使用 SVG 图标<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.logo</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"logo.svg"</span>);</div><div class="line">&#125;<span class="comment">/* SVG 在所有分辨率下都可以良好缩放，并且支持所有 IE9 以后的浏览器 */</span></div><div class="line"><span class="comment">/* 针对仅有图标的按钮，如果 SVG 没有加载成功的话，以下样式对无障碍有所帮助 */</span></div><div class="line"><span class="selector-class">.no-svg</span> <span class="selector-class">.icon-only</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(aria-label);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>8、 通用选择器 (*) 和 相邻兄弟选择器 (+) 一起使用<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* + * &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">1.5em</span>;</div><div class="line">&#125;<span class="comment">/* 文档流中的所有的相邻兄弟元素将都将设置 margin-top: 1.5em 的样式 */</span></div></pre></td></tr></table></figure></p>
+<p>9、 使用 max-height 来建立纯 CSS 的滑块<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.slider</span> &#123;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">overflow-y</span>: hidden;</div><div class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.slider</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">600px</span>;</div><div class="line">  <span class="attribute">overflow-y</span>: scroll;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>10、 创造格子等宽的表格<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.calendar</span> &#123;</div><div class="line">  <span class="attribute">table-layout</span>: fixed;</div><div class="line">&#125;<span class="comment">/* table-layout: fixed 可以让每个格子保持等宽 */</span></div></pre></td></tr></table></figure></p>
+<p>11、 利用 Flexbox 去除多余的外边距<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.list</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: space-between;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.list</span> <span class="selector-class">.person</span> &#123;</div><div class="line">  <span class="attribute">flex-basis</span>: <span class="number">23%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>12、 利用 Flexbox 去除多余的外边距<br>与其使用 nth-， first-， 和 last-child 去除列之间多余的间隙，不如使用 flexbox 的 space-between 属性：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.list</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: space-between;<span class="comment">/* 定义项目在主轴上的对齐方式:两端对齐，项目之间的间隔相等 */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.list</span> <span class="selector-class">.person</span> &#123;</div><div class="line">  <span class="attribute">flex-basis</span>: <span class="number">23%</span>;<span class="comment">/* 定义在分配多余空间之前，项目占据的主轴空间 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>13、 利用属性选择器来选择空链接<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="http"]</span><span class="selector-pseudo">:empty</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(href);</div><div class="line">&#125;<span class="comment">/* 当 &lt;a&gt; 元素没有文本内容，但有 href 属性的时候，显示它的 href 属性 */</span></div></pre></td></tr></table></figure></p>
+<p>14、 给 “默认” 链接定义样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[class]</span>) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#008000</span>;</div><div class="line">  <span class="attribute">text-decoration</span>: underline;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>15、 一致垂直节奏<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.intro</span> &gt; * &#123;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1.25rem</span>;</div><div class="line">&#125;<span class="comment">/* 通用选择器 (*) 跟元素一起使用，可以保持一致的垂直节奏 */</span></div></pre></td></tr></table></figure></p>
+<p>16、 固定比例盒子<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding-bottom</span>: <span class="number">20%</span>;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">2px</span> dashed <span class="number">#ddd</span>;  </div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;<span class="comment">/* 使用20％的padding-bottom使得框等于其宽度的20％的高度。与视口宽度无关，子元素的div将保持其宽高比（100％/ 20％= 5:1） */</span></div></pre></td></tr></table></figure></p>
+<p>17、 为破碎图象定义样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span> &#123;  </div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">font-family</span>: Helvetica, Arial, sans-serif;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">300</span>;</div><div class="line">  <span class="attribute">height</span>: auto;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;<span class="comment">/* 以添加伪元素的法则来显示用户信息和URL的引用： */</span></div><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:before</span> &#123;  </div><div class="line">  <span class="attribute">content</span>: <span class="string">"We're sorry, the image below is broken :("</span>;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:after</span> &#123;  </div><div class="line">  <span class="attribute">content</span>: <span class="string">"(url: "</span> <span class="built_in">attr</span>(src) <span class="string">")"</span>;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>18、 用 rem 来调整全局大小；用 em 来调整局部大小<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h2</span> &#123; <span class="comment">/* 在根元素设置基本字体大小后 (html &#123; font-size: 100%; &#125;), 使用 em 设置文本元素的字体大小: */</span></div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1em</span>;</div><div class="line">&#125;<span class="comment">/* 然后设置模块的字体大小为 rem： */</span></div><div class="line"><span class="selector-tag">article</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.25rem</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-class">.module</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: .<span class="number">9rem</span>;</div><div class="line">&#125;<span class="comment">/* 现在，每个模块变得独立，更容易、灵活的样式便于维护。 */</span></div></pre></td></tr></table></figure></p>
+<p>19、 隐藏没有静音、自动播放的影片<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">video</span><span class="selector-attr">[autoplay]</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[muted]</span>) &#123;<span class="comment">/* 避免在加载页面时自动播放。如果没有静音，则不显示视频： */</span></div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>20、 使用选择器:root来控制字体弹性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">:root</span> &#123;<span class="comment">/* 在响应式布局中，字体大小应需要根据不同的视口进行调整。你可以计算字体大小根据视口高度的字体大小和宽度，这时需要用到:root: */</span></div><div class="line">  <span class="attribute">font-size</span>: <span class="built_in">calc</span>(1vw + 1vh + .5vmin);</div><div class="line">&#125;<span class="comment">/* 现在，您可以使用 root em： */</span></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font</span>: <span class="number">1rem</span>/<span class="number">1.6</span> sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>21、 为更好的移动体验，为表单元素设置字体大小<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span>,</div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="number"]</span>,</div><div class="line"><span class="selector-tag">select</span>,</div><div class="line"><span class="selector-tag">textarea</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">&#125;<span class="comment">/* 当触发&lt;select&gt;的下拉列表时，为了避免表单元素在移动浏览器（ios Safari 等等）上的缩放，加上font-size： */</span></div></pre></td></tr></table></figure></p>
+<p>22、 使用text-indent来隐藏文本<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;<span class="comment">/* 使用“text-indent”我们可以达到图片替换文本的效果，而且方便搜索引擎的优化，还能支持阅读器阅读网页内容 */</span></div><div class="line">       <span class="attribute">text-indent</span>:-<span class="number">9999px</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto;</div><div class="line">    <span class="attribute">width</span>:<span class="number">400px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>:transparent <span class="built_in">url</span>(<span class="string">"images/logo.jpg"</span>) no-repeat scroll;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>23、 根据文件格式设置链接图标<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="http:"]</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-right</span>:<span class="number">14px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/ExternalLink.gif) center right no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="mailto:"]</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/MailTo.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.pdf']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/PDFIcon.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.swf']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.fla']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.swd']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/FlashIcon.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.xls']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.csv']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.xlt']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.xlw']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/ExcelIcon.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.ppt']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.pps']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/PowerPointIcon.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.doc']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.rtf']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.txt']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.wps']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/WordDocIcon.gif) center left no-repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$='.zip']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.gzip']</span>, <span class="selector-tag">a</span><span class="selector-attr">[href$='.rar']</span> &#123;</div><div class="line">        <span class="attribute">display</span>:inline-block;</div><div class="line">        <span class="attribute">padding-left</span>:<span class="number">20px</span>;</div><div class="line">        <span class="attribute">line-height</span>:<span class="number">18px</span>;</div><div class="line">        <span class="attribute">background</span>:transparent <span class="built_in">url</span>(/Images/ZIPIcon.gif) center left no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>24、 在IE浏览器中删除textarea的滚动条<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">textarea</span>&#123;</div><div class="line">    <span class="attribute">overflow</span>:auto;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>25、 段落首字下沉<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-letter</span>&#123;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">5px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">    <span class="attribute">float</span>:left;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#FF3366</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">font-family</span>:Georgia;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>26、 所有浏览器下的CSS透明度<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transparent</span> &#123;</div><div class="line">    <span class="comment">/* Fallback for web browsers that doesn't support RGBa */</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(0, 0, 0);</div><div class="line">    <span class="comment">/* RGBa with 0.6 opacity */</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.6);</div><div class="line">    <span class="comment">/* For IE 5.5 - 7*/</span></div><div class="line">    <span class="attribute">filter</span>:progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorstr=#99000000, endColorstr=#99000000);</div><div class="line">    <span class="comment">/* For IE 8*/</span></div><div class="line">    <span class="attribute">-ms-filter</span>: <span class="string">"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>27、 图片预加载<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#preloader</span> &#123;<span class="comment">/* 这样当某个元素需要时，他就已经被加载了，此时就不会有任何延误或闪烁的现像：*/</span></div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(image1.jpg);</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(image2.jpg);</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(image3.jpg);</div><div class="line">    <span class="attribute">width</span>: <span class="number">0px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</div><div class="line">    <span class="attribute">display</span>: inline;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>28、 固定页脚<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#footer</span> &#123;</div><div class="line">    <span class="attribute">position</span>:fixed;</div><div class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</div><div class="line">    <span class="attribute">bottom</span>:<span class="number">0px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">30px</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#999</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* IE 6 */</span></div><div class="line">* <span class="selector-tag">html</span> <span class="selector-id">#footer</span> &#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="built_in">expression</span>((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+<span class="string">'px'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>29、 翻转图片<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span><span class="selector-class">.flip</span> &#123;</div><div class="line">    <span class="attribute">-moz-transform</span>: <span class="built_in">scaleX</span>(-1);</div><div class="line">    <span class="attribute">-o-transform</span>: <span class="built_in">scaleX</span>(-1);</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scaleX</span>(-1);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(-1);</div><div class="line">    <span class="attribute">filter</span>: FlipH;</div><div class="line">    <span class="attribute">-ms-filter</span>: <span class="string">"FlipH"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>30、 clearfix<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">    <span class="attribute">clear</span>:both ;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>31、 简单的文字模糊效果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">*&#123; </div><div class="line">    <span class="attribute">color</span>: transparent;</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">#111</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>32、 鼠标移进网页里消失<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    <span class="attribute">cursor</span>: none<span class="meta">!important</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>33、 多重边框<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">12px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">18px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">24px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2);</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/20/docker-学习/" rel="next" title="docker命令记录">
+                <i class="fa fa-chevron-left"></i> docker命令记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/27/伪元素小技巧/" rel="prev" title="伪元素小技巧">
+                伪元素小技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>

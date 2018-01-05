@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="docker基本命令 brew cask install docker:Homebrew 的 Cask安装docker docker –version:查看版本 docker info:查看docker是否存在，返回所有容器+镜像 docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]:获取镜像  docker pull ubuntu:16.04">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker命令记录">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/docker-学习/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="docker基本命令 brew cask install docker:Homebrew 的 Cask安装docker docker –version:查看版本 docker info:查看docker是否存在，返回所有容器+镜像 docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]:获取镜像  docker pull ubuntu:16.04">
+<meta property="og:updated_time" content="2018-01-04T06:46:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker命令记录">
+<meta name="twitter:description" content="docker基本命令 brew cask install docker:Homebrew 的 Cask安装docker docker –version:查看版本 docker info:查看docker是否存在，返回所有容器+镜像 docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]:获取镜像  docker pull ubuntu:16.04">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/20/docker-学习/"/>
+
+
+
+
+
+  <title>docker命令记录 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/docker-学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker命令记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T10:35:29+08:00">
+                2017-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="docker基本命令"><a href="#docker基本命令" class="headerlink" title="docker基本命令"></a>docker基本命令</h1><ul>
+<li>brew cask install docker:Homebrew 的 Cask安装docker</li>
+<li>docker –version:查看版本</li>
+<li>docker info:查看docker是否存在，返回所有容器+镜像</li>
+<li><p>docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]:获取镜像</p>
+<blockquote>
+<p>docker pull ubuntu:16.04</p>
+</blockquote>
+</li>
+<li><p>docker run:创建容器</p>
+<blockquote>
+<p>docker run -i -t ubuntu /bin/bash</p>
+</blockquote>
+</li>
+</ul>
+<p>基于ubuntu镜像创建容器，在容器中执行/bin/bash命令启动Bash shell。</p>
+<ul>
+<li><p>/etc/hosts:linux 的/etc/hosts是配置ip地址和其对应主机名的文件</p>
+<blockquote>
+<p>cat /etc/hosts:查看/etc/hosts</p>
+</blockquote>
+</li>
+<li><p>ps -aux:查看容器中运行进程</p>
+</li>
+<li>apt-get update &amp;&amp; apt-get install vim:软件安装（vim）</li>
+<li>exit:返回到宿主机命令行（！只有在指定的/bin/bash命令处于运行状态时，容器才会相应的处于运行状态）</li>
+<li>docker ps:正在运行的容器;docker ps -a:所有容器列表;docker ps -l:最后一次运行的容器</li>
+<li>docker run –name xxx -i -t ubuntu /bin/bash:给创建的容器指定名称</li>
+<li>docker rm xxx:删除容器；docker rm <code>docker ps -a -q</code>:删除所有容器，<b>运行中的容器是无法删除的。</b></li>
+<li>docker start xxx:重新启动已经停止的容器</li>
+<li>docker attach xxx: 附着到容器上，运行一个交互式回话shell（需要按一下enter）</li>
+<li>whereis xxx:查找xxx</li>
+<li>sudo docker run –name aofo -d ubuntu:14.04 /bin/sh -c “while true; do echo hello world; sleep 1; done”:创建守护式容器<br>守护式容器（daemonized container）:长期运行的容器,没有交互式会话，适合运行应用程序和服务,大多数时候是需要以守护式来运行容器。 -d 参数会让容器在后台运行</li>
+<li>docker logs xxx:查看容器日志; docker logs -f xxx:添加-f参数来监听日志，ctrl+c来退出监控日志；docker logs –tail 10 xxx:获取日志的最后10行；docker logs –tail 0 -f xxx:跟踪某个容器的最新日志而不必读取整个日志文件；docker logs -ft xxx:-t参数为每条日志加上时间戳。</li>
+<li>docker top xxx:查看容器内的所有进程</li>
+<li><p>docker exec:在容器内部额外启动新进程</p>
+<blockquote>
+<p>docker exec -d daemon aofo touch /etc/new_config_file:-d标志标明要运行一个后台进程，后面指定要在内部执行这个命令的容器名,在容器内创建了一个空文件夹new_config_file。<br>docker exec -t -i aofo /bin/bash:在容器中创建一个新的bash会话</p>
+</blockquote>
+</li>
+<li><p>docker stop xxx:停止容器</p>
+</li>
+<li>docker kill xxx:快速停止容器</li>
+<li>docker run –restart=always –name xxx -d ubuntu /bin/bash -c “while true;do echo hello world;sleep 1;done”:除了always，不管退出代码是什么都会重启该容器，–restart=on-failure:5接受一个可选的重启次数参数，即最多重启5次。</li>
+<li>docker inspect:获取更多的容器消息</li>
+<li>docker history xxx:查看镜像是如何构建的</li>
+<li>docker run –name xxx -i -t -w /var/log ubuntu pwd:-w标志在运行时覆盖工作目录，即容器内的工作目录为/var/log</li>
+</ul>
+<h1 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h1><p><b>本地镜像都保存在Docker宿主机的/var/lib/docker目录下。每个镜像都保存在Docker所采用的存储驱动目录下。也可以在/var/lib/docker/containers目录下面看到所有的容器</b></p>
+<ul>
+<li>docker images:列出镜像</li>
+<li>docker pull xxx:拉取镜像</li>
+<li>docker search xxx:查找所有Docker Hub上公共的可用镜像</li>
+<li>使用:+tag(标签名)来准确的指定容器的镜像</li>
+<li>docker commit/docker build命令和Dockerfile文件,推荐后者，更灵活更强大。</li>
+<li>docker login:登录到Docker Hub</li>
+<li><p>用 commit 命令创建镜像：</p>
+<ol>
+<li>docker run -i -t ubuntu /bin/bash：创建一个新容器；</li>
+<li>apt-get -yqq update;    apt-get -y install apache2  :安装Apache</li>
+<li>先用exit命令退出容器， 再docker commit 614122c0aabb aoct/apache2：指定了要提交的修改过的容器的ID、目标镜像仓库、镜像名，把这个容器作为一个Web服务器来运行,需要把它当前状态保存下来，就不必每次都创建一个新容器并再次安装Apache；</li>
+<li>docker commit -m=’A new image’ –author=’Aomine’ 614122c0aabb aoct/apache2:像git一样，在提交镜像时指定更多信息来描述所做的修改</li>
+<li>docker run -t -i aoct/apache2 /bin/bash:docker run命令从刚创建的新镜像运行一个容器</li>
+</ol>
+</li>
+<li><p>用Dockerfile构建镜像</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Version:0.0.1</span></div><div class="line"><span class="comment">#指定一个已经存在的镜像</span></div><div class="line"><span class="keyword">FROM</span> ubuntu <span class="number">16.04</span></div><div class="line"><span class="comment">#该镜像的作者及作者的电子邮件地址</span></div><div class="line"><span class="keyword">MAINTAINER</span> sansan <span class="string">"15000876069@163.com"</span></div><div class="line"><span class="keyword">RUN</span> apt-get update&amp;&amp;apt-get install -y nginx</div><div class="line"><span class="keyword">RUN</span> echo 'HI,container' \</div><div class="line">    &gt;/usr/share/nginx/html/index.html</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1、每条指令必须为大写；<br>2、指令会按顺序从上到下执行；</p>
+<blockquote>
+<p>docker build -t=”sansan/static_web:v1” .</p>
+</blockquote>
+<p>-t选项为新镜像设置了仓库(sansan)和名称(static_web):后为标签，如果没有指定任何标签，会自动为镜像设置一个latest标签，”.”告诉docker在本地目录去找Dockerfile,也可以指定一个Git仓库的源地址。</p>
+<blockquote>
+<p>docker build –no-cache -t=”sansan/static_web:v1” .</p>
+</blockquote>
+<p>–no-cache确保构建过程不会使用缓存</p>
+<ul>
+<li>基于构建缓存的Dockerfile模板<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span></div><div class="line"><span class="keyword">MAINTAINER</span> James Turnbull <span class="string">"liaojiafa@qq.com"</span></div><div class="line"><span class="keyword">ENV</span> REFRESHED_AT <span class="number">2016</span>-<span class="number">12</span>-<span class="number">05</span></div><div class="line"><span class="keyword">RUN</span> apt-get -qq update</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>有了这个模版，如果想刷新一个构建，只需要修改ENV指令中的日期。这使DOcker在命令中ENV指令时开始重置这个缓存，并运行后续指令而无需依赖该缓存。也就是说，RUN apt-get update这条指令就会被再次执行，包缓存也会被刷新为最新内容</p>
+<ul>
+<li>从新镜像启动容器<br>docker run -d -p 80 –name static_web sansan/static_web nginx -g “daemon off;”<br>-d选项告诉docker以分离(detached)的方式在后台运行，-p用来控制docker在运行时应该公开哪些端口给外部(宿主机)<br>docker port 容器ID 容器端口号：返回宿主机映射端口<br>docker run -d -p 8080:80 –name static_web sansan/static_web nginx -g “daemon off;”<br>将容器80端口绑定到宿主机8080端口<br>docker run -d -p 127.0.0.1:8080:80 –name static_web sansan/static_web nginx -g “daemon off;”<br>将容器80端口绑定到特定的网络接口<br>docker run -d -p 127.0.0.1::80 –name static_web sansan/static_web nginx -g “daemon off;”<br>也可以不指定</li>
+<li>Dockerfile指令(docker推荐用数组语法来设置要执行的命令[“xx”,”xx”,”xx”])<br>1、CMD(指定容器启动时执行的命令)<br>2、RUN(容器构建时执行的命令):RUN命令可以覆盖CMD指令<br>3、ENTRYPOINT(配置容器启动后执行的命令，并且不可被docker run 提供的参数覆盖。每个Dockerfile中只能有一个ENTRYPOINT，当指定多个ENTRYPOINT时，只有最后一个生效。和CMD相似，却有不同。)<br>4、WORKDIR(镜像创建一个新容器时定义工作目录，如果容器中没有此目录，会自动创建)<br>5、ENV(在镜像构建过程中设置环境变量):ENV RVM_PATH /home/rvm<br>6、VOLUME(向基于镜像创建的容器添加卷)<br>7、ADD(将构建环境下的文件和目录复制到镜像中)<br>8、COPY(和ADD类似，但不会去做文件提取和解压工作)<br>9、ONBUILD(为镜像添加触发器trigger)：ONBUILD命令可以在镜像上运行docker inspect查看<br>10、为apache2镜像构建一个Dockerfile<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span> </div><div class="line"><span class="keyword">MAINTAINER</span> sansan <span class="string">"15000876069@163.com"</span></div><div class="line"><span class="keyword">RUN</span> apt-get update&amp;&amp;apt-get install -y apache2</div><div class="line"><span class="keyword">ENV</span> APACHE_RUN_USER www-data</div><div class="line"><span class="keyword">ENV</span> APACHE_RUN_GROUP www-data</div><div class="line"><span class="keyword">ENV</span> APACHE_LOG_DIR /var/log/apache2</div><div class="line"><span class="keyword">ONBUILD</span> <span class="keyword">ADD</span> . /var/www/</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">ENTRYPOINT</span> ["/usr/sbin/apache2"]</div><div class="line"><span class="keyword">CMD</span> ["-D","FOREGROUND"]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们可以将这个Dockerfile作为一个通用的web应用程序的模板，基于这个模板来构建web应用程序<br><b>ONBUILD ADD . /var/www/:该指令会使用ADD指令将构建环境所在目录下内容全部添加到镜像中的/var/www/目录下</b><br>使用模板来构建webapp镜像：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> sansan/apache2</div><div class="line"><span class="keyword">MAINTAINER</span> sansan <span class="string">"15000876069@163.com"</span></div><div class="line"><span class="keyword">ENV</span> APPLICATION_NAME webapp</div><div class="line"><span class="keyword">ENV</span> ENVIRONMENT development</div></pre></td></tr></table></figure></p>
+<p>11、将镜像推送到Docker Hub</p>
+<blockquote>
+<p>docker push xxx</p>
+</blockquote>
+<p>注意：tag的名字斜线前面部分如果跟Docker Hub姓名不一致会导致push失败需要使用docker tag重命名：</p>
+<blockquote>
+<p>docker push oldname newname</p>
+</blockquote>
+<p>12、自动构建<br>只需将GitHub或BitBucket中含有Dockerfile文件的仓库连接到Docker Hub即可，只能通过更新GitHub仓库来更新自动构建<br>13、删除镜像</p>
+<blockquote>
+<p>docker rmi xxx:该操作只会将本地镜像删除，GitHub依然存在。删除多个：docker rmi xxx yyy</p>
+</blockquote>
+<p>14、运行自己的Docker Registry</p>
+<ul>
+<li>从容器运行Registry:docker run -d -p 5000:5000 –restart=always –name registry registry</li>
+<li>使用这个Registr为本地镜像打上标签:docker tag 9043319a1906 127.0.0.1:5000/sansan/webapp</li>
+<li>将镜像推送到新的Registry:docker push 127.0.0.1:5000/sansan/webapp</li>
+<li>将其用于使用docker run 构建新容器:docker run -i -t 127.0.0.1:5000/sansan/webapp /bin/bash</li>
+</ul>
+<h1 id="在测试中使用docker"><a href="#在测试中使用docker" class="headerlink" title="在测试中使用docker"></a>在测试中使用docker</h1><p>1、静态网站：<a href="http://blog.csdn.net/alive2012/article/details/51871972" target="_blank" rel="external">Docker使用—静态网站测试</a></p>
+<p>2、web应用程序：<a href="http://blog.csdn.net/alive2012/article/details/51881360" target="_blank" rel="external">Docker构建并测试Web应用程序</a><br>下载Sinatra Web应用程序源码：</p>
+<blockquote>
+<p>wget –cut-dirs=3 -nH -r –no-parent <a href="http://dockerbook.com/code/5/sinatra/webapp/" target="_blank" rel="external">http://dockerbook.com/code/5/sinatra/webapp/</a></p>
+</blockquote>
+<p>保证webapp/bin/webapp文件可以执行</p>
+<blockquote>
+<p>chmod +x $PWD/webapp/bin/webapp</p>
+</blockquote>
+<p>3、使用docker构建第一个Java应用服务</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/15/前端常见术语翻译/" rel="next" title="常见术语翻译">
+                <i class="fa fa-chevron-left"></i> 常见术语翻译
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/25/css技巧记录/" rel="prev" title="css技巧记录">
+                css技巧记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker基本命令"><span class="nav-number">1.</span> <span class="nav-text">docker基本命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker镜像"><span class="nav-number">2.</span> <span class="nav-text">docker镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在测试中使用docker"><span class="nav-number">3.</span> <span class="nav-text">在测试中使用docker</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>
