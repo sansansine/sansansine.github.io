@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="sansan.blog">
 <meta property="og:description" content="闭包（Closure）是Javascript的重点，也是难点，在这里记录下来是希望自己能够每看一次便多一次更深刻的理解">
 <meta property="og:image" content="http://yoursite.com/2017/09/13/简单理解Javascript闭包/closure.png">
-<meta property="og:updated_time" content="2017-09-19T07:16:28.000Z">
+<meta property="og:updated_time" content="2018-01-08T01:55:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单理解Javascript闭包">
 <meta name="twitter:description" content="闭包（Closure）是Javascript的重点，也是难点，在这里记录下来是希望自己能够每看一次便多一次更深刻的理解">
@@ -324,7 +324,7 @@
 
       
         <p><img src="/2017/09/13/简单理解Javascript闭包/closure.png" alt="logo"><br><strong>闭包（Closure）是Javascript的重点，也是难点，在这里记录下来是希望自己能够每看一次便多一次更深刻的理解</strong><br><a id="more"></a></p>
-<h2 id="1、闭包的概念"><a href="#1、闭包的概念" class="headerlink" title="1、闭包的概念"></a>1、闭包的概念</h2><p>官方对闭包的解释是：一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br><strong>函数套函数就是闭包吗？不是！，当一个内部函数被其外部函数之外的变量引用时，才会形成了一个闭包。</strong><br>要理解闭包，首先必须理解Javascript特殊的变量作用域。</p>
+<h2 id="1、闭包的概念"><a href="#1、闭包的概念" class="headerlink" title="1、闭包的概念"></a>1、闭包的概念</h2><p>官方对闭包的解释是：一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br><strong>函数套函数就是闭包吗？不是！当一个内部函数被其外部函数之外的变量引用时，才会形成了一个闭包。</strong><br>要理解闭包，首先必须理解Javascript特殊的变量作用域。</p>
 <h2 id="2、变量的作用域"><a href="#2、变量的作用域" class="headerlink" title="2、变量的作用域"></a>2、变量的作用域</h2><p>Javascript变量的作用于有两种：全局变量和局部变量；<br>1.函数内部可以直接读取全局变量；<br>2.在函数外部无法读取函数内的局部变量；<br><strong><del>函数内部声明变量的时候，一定要使用var命令，否则会变成全局变量</del></strong><br>为了读取函数内部的变量，可以在函数内部定义一个函数，那么子函数就可以读取父函数内的局部变量，再将子函数作为父函数的返回值，最终我们就得到了函数内部的局部变量。</p>
 <h2 id="3、闭包"><a href="#3、闭包" class="headerlink" title="3、闭包"></a>3、闭包</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　　　nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          n+=<span class="number">1</span></div><div class="line">        &#125;</div><div class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　alert(n);</div><div class="line">　　　　&#125;</div><div class="line">　　　　<span class="keyword">return</span> f2;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> result=f1();</div><div class="line">　　result(); <span class="comment">// 999</span></div><div class="line">　　nAdd();<span class="comment">// nAdd前面没有使用var关键字，因此nAdd是一个全局变量，全局变量的调用者时window。其次，nAdd的值是一个匿名函数，这个匿名函数本身也是一个闭包,可以在函数外部对函数内部的局部变量进行操作</span></div><div class="line">　　result(); <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
 <h2 id="4、闭包的用途"><a href="#4、闭包的用途" class="headerlink" title="4、闭包的用途"></a>4、闭包的用途</h2><p>1.可以读取函数内部的变量；<br>2.让变量的值始终保持在内存中；</p>

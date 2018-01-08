@@ -41,7 +41,7 @@
     <link href="http://yoursite.com/2018/01/02/%E5%89%8D%E7%AB%AF%E7%96%91%E6%83%91%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2018/01/02/前端疑惑记录/</id>
     <published>2018-01-02T09:58:50.000Z</published>
-    <updated>2018-01-05T03:30:40.000Z</updated>
+    <updated>2018-01-05T05:42:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="“use-strict”"><a href="#“use-strict”" class="headerlink" title="“use strict”"></a>“use strict”</h1><p><b>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。</b></p>
 <ol>
@@ -108,7 +108,7 @@
 <li>HTTP 无法加密，而HTTPS 对传输的数据进行加密</li>
 <li>HTTP无需证书，而HTTPS 需要CA机构wosign的颁发的SSL证书</li>
 </ol>
-<h1 id="setTimeout-和setInterval"><a href="#setTimeout-和setInterval" class="headerlink" title="setTimeout()和setInterval()"></a>setTimeout()和setInterval()</h1><p>setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式；而setInterval()则可以在每隔指定的毫秒数<b>循环</b>调用函数或表达式，直到clearInterval把它清除。<br>setTimeout(code,millisec)、setInterval(code,millisec[,”lang”])<br>setInterval只要一次计时完毕，插入回调之后不管回调执不执行就开始计时，这会出现一种情况，当我们插入回调的时候前队列有别的代码在执行。</p>
+<h1 id="setTimeout-和setInterval"><a href="#setTimeout-和setInterval" class="headerlink" title="setTimeout()和setInterval()"></a>setTimeout()和setInterval()</h1><p>setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式；而setInterval()则可以在每隔指定的毫秒数<b>循环</b>调用函数或表达式，直到clearInterval把它清除。<br>setTimeout(code,millisec)、setInterval(code,millisec[,”lang”])<br>setInterval只要一次计时完毕，插入回调之后不管回调执不执行就开始计时，这会出现一种情况，当我们插入回调的时候前队列有别的代码在执行。setInterval如果第一个函数的执行时间特别长，在执行的过程中本应触发了许多个func，这些func并不会都进入队列，只要发现队列中有一个被执行的函数存在，那么其他的统统忽略。<b>在setInterval的里指定的周期是100毫秒，但它并不能保证两个函数之间调用的间隔一定是一百毫秒。<b><br>保证每次执行的间隔相同：用setTimeout</b></b></p>
 ]]></content>
     
     <summary type="html">
@@ -373,7 +373,7 @@
     <link href="http://yoursite.com/2017/12/15/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E6%9C%AF%E8%AF%AD%E7%BF%BB%E8%AF%91/"/>
     <id>http://yoursite.com/2017/12/15/前端常见术语翻译/</id>
     <published>2017-12-15T07:24:45.000Z</published>
-    <updated>2018-01-05T03:16:46.000Z</updated>
+    <updated>2018-01-08T01:23:31.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="常见术语"><a href="#常见术语" class="headerlink" title="常见术语"></a>常见术语</h1><ul>
 <li>ReferenceError:引用错误</li>
@@ -384,9 +384,13 @@
 <li>registry:注册表</li>
 <li>executor:执行者</li>
 <li>hack:为了兼容不同的浏览器写不同的css代码</li>
+<li>cluster:集群</li>
+<li>CI：持续集成</li>
+<li>Cloud Native:云原生</li>
 </ul>
 <h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><ul>
-<li>npm run dev:以本地服务器的端口启动这个工程,关于本地服务器的配置信息，在工程根目录的webpack.config.js中:</li>
+<li>-save、save-dev:可以省掉你手动修改package.json文件的步骤，自动把模块和版本号添加到dependencies部分</li>
+<li>npm run dev:以本地服务器的端口启动这个工程,关于本地服务器的配置信息，在工程根目录的webpack.config.js中</li>
 <li>npm config get proxy:查看npm代理设置</li>
 <li>npm config set proxy null：设置npm代理为null</li>
 <li>lsof -i:xxxx:查看占用端口进程</li>
