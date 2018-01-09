@@ -978,7 +978,7 @@
     <link href="http://yoursite.com/2017/11/22/JS%E9%9A%8F%E7%AC%94/"/>
     <id>http://yoursite.com/2017/11/22/JS随笔/</id>
     <published>2017-11-22T05:40:48.000Z</published>
-    <updated>2018-01-09T03:09:34.000Z</updated>
+    <updated>2018-01-09T03:15:28.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>在阅读博客过程中的JavaScript疑惑记录</strong><br><a id="more"></a></p>
 <h1 id="js立即执行函数的写法"><a href="#js立即执行函数的写法" class="headerlink" title="js立即执行函数的写法"></a>js立即执行函数的写法</h1><p>立即执行函数其实就是直接调用匿名函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">    &#125;()</div><div class="line">); </div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;)(); </div><div class="line"></div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;(); </div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">2</span>);</div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
@@ -1028,7 +1028,16 @@
 <ul>
 <li>Promise 错误<br>通过 Promise 可以帮助我们解决异步回调异常的问题，但是一旦 Promise 实例抛出异常而你没有用 catch 去捕获的话，onerror 或 try-catch 也无能为力，无法捕捉到错误<br>在写 Promise 实例的时候养成最后写上 catch 函数是个好习惯，如果你的应用用到很多的 Promise 实例的话，最好添加一个 Promise 全局异常捕获事件 unhandledrejection。</li>
 </ul>
-<h1 id="window-load-window-onload-function-document-ready-和window-document的区别"><a href="#window-load-window-onload-function-document-ready-和window-document的区别" class="headerlink" title="$(window).load()\window.onload=function(){}\$(document).ready()和window\document的区别"></a>$(window).load()\window.onload=function(){}\$(document).ready()和window\document的区别</h1><p>1、$(window).load() 和window.onload=function(){}是页面中的所有元素（包括图片、flash）等都加载完毕后，才能执行；$(document).ready() 是页面中的DOM元素加载完成后便可执行。<br>2、$(window).load()和window.onload=function(){}不同的是，前者可以和$(document).ready()一样，可以同时加载多个函数。<br>3、window代表的是浏览器窗口，即可视的浏览器窗口；document代表的是整个页面的dom元素；即document只是window的一个属性；<br>4、两者的区别在页面有滚动条时可以直观的显示出来，当出现滚动条时，$(window).height和$(document).height是不相等的，$(document).height比$(window).height大，因为window的高度始终都是可见的浏览器窗口的高度，而document的高度则是整个页面的dom元素的高度，即超出一屏幕了。<br>5、当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素不是通过ajax回调填充的情况下，使用$(window).load()即可。<br>6、当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素是通过ajax回调填充的情况下，使用$(window).load()会出现有时有效，有时无效的情况.</p>
+<h1 id="window-load-、window-onload-function-、-document-ready-的区别"><a href="#window-load-、window-onload-function-、-document-ready-的区别" class="headerlink" title="$(window).load()、window.onload=function(){}、$(document).ready()的区别"></a>$(window).load()、window.onload=function(){}、$(document).ready()的区别</h1><ol>
+<li>$(window).load() 和window.onload=function(){}是页面中的所有元素（包括图片、flash）等都加载完毕后，才能执行；$(document).ready() 是页面中的DOM元素加载完成后便可执行。</li>
+<li>$(window).load()和window.onload=function(){}不同的是，前者可以和$(document).ready()一样，可以同时加载多个函数。</li>
+<li>当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素不是通过ajax回调填充的情况下，使用$(window).load()即可。</li>
+<li>当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素是通过ajax回调填充的情况下，使用$(window).load()会出现有时有效，有时无效的情况.</li>
+</ol>
+<h1 id="window、document的区别"><a href="#window、document的区别" class="headerlink" title="window、document的区别"></a>window、document的区别</h1><ol>
+<li>window代表的是浏览器窗口，即可视的浏览器窗口；document代表的是整个页面的dom元素；即document只是window的一个属性；</li>
+<li>两者的区别在页面有滚动条时可以直观的显示出来，当出现滚动条时，$(window).height和$(document).height是不相等的，$(document).height比$(window).height大，因为window的高度始终都是可见的浏览器窗口的高度，而document的高度则是整个页面的dom元素的高度，即超出一屏幕了。</li>
+</ol>
 ]]></content>
     
     <summary type="html">
