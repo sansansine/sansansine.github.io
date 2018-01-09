@@ -103,7 +103,7 @@
 <meta property="og:description" content="在阅读博客过程中的JavaScript疑惑记录">
 <meta property="og:image" content="http://yoursite.com/2017/11/22/JS随笔/js.png">
 <meta property="og:image" content="http://yoursite.com/2017/11/22/JS随笔/mask.png">
-<meta property="og:updated_time" content="2018-01-09T03:15:28.000Z">
+<meta property="og:updated_time" content="2018-01-09T03:21:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS随笔">
 <meta name="twitter:description" content="在阅读博客过程中的JavaScript疑惑记录">
@@ -372,7 +372,7 @@
 <ul>
 <li>Promise 错误<br>通过 Promise 可以帮助我们解决异步回调异常的问题，但是一旦 Promise 实例抛出异常而你没有用 catch 去捕获的话，onerror 或 try-catch 也无能为力，无法捕捉到错误<br>在写 Promise 实例的时候养成最后写上 catch 函数是个好习惯，如果你的应用用到很多的 Promise 实例的话，最好添加一个 Promise 全局异常捕获事件 unhandledrejection。</li>
 </ul>
-<h1 id="window-load-、window-onload-function-、-document-ready-的区别"><a href="#window-load-、window-onload-function-、-document-ready-的区别" class="headerlink" title="$(window).load()、window.onload=function(){}、$(document).ready()的区别"></a>$(window).load()、window.onload=function(){}、$(document).ready()的区别</h1><ol>
+<h1 id="load-、onload-function-、ready"><a href="#load-、onload-function-、ready" class="headerlink" title="load()、onload=function(){}、ready()"></a>load()、onload=function(){}、ready()</h1><ol>
 <li>$(window).load() 和window.onload=function(){}是页面中的所有元素（包括图片、flash）等都加载完毕后，才能执行；$(document).ready() 是页面中的DOM元素加载完成后便可执行。</li>
 <li>$(window).load()和window.onload=function(){}不同的是，前者可以和$(document).ready()一样，可以同时加载多个函数。</li>
 <li>当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素不是通过ajax回调填充的情况下，使用$(window).load()即可。</li>
@@ -568,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js立即执行函数的写法"><span class="nav-number">1.</span> <span class="nav-text">js立即执行函数的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript执行机制"><span class="nav-number">2.</span> <span class="nav-text">javascript执行机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript预解析"><span class="nav-number">3.</span> <span class="nav-text">javascript预解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS异常"><span class="nav-number">4.</span> <span class="nav-text">JS异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#window-load-、window-onload-function-、-document-ready-的区别"><span class="nav-number">5.</span> <span class="nav-text">$(window).load()、window.onload=function(){}、$(document).ready()的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#window、document的区别"><span class="nav-number">6.</span> <span class="nav-text">window、document的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js立即执行函数的写法"><span class="nav-number">1.</span> <span class="nav-text">js立即执行函数的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript执行机制"><span class="nav-number">2.</span> <span class="nav-text">javascript执行机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript预解析"><span class="nav-number">3.</span> <span class="nav-text">javascript预解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS异常"><span class="nav-number">4.</span> <span class="nav-text">JS异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#load-、onload-function-、ready"><span class="nav-number">5.</span> <span class="nav-text">load()、onload=function(){}、ready()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#window、document的区别"><span class="nav-number">6.</span> <span class="nav-text">window、document的区别</span></a></li></ol></div>
             
 
           </div>
