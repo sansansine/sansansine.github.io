@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-05T02:56:23.000Z</updated>
+  <updated>2018-01-17T06:32:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,20 +16,161 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/01/17/vue%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85%E9%9B%86%E5%90%88/"/>
+    <id>http://yoursite.com/2018/01/17/vue依赖安装集合/</id>
+    <published>2018-01-17T06:32:51.000Z</published>
+    <updated>2018-01-17T06:32:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>title: vue依赖安装集合<br>date: 2018-01-12 14:50:38<br>tags:<br>—】</p>
+<h1 id="在vue-cli的组件模板里使用font-awesome"><a href="#在vue-cli的组件模板里使用font-awesome" class="headerlink" title="在vue-cli的组件模板里使用font-awesome"></a>在vue-cli的组件模板里使用font-awesome</h1><blockquote>
+<p>npm install font-awesome</p>
+<ul>
+<li>在main.js里添加<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'font-awesome/css/font-awesome.css'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h1 id="在vue-cli的组件模板里使用Scss"><a href="#在vue-cli的组件模板里使用Scss" class="headerlink" title="在vue-cli的组件模板里使用Scss"></a>在vue-cli的组件模板里使用Scss</h1><ul>
+<li><p>依次执行以下命令 安装node-sass和sass-loader</p>
+<blockquote>
+<p>npm install node-sass –save-dev<br>npm install sass-loader –save-dev</p>
+</blockquote>
+</li>
+<li><p>修改相关webpack配置 打开webpack.base.config.js, 在module里的rules中加上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> test: /\.scss$/,</div><div class="line"> loaders : [&quot;style&quot;, &quot;css&quot;, &quot;sass&quot;],</div><div class="line"> include: [resolve(&apos;static&apos;), resolve(&apos;test&apos;)]</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果要在vue文件中的style使用scss,则在 style处声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;sass&quot; scoped&gt;</div><div class="line">  @import &apos;login.scss&apos;;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="在vue-cli的组件模板里使用amaze-vue"><a href="#在vue-cli的组件模板里使用amaze-vue" class="headerlink" title="在vue-cli的组件模板里使用amaze-vue"></a>在vue-cli的组件模板里使用amaze-vue</h1><p>通过npm安装amaze-vue:</p>
+<blockquote>
+<p>npm install amaze-vue –save</p>
+</blockquote>
+<p>修改src/main.js 文件:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> AmazeVue <span class="keyword">from</span> <span class="string">'amaze-vue'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'amaze-vue/dist/amaze-vue.css'</span>;</div><div class="line">Vue.use(AmazeVue);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: vue依赖安装集合&lt;br&gt;date: 2018-01-12 14:50:38&lt;br&gt;tags:&lt;br&gt;—】&lt;/p&gt;
+&lt;h1 id=&quot;在vue-cli的组件模板里使用font-awesome&quot;&gt;&lt;a href=&quot;#在vue-cli的组件模板里使用fon
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>帆软使用技巧记录</title>
+    <link href="http://yoursite.com/2018/01/16/%E5%B8%86%E8%BD%AF%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2018/01/16/帆软使用技巧记录/</id>
+    <published>2018-01-16T01:50:58.000Z</published>
+    <updated>2018-01-16T02:20:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="帆软制作报表，让标题行在翻页时仍然存在"><a href="#帆软制作报表，让标题行在翻页时仍然存在" class="headerlink" title="帆软制作报表，让标题行在翻页时仍然存在"></a>帆软制作报表，让标题行在翻页时仍然存在</h1><p>模版–》重复与冻结设置–》然后在重复标题从第一行到第一行出打勾即可</p>
+<h1 id="帆软制作饼状图"><a href="#帆软制作饼状图" class="headerlink" title="帆软制作饼状图"></a>帆软制作饼状图</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;帆软制作报表，让标题行在翻页时仍然存在&quot;&gt;&lt;a href=&quot;#帆软制作报表，让标题行在翻页时仍然存在&quot; class=&quot;headerlink&quot; title=&quot;帆软制作报表，让标题行在翻页时仍然存在&quot;&gt;&lt;/a&gt;帆软制作报表，让标题行在翻页时仍然存在&lt;/h1&gt;&lt;p&gt;模版
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git使用记录</title>
+    <link href="http://yoursite.com/2018/01/10/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2018/01/10/git使用记录/</id>
+    <published>2018-01-10T08:29:22.000Z</published>
+    <updated>2018-01-11T05:43:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>工作过程中git的使用结合大神博客的总结和整理<br><a id="more"></a></p>
+<h1 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h1><p><img src="/2018/01/10/git使用记录/1.png" alt="process"></p>
+<ul>
+<li>Workspace（工作区）：程序员进行开发改动的地方，是你当前看到的，也是最新的。</li>
+<li>Index / Stage（暂存区）：.git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。可以使用git status查看暂存区的状态。暂存区标记了你当前工作区中，哪些内容是被git管理的。当你完成某个需求或功能后需要提交到远程仓库，那么第一步就是通过git add先提交到暂存区，被git管理。                    </li>
+<li>Repository（仓库区/本地仓库）：保存了对象被提交 过的各个版本，比起工作区和暂存区的内容，它要更旧一些。git commit后同步index的目录树到本地仓库，方便从下一步通过git push同步本地仓库与远程仓库的同步。</li>
+<li>Remote（远程仓库）：远程仓库的内容可能被分布在多个地点的处于协作关系的本地仓库修改，因此它可能与本地仓库同步，也可能不同步，但是它的内容是最旧的。<br><b>小结:</b></li>
+<li>任何对象都是在工作区中诞生和被修改；</li>
+<li>任何修改都是从进入index区才开始被版本控制；</li>
+<li>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹；</li>
+<li>与协作者分享本地的修改，可以把它们push到远程仓库来共享。<br><img src="/2018/01/10/git使用记录/2.png" alt="sum"><h1 id="常用Git命令"><a href="#常用Git命令" class="headerlink" title="常用Git命令"></a>常用Git命令</h1><img src="/2018/01/10/git使用记录/3.png" alt="command"></li>
+<li>HEAD<br>HEAD，它始终指向当前所处分支的最新的提交点。你所处的分支变化了，或者产生了新的提交点，HEAD就会跟着改变。<br><img src="/2018/01/10/git使用记录/4.png" alt="command"></li>
+<li>add<br>主要实现将工作区修改的内容提交到暂存区，交由git管理。<br>git add .    添加当前目录的所有文件到暂存区<br>git add <dir>    添加指定目录到暂存区，包括子目录<br>git add <file1>    添加指定文件到暂存区</file1></dir></li>
+<li>commit<br>主要实现将暂存区的内容提交到本地仓库，并使得当前分支的HEAD向后移动一个提交点。<br>git commit -m <message>    提交暂存区到本地仓库,message代表说明信息<br>git commit <file1> -m <message>    提交暂存区的指定文件到本地仓库<br>git commit –amend -m <message>    使用一次新的commit，替代上一次提交</message></message></file1></message></li>
+<li>branch<br>涉及到协作，自然会涉及到分支，关于分支，大概有展示分支，切换分支，创建分支，删除分支这四种操作。<br>git branch    列出所有本地分支<br>git branch -r    列出所有远程分支<br>git branch -a    列出所有本地分支和远程分支<br>git branch <branch-name>    新建一个分支，但依然停留在当前分支<br>git checkout -b <branch-name>    新建一个分支，并切换到该分支<br>git branch –track <branch><remote-branch>    新建一个分支，与指定的远程分支建立追踪关系<br>git checkout <branch-name>    切换到指定分支，并更新工作区<br>git branch -d <branch-name>    删除分支<br>git push origin –delete <branch-name>    删除远程分支</branch-name></branch-name></branch-name></remote-branch></branch></branch-name></branch-name></li>
+<li>merge<br>merge命令把不同的分支合并起来。<br>git fetch <remote>    merge之前先拉一下远程仓库最新代码<br>git merge <branch>    合并指定分支到当前分支</branch></remote></li>
+<li>rebase<br>rebase又称为衍合，是合并的另外一种选择。</li>
+<li>reset<br>reset命令把当前分支指向另一个位置，并且相应的变动工作区和暂存区。<br>git reset —soft <commit>    只改变提交点，暂存区和工作目录的内容都不改变<br>git reset —mixed <commit>    改变提交点，同时改变暂存区的内容<br>git reset —hard <commit>    暂存区、工作区的内容都会被修改到与提交点完全一致的状态<br>git reset –hard HEAD    让工作区回到上次提交时的状态</commit></commit></commit></li>
+<li><p>revert<br>git revert用一个新提交来消除一个历史提交所做的任何修改。<br><b>revert与reset的区别：</b><br>git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit。<br>在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。因为git revert是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，导致这部分改变不会再次出现，减少冲突。但是git reset是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入，产生很多冲突。关于这一点，不太理解的可以看这篇文章。<br>git reset 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。</p>
+</li>
+<li><p>push<br>上传本地仓库分支到远程仓库分支，实现同步。<br>git push <remote><branch>    上传本地指定分支到远程仓库<br>git push <remote> –force    强行推送当前分支到远程仓库，即使有冲突<br>git push <remote> –all    推送所有分支到远程仓库</remote></remote></branch></remote></p>
+</li>
+<li>其他命令<br>git status    显示有变更的文件<br>git log    显示当前分支的版本历史<br>git diff    显示暂存区和工作区的差异<br>git diff HEAD    显示工作区与当前分支最新commit之间的差异<br>git cherry-pick <commit>    选择一个commit，合并进当前分支</commit></li>
+</ul>
+<h1 id="Git-文件状态"><a href="#Git-文件状态" class="headerlink" title="Git 文件状态"></a>Git 文件状态</h1><p>git status:</p>
+<ul>
+<li>untracked 新文件未加入版本管理</li>
+<li>unmodify</li>
+<li>modified</li>
+<li>staged 用 git add 暂存<br><b>git diff –staged 或 git diff –cached 可查看已暂存文件和上次提交的区别</b></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工作过程中git的使用结合大神博客的总结和整理&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML5.2变更内容</title>
+    <link href="http://yoursite.com/2018/01/10/HTML5-2%E5%8F%98%E6%9B%B4%E5%86%85%E5%AE%B9/"/>
+    <id>http://yoursite.com/2018/01/10/HTML5-2变更内容/</id>
+    <published>2018-01-10T01:24:25.000Z</published>
+    <updated>2018-01-10T03:08:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.<br><a id="more"></a></p>
+<h1 id="新增的dialog元素"><a href="#新增的dialog元素" class="headerlink" title="新增的dialog元素"></a>新增的dialog元素</h1><p>帮助我们快速实现一个对话框.在HTML5.2中,你只需要这写:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">id</span>=<span class="string">"dialog"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是对话框标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是对话框内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>添加open属性让他显示:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">id</span>=<span class="string">"dialog"</span> <span class="attr">open</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>调用它的show()方法让他显示:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dialog = <span class="built_in">document</span>.querySelector(<span class="string">'#dialog'</span>).show();</div></pre></td></tr></table></figure></p>
+<p>想要这个对话框隐藏,只需要调用这个dialog元素的close()方法即可<br>显示对话框的同时,有一个遮罩层的话，使用showModal()；注意一点的是open属性和showModal()不能同时使用</p>
+<h1 id="支付请求API-—-allowpaymentrequest"><a href="#支付请求API-—-allowpaymentrequest" class="headerlink" title="支付请求API — allowpaymentrequest"></a>支付请求API — allowpaymentrequest</h1><p>在HTML5.2之前.对于支付请求的API是不能在iframe中来完成的.所以每次我们在进行移动支付时都需要跳转到另外一个支付页面才能完成付款.而现在,使用allowpaymentrequest属性应用在iframe上<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">allowpaymentrequest</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="在页面上同时使用多个main标签"><a href="#在页面上同时使用多个main标签" class="headerlink" title="在页面上同时使用多个main标签"></a>在页面上同时使用多个main标签</h1><p>而现在,随着单页面应用(SPA)的越来越流行.使得这一特性的已经不符合当下的实景,所以在HTML5.2中.在页面中同时出现多个<main>标签是被允许的.只要在同一时间内,只有一个<main>标签是对外显示的,其他所有都是被hidden属性隐藏的即可<br><b>此外要注意,隐藏<main>标签的方法必须是使用hidden属性才行.其它的如:display: none、透明的为0等方法不行.这会让<main>标签失去自己的语义和作用.</main></main></b></main></main></p>
+<h1 id="被删除的属性和元素"><a href="#被删除的属性和元素" class="headerlink" title="被删除的属性和元素"></a>被删除的属性和元素</h1><p>被删除的元素<br>keygen：用于帮助生成表单的公钥<br>menu和menuitem：用于创建导航或上下文菜单<br>被删除的属性<br>Window.showModalDialog(): 创建并显示一个包含指定HTML文档的模态框。<br>插件API: 提供有关浏览器插件的信息 .<br>废弃的HTML头部声明<br>以下两种HTML的头部声明已在HTML中废弃<br>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “<a href="http://www.w3.org/TR/html4/strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a><br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>WebStorm 使用技巧</title>
     <link href="http://yoursite.com/2018/01/05/WebStorm-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2018/01/05/WebStorm-使用技巧/</id>
     <published>2018-01-05T02:15:58.000Z</published>
-    <updated>2018-01-05T02:56:23.000Z</updated>
+    <updated>2018-01-09T05:48:47.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>command + g 或者command + f在当前文件中查找<br>command + shift + f 在某文件夹下查找<br>command + r 替换</p>
+    <content type="html"><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>commond+shift+O :按照文件名查找文件<br>command + g 或者command + f在当前文件中查找<br>command + shift + f 在某文件夹下查找<br>command + r 替换</p>
 <h1 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h1><p>command + d 行复制<br>command + x 剪切行<br>ctrl + g 查找与当前选中的单词相同的单词<br>command + shift + ‘up/down方向键’ 上下移动选中的代码块<br>shift + enter 重新开始新的一行 （无论光标在何位置）<br>alt + ‘left/right方向键’ 以单词为单位移动光标<br>command + e 选择最近打开的文件<br>ctrl + tab 切换当前打开的文件<br>alt + ‘up/down方向键’ 向上/下选择代码块<br>command + 退格键 删除当前行</p>
 <h1 id="view代码神器"><a href="#view代码神器" class="headerlink" title="view代码神器"></a>view代码神器</h1><p>command + p 显示参数信息<br>command + 点击 跳转到变量定义处<br>fn + alt + F7 查看当前变量在何处被调用过<br>fn+shift + F6 高级重命名变量<br>command + shift + c 复制当前文件的绝对路径</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;查找&quot;&gt;&lt;a href=&quot;#查找&quot; class=&quot;headerlink&quot; title=&quot;查找&quot;&gt;&lt;/a&gt;查找&lt;/h1&gt;&lt;p&gt;command + g 或者command + f在当前文件中查找&lt;br&gt;command + shift + f 在某文件夹下查找&lt;br&gt;c
+      &lt;h1 id=&quot;查找&quot;&gt;&lt;a href=&quot;#查找&quot; class=&quot;headerlink&quot; title=&quot;查找&quot;&gt;&lt;/a&gt;查找&lt;/h1&gt;&lt;p&gt;commond+shift+O :按照文件名查找文件&lt;br&gt;command + g 或者command + f在当前文件中查找&lt;br&gt;com
     
     </summary>
     
@@ -41,9 +182,10 @@
     <link href="http://yoursite.com/2018/01/02/%E5%89%8D%E7%AB%AF%E7%96%91%E6%83%91%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2018/01/02/前端疑惑记录/</id>
     <published>2018-01-02T09:58:50.000Z</published>
-    <updated>2018-01-05T05:42:35.000Z</updated>
+    <updated>2018-01-10T06:35:39.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="“use-strict”"><a href="#“use-strict”" class="headerlink" title="“use strict”"></a>“use strict”</h1><p><b>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。</b></p>
+    <content type="html"><![CDATA[<h1 id="Script-Error"><a href="#Script-Error" class="headerlink" title="Script Error"></a>Script Error</h1><p>是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js错误信息中可能包含一些敏感信息，比如用户名、权限提示等，希望能够把这类信息屏蔽。目前跨域的场景下会触发这种安全限制，window.onerror无法获得具体出错信息，而只能得到Script error.<br>解决ScriptError 问题：<br>响应头增加 access-control-allow-orgin （以下简称AC）<br>每个fucntion 包裹 try-catch<br>切面包裹入口函数， try-catch</p>
+<h1 id="“use-strict”"><a href="#“use-strict”" class="headerlink" title="“use strict”"></a>“use strict”</h1><p><b>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。</b></p>
 <ol>
 <li>优点<br>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;消除代码运行的一些不安全之处，保证代码运行的安全提高编译器效率，增加运行速度;为未来新版本的Javascript做好铺垫。<br>“严格模式”体现了Javascript更合理、更安全、更严谨的发展方向，包括IE 10在内的主流浏览器，都已经支持它，许多大项目已经开始全面拥抱它。另一方面，同样的代码，在”严格模式”中，可能会有不一样的运行结果；一些在”正常模式”下可以运行的语句，在”严格模式”下将不能运行。</li>
 <li><p>调用</p>
@@ -113,7 +255,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;“use-strict”&quot;&gt;&lt;a href=&quot;#“use-strict”&quot; class=&quot;headerlink&quot; title=&quot;“use strict”&quot;&gt;&lt;/a&gt;“use strict”&lt;/h1&gt;&lt;p&gt;&lt;b&gt;ECMAscript 5添加了第二种运行模式：”严格模
+      &lt;h1 id=&quot;Script-Error&quot;&gt;&lt;a href=&quot;#Script-Error&quot; class=&quot;headerlink&quot; title=&quot;Script Error&quot;&gt;&lt;/a&gt;Script Error&lt;/h1&gt;&lt;p&gt;是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js
     
     </summary>
     
@@ -152,9 +294,10 @@
     <link href="http://yoursite.com/2017/12/27/%E4%BC%AA%E5%85%83%E7%B4%A0%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2017/12/27/伪元素小技巧/</id>
     <published>2017-12-27T06:39:58.000Z</published>
-    <updated>2017-12-27T07:11:02.000Z</updated>
+    <updated>2018-01-11T09:34:28.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">    <span class="attribute">clear</span>:both ;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h1 id="前面-后面添加图片"><a href="#前面-后面添加图片" class="headerlink" title="前面/后面添加图片"></a>前面/后面添加图片</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>: <span class="built_in">url</span>(../img/nav_fg.png);&#125;</div></pre></td></tr></table></figure>
+<h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">    <span class="attribute">clear</span>:both ;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="画分割线"><a href="#画分割线" class="headerlink" title="画分割线"></a>画分割线</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:after</span>,<span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h1><ol>
 <li>counter-reset: 属性创建或者重置一个或多个计数器；</li>
@@ -168,7 +311,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;清除浮动&quot;&gt;&lt;a href=&quot;#清除浮动&quot; class=&quot;headerlink&quot; title=&quot;清除浮动&quot;&gt;&lt;/a&gt;清除浮动&lt;/h1&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+      &lt;h1 id=&quot;前面-后面添加图片&quot;&gt;&lt;a href=&quot;#前面-后面添加图片&quot; class=&quot;headerlink&quot; title=&quot;前面/后面添加图片&quot;&gt;&lt;/a&gt;前面/后面添加图片&lt;/h1&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td 
     
     </summary>
     
@@ -180,7 +323,7 @@
     <link href="http://yoursite.com/2017/12/25/css%E6%8A%80%E5%B7%A7%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/12/25/css技巧记录/</id>
     <published>2017-12-25T08:35:56.000Z</published>
-    <updated>2018-01-05T02:13:58.000Z</updated>
+    <updated>2018-01-11T09:04:56.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>title: css技巧记录<br>date: 2017-12-25 16:00:07</p>
@@ -218,6 +361,8 @@
 <p>31、 简单的文字模糊效果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">*&#123; </div><div class="line">    <span class="attribute">color</span>: transparent;</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">#111</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>32、 鼠标移进网页里消失<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    <span class="attribute">cursor</span>: none<span class="meta">!important</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>33、 多重边框<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">12px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">18px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2), <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">24px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2);</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>34、去掉li前面的点<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span>&#123;</div><div class="line">    <span class="attribute">list-style-type</span>:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>35、去掉a标签下划线<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -622,10 +767,10 @@
     <link href="http://yoursite.com/2017/12/01/webpack%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
     <id>http://yoursite.com/2017/12/01/webpack学习一/</id>
     <published>2017-12-01T03:30:45.000Z</published>
-    <updated>2017-12-01T06:01:16.000Z</updated>
+    <updated>2018-01-09T09:28:50.000Z</updated>
     
     <content type="html"><![CDATA[<p><b>webpack是一个现代JavaScript应用程序的模块打包器(module bundler)。当webpack处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个bundle。</b><br><a id="more"></a></p>
-<h1 id="1、webpack的四个核心概念"><a href="#1、webpack的四个核心概念" class="headerlink" title="1、webpack的四个核心概念"></a>1、webpack的四个核心概念</h1><ul>
+<h1 id="webpack的四个核心概念"><a href="#webpack的四个核心概念" class="headerlink" title="webpack的四个核心概念"></a>webpack的四个核心概念</h1><ul>
 <li><p>入口(entry):<br>入口起点(entry point)指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和间接）依赖的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./path/to/my/entry/file.js'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
@@ -640,9 +785,35 @@
 <blockquote>
 <p>“嘿，webpack 编译器，当你碰到「在 require()/import 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先使用 raw-loader 转换一下。”</p>
 <ul>
-<li>插件(plugins)</li>
+<li>插件(plugins)<br>插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务。想要使用一个插件，你只需要 require() 它，然后把它添加到 plugins 数组中。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">// 通过 npm 安装</span></div><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">// 用于访问内置插件</span></div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./path/to/my/entry/file.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    <span class="attr">filename</span>: <span class="string">'my-first-webpack.bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</div><div class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
+<h1 id="入口起点-Entry-Points"><a href="#入口起点-Entry-Points" class="headerlink" title="入口起点(Entry Points)"></a>入口起点(Entry Points)</h1><p>单个入口（简写）语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">    <span class="attr">app</span>: <span class="string">'./src/app.js'</span>,</div><div class="line">    <span class="attr">vendors</span>: <span class="string">'./src/vendors.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;<span class="comment">/* 这告诉我们 webpack 从 app.js 和 vendors.js 开始创建依赖图(dependency graph)。这些依赖图是彼此完全分离、互相独立的。这种方式比较常见于只有一个入口起点（不包括 vendor）的单页应用程序(SPA) */</span></div></pre></td></tr></table></figure></p>
+<p>多页面应用程序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">    <span class="attr">pageOne</span>: <span class="string">'./src/pageOne/index.js'</span>,</div><div class="line">    <span class="attr">pageTwo</span>: <span class="string">'./src/pageTwo/index.js'</span>,</div><div class="line">    <span class="attr">pageThree</span>: <span class="string">'./src/pageThree/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;<span class="comment">/* 我们告诉 webpack 需要 3 个独立分离的依赖图 */</span></div></pre></td></tr></table></figure></p>
+<h1 id="输出-Output"><a href="#输出-Output" class="headerlink" title="输出(Output)"></a>输出(Output)</h1><p><b>配置 output 选项可以控制 webpack 如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置。</b><br>在 webpack 中配置 output 属性的最低要求是，将它的值设置为一个对象，包括以下两点：filename 用于输出文件的文件名;目标输出目录 path 的绝对路径。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: <span class="string">'/home/proj/public/assets'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p>
+<p>多个入口起点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">    <span class="attr">app</span>: <span class="string">'./src/app.js'</span>,</div><div class="line">    <span class="attr">search</span>: <span class="string">'./src/search.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'[name].js'</span>,</div><div class="line">    <span class="attr">path</span>: __dirname + <span class="string">'/dist'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 写入到硬盘：./dist/app.js, ./dist/search.js</span></div></pre></td></tr></table></figure></p>
+<h1 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h1><p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
+<ul>
+<li><p>首先安装相对应的 loader:</p>
+<blockquote>
+<p>npm install –save-dev css-loader<br>npm install –save-dev ts-loader</p>
+</blockquote>
+</li>
+<li><p>配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</div><div class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>三种使用 loader 的方式<br>配置（推荐）：在 webpack.config.js 文件中指定 loader。<br>内联：在每个 import 语句中显式指定 loader。<br>CLI：在 shell 命令中指定它们。</p>
+</li>
+</ul>
+<h1 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件(Plugins)"></a>插件(Plugins)</h1><p>插件是 wepback 的支柱功能,插件目的在于解决 loader 无法实现的其他事。</p>
+<ul>
+<li>用法<br>由于插件可以携带参数/选项，你必须在 webpack 配置中，向 plugins 属性传入 new 实例。根据你的 webpack 用法，这里有多种方式使用插件。</li>
+<li>配置<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//通过 npm 安装</span></div><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">//访问内置的插件</span></div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./path/to/my/entry/file.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'my-first-webpack.bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'dist'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">loaders</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">        <span class="attr">use</span>: <span class="string">'babel-loader'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</div><div class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置(Configuration)"></a>配置(Configuration)</h1><p> webpack 的配置文件，是导出一个对象的 JavaScript 文件。可以做到以下事情：<br> 通过 require(…) 导入其他文件<br> 通过 require(…) 使用 npm 的工具函数<br> 使用 JavaScript 控制流表达式，例如 ?: 操作符<br> 对常用值使用常量或变量<br> 编写并执行函数来生成部分配置</p>
+<h1 id="模块-Modules"><a href="#模块-Modules" class="headerlink" title="模块(Modules)"></a>模块(Modules)</h1><p>在模块化编程中，开发者将程序分解成离散功能块(discrete chunks of functionality)，并称之为模块。</p>
 ]]></content>
     
     <summary type="html">
@@ -909,195 +1080,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;b&gt;使用sketch过程中一些小技巧的记录&lt;/b&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>初涉angular</title>
-    <link href="http://yoursite.com/2017/11/23/%E5%88%9D%E6%B6%89angular/"/>
-    <id>http://yoursite.com/2017/11/23/初涉angular/</id>
-    <published>2017-11-23T06:43:54.000Z</published>
-    <updated>2017-12-01T01:54:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><b>AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。</b><br><a id="more"></a></p>
-<h1 id="1-AngularJS-表达式"><a href="#1-AngularJS-表达式" class="headerlink" title="1 AngularJS 表达式"></a>1 AngularJS 表达式</h1><p><b>AngularJS 使用表达式把数据绑定到HTML</b></p>
-<ol>
-<li>AngularJS 表达式写在双大括号内：,与ng-bind指令有异曲同工之妙;</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;b&gt;AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。&lt;/b&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Vue实例和生命周期的理解</title>
-    <link href="http://yoursite.com/2017/11/23/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://yoursite.com/2017/11/23/Vue-生命周期的理解/</id>
-    <published>2017-11-23T02:17:12.000Z</published>
-    <updated>2017-11-23T03:14:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。</strong><br><a id="more"></a></p>
-<h1 id="1、Vue实例详解"><a href="#1、Vue实例详解" class="headerlink" title="1、Vue实例详解"></a>1、Vue实例详解</h1><p>每个 Vue 应用都是通过 Vue 函数创建一个新的 Vue 实例开始的</p>
-<h2 id="1-1-data对象"><a href="#1-1-data对象" class="headerlink" title="1.1 data对象"></a>1.1 data对象</h2><p>数据绑定离不开data里面的数据,也是Vue的核心属性.data对象是Vue绑定数据到HTML标签的数据源泉,Vue会自动将data里面的数据进行递归抓换成getter和setter，然后就可以自动更新HTML标签了</p>
-<h2 id="1-2-computed"><a href="#1-2-computed" class="headerlink" title="1.2 computed"></a>1.2 computed</h2><p>Vue的计算属性（computed)的属性会自动混入Vue的实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。这就很强大了，再计算属性中定义的函数里面可以直接使用指向了vue实例的this<br>Vue检测到<strong>数据发生变动</strong>时就会执行对相应数据有引用的函数<br>应用：利用computed可以做一些监控之类的效果<br>computed vs methods vs watch<br>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。<br>computed是在HTML DOM加载后马上执行的，如赋值；<br>而methods则必须要有一定的触发条件才能执行，如点击事件；<br>watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是对象，包含选项。<br>所以他们的执行顺序为：默认加载的时候先computed再watch，不执行methods；等触发某一事件后，则是：先methods再watch。</p>
-<h2 id="1-3-methods"><a href="#1-3-methods" class="headerlink" title="1.3 methods"></a>1.3 methods</h2><p>methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些方法，或者在指令表达式中使用。方法中的 this 自动绑定为 Vue 实例。<br><strong>注意，不应该使用箭头函数来定义method函数,理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向Vue实例，this.a 将是 undefined</strong></p>
-<h2 id="1-4-watch"><a href="#1-4-watch" class="headerlink" title="1.4 watch"></a>1.4 watch</h2><p>一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">watch: &#123;</div><div class="line">    <span class="comment">// 监控a变量变化的时候，自动执行此函数</span></div><div class="line">    a: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'new: %s, old: %s'</span>, val, oldVal)</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 深度 watcher</span></div><div class="line">    c: &#123;</div><div class="line">      <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">      <span class="attr">deep</span>: <span class="literal">true</span> <span class="comment">//对象内部的属性监听，也叫深度监听,数组的改变不需要使用深度watch</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p><strong>//注意，不应该使用箭头函数来定义 watcher 函数 (例如 searchQuery: newValue =&gt; this.updateAutocomplete(newValue))。理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.updateAutocomplete 将是 undefined。</strong></p>
-<h2 id="1-5-设置el的详解"><a href="#1-5-设置el的详解" class="headerlink" title="1.5 设置el的详解"></a>1.5 设置el的详解</h2><p>如果这个选项在实例化时有作用，实例将立即进入编译过程，否则，需要显式调用 vm.$mount()(动态添加el)手动开启编译</p>
-<h1 id="2、Vue实例的生命周期"><a href="#2、Vue实例的生命周期" class="headerlink" title="2、Vue实例的生命周期"></a>2、Vue实例的生命周期</h1><p>Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期</p>
-<h2 id="2-1-beforeCreate"><a href="#2-1-beforeCreate" class="headerlink" title="2.1 beforeCreate"></a>2.1 beforeCreate</h2><p>应用：可以在这加个loading事件<br>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用</p>
-<h2 id="2-2-created"><a href="#2-2-created" class="headerlink" title="2.2 created"></a>2.2 created</h2><p>应用：在这结束loading，还做一些初始化，实现函数自执行<br>实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见</p>
-<h2 id="2-3-beforeMount"><a href="#2-3-beforeMount" class="headerlink" title="2.3 beforeMount"></a>2.3 beforeMount</h2><p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
-<h2 id="2-4-mounted"><a href="#2-4-mounted" class="headerlink" title="2.4 mounted"></a>2.4 mounted</h2><p>应用：在这发起后端请求，拿回数据，配合路由钩子做一些事情<br>el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。</p>
-<h2 id="2-5-beforeUpdate"><a href="#2-5-beforeUpdate" class="headerlink" title="2.5 beforeUpdate"></a>2.5 beforeUpdate</h2><p>数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。 你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。</p>
-<h2 id="2-6-update"><a href="#2-6-update" class="headerlink" title="2.6 update"></a>2.6 update</h2><p>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
-<h2 id="2-7-beforeDestroy"><a href="#2-7-beforeDestroy" class="headerlink" title="2.7 beforeDestroy"></a>2.7 beforeDestroy</h2><p>实例销毁之前调用。在这一步，实例仍然完全可用</p>
-<h2 id="2-8-destroy"><a href="#2-8-destroy" class="headerlink" title="2.8 destroy"></a>2.8 destroy</h2><p>Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JS随笔</title>
-    <link href="http://yoursite.com/2017/11/22/JS%E9%9A%8F%E7%AC%94/"/>
-    <id>http://yoursite.com/2017/11/22/JS随笔/</id>
-    <published>2017-11-22T05:40:48.000Z</published>
-    <updated>2018-01-09T03:21:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>在阅读博客过程中的JavaScript疑惑记录</strong><br><a id="more"></a></p>
-<h1 id="js立即执行函数的写法"><a href="#js立即执行函数的写法" class="headerlink" title="js立即执行函数的写法"></a>js立即执行函数的写法</h1><p>立即执行函数其实就是直接调用匿名函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">    &#125;()</div><div class="line">); </div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;)(); </div><div class="line"></div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;(); </div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">2</span>);</div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
-<h1 id="javascript执行机制"><a href="#javascript执行机制" class="headerlink" title="javascript执行机制"></a>javascript执行机制</h1><p><strong>javascript是一门单线程语言，在最新的HTML5中提出了Web-Worker，但javascript是单线程这一核心仍未改变。所以一切javascript版的”多线程”都是用单线程模拟出来的</strong></p>
-<ol>
-<li>js任务：</li>
-</ol>
-<ul>
-<li>同步任务（当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染）、</li>
-<li>异步任务（加载图片音乐之类占用资源大耗时久的任务，就是异步任务）</li>
-</ul>
-<p><img src="/2017/11/22/JS随笔/js.png" alt="执行机制"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = [];</div><div class="line">$.ajax(&#123;</div><div class="line">    <span class="attr">url</span>:www.javascript.com,</div><div class="line">    <span class="attr">data</span>:data,</div><div class="line">    <span class="attr">success</span>:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'发送成功!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'代码执行结束'</span>);</div><div class="line"><span class="comment">//ajax进入Event Table，注册回调函数success</span></div><div class="line"><span class="comment">//执行console.log('代码执行结束')</span></div><div class="line"><span class="comment">//ajax事件完成，回调函数success进入Event Queue</span></div><div class="line"><span class="comment">//主线程从Event Queue读取回调函数success并执行</span></div></pre></td></tr></table></figure></p>
-<ol>
-<li>setTimeout(在指定的毫秒数后调用函数或计算表达式)(异步)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'延时3秒'</span>);</div><div class="line">&#125;,<span class="number">3000</span>)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，意思就是不用再等多少秒了，只要主线程执行栈内的同步任务全部执行完成，栈为空就马上执行。<br>3.setInterval<br><strong>可按照指定的周期（以毫秒计）来调用函数或计算表达式,setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭.</strong><br>对于执行顺序来说，setInterval会每隔指定的时间将注册的函数置入Event Queue，如果前面的任务耗时太久，那么同样需要等待<br>4.Promise与process.nextTick(callback)<br><strong>Promise就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理</strong><br><strong>process.nextTick(callback)在事件循环的下一次循环中调用 callback 回调函数</strong><br>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval<br>micro-task(微任务)：Promise，process.nextTick<br><img src="/2017/11/22/JS随笔/mask.png" alt="mask"></p>
-<h1 id="javascript预解析"><a href="#javascript预解析" class="headerlink" title="javascript预解析"></a>javascript预解析</h1><p><strong>预解析是把带有var和function关键字的事先声明，但不会赋值</strong></p>
-<ul>
-<li>var：只要是通过var定义的，不管是变量，还是函数，都是先赋值undefined，如果是变量，也不管变量有没有赋值，在预解析阶段，都是会被赋值为undefined；</li>
-<li>function：function进行预解析的时候，不仅是声明而且还定义（define）了，但是它存储的数据的那个空间里面存储的是代码是字符串，没有任何意义；</li>
-</ul>
-<p>1.变量声明提前；<br>2.function优先于var<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">a();</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">10</span>)</div><div class="line">&#125;   </div><div class="line">alert(a);</div><div class="line">a=<span class="number">6</span>;</div><div class="line">a(); </div><div class="line"><span class="comment">//刚开始，a就是function a()&#123;alert(10)&#125; ，就会看到这个函数</span></div><div class="line"><span class="comment">//alert(10)</span></div><div class="line"><span class="comment">//alert(3)</span></div><div class="line"><span class="comment">//报错，a已经不是函数</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">a();</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="keyword">var</span> a=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">10</span>)</div><div class="line">&#125; ;  </div><div class="line">alert(a);</div><div class="line">a=<span class="number">6</span>;</div><div class="line">a();</div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="comment">//报错,a是undefined，is not a function</span></div></pre></td></tr></table></figure>
-<p>3.声明式函数与赋值式函数，区别在于：在JS的预编译期，声明式函数将会先被提取出来，然后才按顺序执行js代码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">f();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//声明式函数</span></div><div class="line"> alert(<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line">f1();</div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//赋值式函数</span></div><div class="line"> alert(<span class="number">2</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>作用域：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(a);</div><div class="line">    <span class="keyword">var</span> a=<span class="number">3</span></div><div class="line">&#125;</div><div class="line">aa();</div><div class="line"><span class="comment">//underfind  在aa函数里面，有var a=3，那么在aa作用域里面，就是把a这个变量声明提前，但是不会赋值，所以是underfind</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">    alert(a);</div><div class="line">    <span class="keyword">var</span> a=<span class="number">3</span></div><div class="line">&#125;</div><div class="line">aa(<span class="number">5</span>);</div><div class="line">alert(a)</div><div class="line"><span class="comment">//5,0   在函数体内，参数a的优先级高于变量a</span></div></pre></td></tr></table></figure>
-<p>数据排列：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">num</span>(<span class="params">n,m</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(n);</div><div class="line">    <span class="keyword">if</span>(n&lt;m)&#123;</div><div class="line">        num(n+<span class="number">1</span>,m);</div><div class="line">        <span class="built_in">console</span>.log(n);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">num(<span class="number">2</span>,<span class="number">5</span>)  <span class="comment">//2345432</span></div></pre></td></tr></table></figure></p>
-<p>其它：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line"> &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);</div><div class="line"><span class="comment">//这个大家就要小心一点了，答案是5    55555</span></div><div class="line"><span class="comment">//在setTimeout执行之前，for循环早就执行完了，i的值早已经是5了，所以一开始是执行，最后面的console.log(i);</span></div><div class="line"><span class="comment">//在for循环的时候一下子自定义5个setTimeout，大概一秒后，就是输出55555</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123; <span class="comment">// j = i</span></div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(j);</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line"> &#125;)(i);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i); </div><div class="line"><span class="comment">//这里的解析和上面基本一样，只是用闭包来记录每一次循环的i,</span></div><div class="line"><span class="comment">//所以答案是5     01234</span></div></pre></td></tr></table></figure>
-<p>let的局部作用域：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line"> &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);</div><div class="line"><span class="comment">//结果是  报错   01234</span></div></pre></td></tr></table></figure></p>
-<h1 id="JS异常"><a href="#JS异常" class="headerlink" title="JS异常"></a>JS异常</h1><p>Javascript执行过程：</p>
-<ol>
-<li>当前代码块将作为一个任务压入任务队列中，JS线程会不断地从任务队列中提取任务执行。</li>
-<li>当任务执行过程中出现异常，且异常没有捕获处理，则会一直沿着调用栈一层层向外抛出，最终终止当前任务的执行。</li>
-<li>JS线程会<b>继续</b>从任务队列中提取下一个任务继续执行。</li>
-</ol>
-<p>对于 Javascript 而言，我们面对的仅仅只是异常，异常的出现不会直接导致 JS 引擎崩溃，最多只会使当前执行的任务终止。</p>
-<p><b>脚本错误一般分为两种：语法错误(SyntaxError)，运行时错误。几种异常监控的处理方式：</b></p>
-<ul>
-<li><b>try-catch 异常处理</b><br>通过给代码块进行 try-catch 进行包装后，当代码块发生出错时 catch 将能捕捉到错误的信息，页面也将可以继续执行。但try-catch只能捕获捉到<b>运行时非异步错误</b>，对于语法错误和异步错误就捕捉不到。</li>
-<li><b>window.onerror 异常处理</b><br>window.onerror 捕获异常能力比 try-catch 稍微强点，无论是异步还是非异步错误，onerror 都能捕获到运行时错误,对于语法错误还是无能为力.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">msg, url, row, col, error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我知道错误了'</span>);</div><div class="line">  <span class="built_in">console</span>.log(&#123;</div><div class="line">    msg,  url,  row, col, error</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div><div class="line">error;<span class="comment">/* 运行时同步错误 */</span></div><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">msg, url, row, col, error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我知道异步错误了'</span>);</div><div class="line">  <span class="built_in">console</span>.log(&#123;</div><div class="line">    msg,  url,  row, col, error</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  error;</div><div class="line">&#125;);<span class="comment">/* 异步错误 */</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>1、 对于 onerror 这种全局捕获，最好写在所有 JS 脚本的前面，因为你无法保证你写的代码是否出错，如果写在后面，一旦发生错误的话是不会被 onerror 捕获到的<br>2、 onerror 是无法捕获到网络异常的错误</p>
-<p><b>在实际的使用过程中，onerror 主要是来捕获预料之外的错误，而 try-catch 则是用来在可预见情况下监控特定的错误，两者结合使用更加高效。</b></p>
-<ul>
-<li>Promise 错误<br>通过 Promise 可以帮助我们解决异步回调异常的问题，但是一旦 Promise 实例抛出异常而你没有用 catch 去捕获的话，onerror 或 try-catch 也无能为力，无法捕捉到错误<br>在写 Promise 实例的时候养成最后写上 catch 函数是个好习惯，如果你的应用用到很多的 Promise 实例的话，最好添加一个 Promise 全局异常捕获事件 unhandledrejection。</li>
-</ul>
-<h1 id="load-、onload-function-、ready"><a href="#load-、onload-function-、ready" class="headerlink" title="load()、onload=function(){}、ready()"></a>load()、onload=function(){}、ready()</h1><ol>
-<li>$(window).load() 和window.onload=function(){}是页面中的所有元素（包括图片、flash）等都加载完毕后，才能执行；$(document).ready() 是页面中的DOM元素加载完成后便可执行。</li>
-<li>$(window).load()和window.onload=function(){}不同的是，前者可以和$(document).ready()一样，可以同时加载多个函数。</li>
-<li>当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素不是通过ajax回调填充的情况下，使用$(window).load()即可。</li>
-<li>当某一触发事件，需要页面的所有元素都加载完毕后才执行，并且元素是通过ajax回调填充的情况下，使用$(window).load()会出现有时有效，有时无效的情况.</li>
-</ol>
-<h1 id="window、document的区别"><a href="#window、document的区别" class="headerlink" title="window、document的区别"></a>window、document的区别</h1><ol>
-<li>window代表的是浏览器窗口，即可视的浏览器窗口；document代表的是整个页面的dom元素；即document只是window的一个属性；</li>
-<li>两者的区别在页面有滚动条时可以直观的显示出来，当出现滚动条时，$(window).height和$(document).height是不相等的，$(document).height比$(window).height大，因为window的高度始终都是可见的浏览器窗口的高度，而document的高度则是整个页面的dom元素的高度，即超出一屏幕了。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;在阅读博客过程中的JavaScript疑惑记录&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6  学习笔记</title>
-    <link href="http://yoursite.com/2017/11/15/ES6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/11/15/ES6-学习笔记/</id>
-    <published>2017-11-15T09:42:06.000Z</published>
-    <updated>2018-01-09T02:38:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><b>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</b><br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// ES5</span></div><div class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h1 id="let"><a href="#let" class="headerlink" title="let"></a>let</h1><ol>
-<li><p>表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div><div class="line"><span class="comment">// abc</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>不存在变量提升<br>var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；<br>let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p>
-</li>
-<li>暂时性死区<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错；<br>“暂时性死区”也意味着typeof不再是一个百分之百安全的操作.暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
-<ol>
-<li>不允许重复声明<br>let不允许在相同作用域内，重复声明同一个变量,因此，不能在函数内部重新声明参数</li>
-<li>块级作用域<br>ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景：  第一种场景，内层变量可能会覆盖外层变量；第二种场景，用来计数的循环变量泄露为全局变量；<br>ES6 允许块级作用域的任意嵌套，内层作用域可以定义外层作用域的同名变量，外层作用域无法读取内层作用域的变量，块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要。<br>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>本质上，块级作用域是一个语句，将多个操作封装在一起，没有返回值，但是，在块级作用域以外，没有办法得到t的值，因为块级作用域不返回值，除非t是全局变量。现在有一个提案，使得块级作用域可以变为表达式，也就是说可以返回值，办法就是在块级作用域之前加上do，使它变为do表达式，然后就会返回内部最后执行的表达式的值。<br>ES6 的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="keyword">do</span> &#123;</div><div class="line">  <span class="keyword">let</span> t = f();</div><div class="line">  t * t + <span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="const-声明一个只读的常量-一旦声明，常量的值就不能改变"><a href="#const-声明一个只读的常量-一旦声明，常量的值就不能改变" class="headerlink" title="const(声明一个只读的常量,一旦声明，常量的值就不能改变)"></a>const(声明一个只读的常量,一旦声明，常量的值就不能改变)</h1><p><strong>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动</strong></p>
-<ol>
-<li>const一旦声明变量，就必须立即初始化；</li>
-<li>const也与let一样只在声明所在的块级作用域内有效，同样存在暂时性死区，只能在声明的位置后面使用；</li>
-<li>const也与let一样不可重复声明；</li>
-<li>但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制.<br><strong>ES5 只有两种声明变量的方法：var、function；ES6 除了添加let和const命令，还有两种声明变量的方法：import、class，所以，ES6 一共有 6 种声明变量的方法</strong></li>
-</ol>
-<h1 id="顶层对象"><a href="#顶层对象" class="headerlink" title="顶层对象"></a>顶层对象</h1><ol>
-<li>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。ES5之中，顶层对象的属性与全局变量是等价的。</li>
-<li>ES6 为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</li>
-</ol>
-<h1 id="global-对象"><a href="#global-对象" class="headerlink" title="global 对象"></a>global 对象</h1><p>在语言标准的层面，引入global作为顶层对象。也就是说，在所有环境下，global都是存在的，都可以从它拿到顶层对象</p>
-<h1 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h1><p><strong>事实上，只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值/strong&gt;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];<span class="comment">/*等价*/</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure></strong></p>
-<ol>
-<li>解构赋值允许指定默认值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]; <span class="comment">// x='a', y='b'</span></div><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>, <span class="literal">undefined</span>]; <span class="comment">// x='a', y='b</span></div><div class="line"><span class="keyword">let</span> [x = <span class="number">1</span>] = [<span class="literal">null</span>];<span class="comment">/*如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。*/</span></div><div class="line">x <span class="comment">// null</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><b>如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到的时候，才会求值。</b></p>
-<ol>
-<li>对象的解构赋值</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;b&gt;ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。&lt;/b&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。">
+<meta name="description" content="在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初涉angular">
-<meta property="og:url" content="http://yoursite.com/2017/11/23/初涉angular/index.html">
+<meta property="og:title" content="HTML5.2变更内容">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/HTML5-2变更内容/index.html">
 <meta property="og:site_name" content="sansan.blog">
-<meta property="og:description" content="AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。">
-<meta property="og:updated_time" content="2017-12-01T01:54:35.000Z">
+<meta property="og:description" content="在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.">
+<meta property="og:updated_time" content="2018-01-10T03:08:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初涉angular">
-<meta name="twitter:description" content="AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。">
+<meta name="twitter:title" content="HTML5.2变更内容">
+<meta name="twitter:description" content="在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/23/初涉angular/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/10/HTML5-2变更内容/"/>
 
 
 
 
 
-  <title>初涉angular | sansan.blog</title>
+  <title>HTML5.2变更内容 | sansan.blog</title>
   
 
 
@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/23/初涉angular/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/HTML5-2变更内容/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="三三">
@@ -274,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">初涉angular</h1>
+          <h1 class="post-title" itemprop="name headline">HTML5.2变更内容</h1>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T14:43:54+08:00">
-                2017-11-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T09:24:25+08:00">
+                2018-01-10
               </time>
             
 
@@ -321,11 +321,14 @@
       
 
       
-        <p><b>AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。</b><br><a id="more"></a></p>
-<h1 id="1-AngularJS-表达式"><a href="#1-AngularJS-表达式" class="headerlink" title="1 AngularJS 表达式"></a>1 AngularJS 表达式</h1><p><b>AngularJS 使用表达式把数据绑定到HTML</b></p>
-<ol>
-<li>AngularJS 表达式写在双大括号内：,与ng-bind指令有异曲同工之妙;</li>
-</ol>
+        <p>在2017年12月14日W3C发布了HTML规范5.2更新版本,这个版本相对之前的版本来说有了一些增加和删除.<br><a id="more"></a></p>
+<h1 id="新增的dialog元素"><a href="#新增的dialog元素" class="headerlink" title="新增的dialog元素"></a>新增的dialog元素</h1><p>帮助我们快速实现一个对话框.在HTML5.2中,你只需要这写:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">id</span>=<span class="string">"dialog"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是对话框标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是对话框内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>添加open属性让他显示:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">id</span>=<span class="string">"dialog"</span> <span class="attr">open</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>调用它的show()方法让他显示:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dialog = <span class="built_in">document</span>.querySelector(<span class="string">'#dialog'</span>).show();</div></pre></td></tr></table></figure></p>
+<p>想要这个对话框隐藏,只需要调用这个dialog元素的close()方法即可<br>显示对话框的同时,有一个遮罩层的话，使用showModal()；注意一点的是open属性和showModal()不能同时使用</p>
+<h1 id="支付请求API-—-allowpaymentrequest"><a href="#支付请求API-—-allowpaymentrequest" class="headerlink" title="支付请求API — allowpaymentrequest"></a>支付请求API — allowpaymentrequest</h1><p>在HTML5.2之前.对于支付请求的API是不能在iframe中来完成的.所以每次我们在进行移动支付时都需要跳转到另外一个支付页面才能完成付款.而现在,使用allowpaymentrequest属性应用在iframe上<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">allowpaymentrequest</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="在页面上同时使用多个main标签"><a href="#在页面上同时使用多个main标签" class="headerlink" title="在页面上同时使用多个main标签"></a>在页面上同时使用多个main标签</h1><p>而现在,随着单页面应用(SPA)的越来越流行.使得这一特性的已经不符合当下的实景,所以在HTML5.2中.在页面中同时出现多个<main>标签是被允许的.只要在同一时间内,只有一个<main>标签是对外显示的,其他所有都是被hidden属性隐藏的即可<br><b>此外要注意,隐藏<main>标签的方法必须是使用hidden属性才行.其它的如:display: none、透明的为0等方法不行.这会让<main>标签失去自己的语义和作用.</main></main></b></main></main></p>
+<h1 id="被删除的属性和元素"><a href="#被删除的属性和元素" class="headerlink" title="被删除的属性和元素"></a>被删除的属性和元素</h1><p>被删除的元素<br>keygen：用于帮助生成表单的公钥<br>menu和menuitem：用于创建导航或上下文菜单<br>被删除的属性<br>Window.showModalDialog(): 创建并显示一个包含指定HTML文档的模态框。<br>插件API: 提供有关浏览器插件的信息 .<br>废弃的HTML头部声明<br>以下两种HTML的头部声明已在HTML中废弃<br>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “<a href="http://www.w3.org/TR/html4/strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a><br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a></p>
 
       
     </div>
@@ -362,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/23/Vue-生命周期的理解/" rel="next" title="Vue实例和生命周期的理解">
-                <i class="fa fa-chevron-left"></i> Vue实例和生命周期的理解
+              <a href="/2018/01/05/WebStorm-使用技巧/" rel="next" title="WebStorm 使用技巧">
+                <i class="fa fa-chevron-left"></i> WebStorm 使用技巧
               </a>
             
           </div>
@@ -372,8 +375,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/24/sketch知识点合集/" rel="prev" title="sketch知识点合集">
-                sketch知识点合集 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/10/git使用记录/" rel="prev" title="git使用记录">
+                git使用记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-AngularJS-表达式"><span class="nav-number">1.</span> <span class="nav-text">1 AngularJS 表达式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新增的dialog元素"><span class="nav-number">1.</span> <span class="nav-text">新增的dialog元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支付请求API-—-allowpaymentrequest"><span class="nav-number">2.</span> <span class="nav-text">支付请求API — allowpaymentrequest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在页面上同时使用多个main标签"><span class="nav-number">3.</span> <span class="nav-text">在页面上同时使用多个main标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#被删除的属性和元素"><span class="nav-number">4.</span> <span class="nav-text">被删除的属性和元素</span></a></li></ol></div>
             
 
           </div>

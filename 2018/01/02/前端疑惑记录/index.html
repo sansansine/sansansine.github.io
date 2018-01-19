@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="“use strict”ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。  优点消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;消除代码运行的一些不安全之处，保证代码运行的安全提高编译器效率，增加运行速度;为未来新版本的Javascript做好铺垫。“严格模式”体现了Jav">
+<meta name="description" content="Script Error是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js错误信息中可能包含一些敏感信息，比如用户名、权限提示等，希望能够把这类信息屏蔽。目前跨域的场景下会触发这种安全限制，window.onerror无法获得具体出错信息，而只能得到Script error.解决ScriptError 问题：响应头增加 access-control-allow-orgin （以下简称AC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端疑惑记录">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/前端疑惑记录/index.html">
 <meta property="og:site_name" content="sansan.blog">
-<meta property="og:description" content="“use strict”ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。  优点消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;消除代码运行的一些不安全之处，保证代码运行的安全提高编译器效率，增加运行速度;为未来新版本的Javascript做好铺垫。“严格模式”体现了Jav">
-<meta property="og:updated_time" content="2018-01-05T05:42:35.000Z">
+<meta property="og:description" content="Script Error是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js错误信息中可能包含一些敏感信息，比如用户名、权限提示等，希望能够把这类信息屏蔽。目前跨域的场景下会触发这种安全限制，window.onerror无法获得具体出错信息，而只能得到Script error.解决ScriptError 问题：响应头增加 access-control-allow-orgin （以下简称AC">
+<meta property="og:updated_time" content="2018-01-10T06:35:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端疑惑记录">
-<meta name="twitter:description" content="“use strict”ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。  优点消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;消除代码运行的一些不安全之处，保证代码运行的安全提高编译器效率，增加运行速度;为未来新版本的Javascript做好铺垫。“严格模式”体现了Jav">
+<meta name="twitter:description" content="Script Error是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js错误信息中可能包含一些敏感信息，比如用户名、权限提示等，希望能够把这类信息屏蔽。目前跨域的场景下会触发这种安全限制，window.onerror无法获得具体出错信息，而只能得到Script error.解决ScriptError 问题：响应头增加 access-control-allow-orgin （以下简称AC">
 
 
 
@@ -321,7 +321,8 @@
       
 
       
-        <h1 id="“use-strict”"><a href="#“use-strict”" class="headerlink" title="“use strict”"></a>“use strict”</h1><p><b>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。</b></p>
+        <h1 id="Script-Error"><a href="#Script-Error" class="headerlink" title="Script Error"></a>Script Error</h1><p>是外部加载的JS 抛出异常的时候， 出于安全方面的考虑，js错误信息中可能包含一些敏感信息，比如用户名、权限提示等，希望能够把这类信息屏蔽。目前跨域的场景下会触发这种安全限制，window.onerror无法获得具体出错信息，而只能得到Script error.<br>解决ScriptError 问题：<br>响应头增加 access-control-allow-orgin （以下简称AC）<br>每个fucntion 包裹 try-catch<br>切面包裹入口函数， try-catch</p>
+<h1 id="“use-strict”"><a href="#“use-strict”" class="headerlink" title="“use strict”"></a>“use strict”</h1><p><b>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）,顾名思义，这种模式使得Javascript在更严格的条件下运行。</b></p>
 <ol>
 <li>优点<br>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;消除代码运行的一些不安全之处，保证代码运行的安全提高编译器效率，增加运行速度;为未来新版本的Javascript做好铺垫。<br>“严格模式”体现了Javascript更合理、更安全、更严谨的发展方向，包括IE 10在内的主流浏览器，都已经支持它，许多大项目已经开始全面拥抱它。另一方面，同样的代码，在”严格模式”中，可能会有不一样的运行结果；一些在”正常模式”下可以运行的语句，在”严格模式”下将不能运行。</li>
 <li><p>调用</p>
@@ -507,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -573,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#“use-strict”"><span class="nav-number">1.</span> <span class="nav-text">“use strict”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS原型与原型链"><span class="nav-number">2.</span> <span class="nav-text">JS原型与原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript的函数currying柯里化"><span class="nav-number">3.</span> <span class="nav-text">JavaScript的函数currying柯里化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解CSS中BFC-Block-Formatting-Context-块格式化上下文"><span class="nav-number">4.</span> <span class="nav-text">理解CSS中BFC(Block Formatting Context:块格式化上下文)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP协议中的三次握手和四次挥手"><span class="nav-number">5.</span> <span class="nav-text">TCP协议中的三次握手和四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http与https"><span class="nav-number">6.</span> <span class="nav-text">http与https</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setTimeout-和setInterval"><span class="nav-number">7.</span> <span class="nav-text">setTimeout()和setInterval()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Script-Error"><span class="nav-number">1.</span> <span class="nav-text">Script Error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“use-strict”"><span class="nav-number">2.</span> <span class="nav-text">“use strict”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS原型与原型链"><span class="nav-number">3.</span> <span class="nav-text">JS原型与原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript的函数currying柯里化"><span class="nav-number">4.</span> <span class="nav-text">JavaScript的函数currying柯里化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解CSS中BFC-Block-Formatting-Context-块格式化上下文"><span class="nav-number">5.</span> <span class="nav-text">理解CSS中BFC(Block Formatting Context:块格式化上下文)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP协议中的三次握手和四次挥手"><span class="nav-number">6.</span> <span class="nav-text">TCP协议中的三次握手和四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http与https"><span class="nav-number">7.</span> <span class="nav-text">http与https</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setTimeout-和setInterval"><span class="nav-number">8.</span> <span class="nav-text">setTimeout()和setInterval()</span></a></li></ol></div>
             
 
           </div>
