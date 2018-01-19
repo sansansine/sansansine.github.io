@@ -63,25 +63,6 @@
   </entry>
   
   <entry>
-    <title>帆软使用技巧记录</title>
-    <link href="http://yoursite.com/2018/01/16/%E5%B8%86%E8%BD%AF%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E8%AE%B0%E5%BD%95/"/>
-    <id>http://yoursite.com/2018/01/16/帆软使用技巧记录/</id>
-    <published>2018-01-16T01:50:58.000Z</published>
-    <updated>2018-01-16T02:20:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="帆软制作报表，让标题行在翻页时仍然存在"><a href="#帆软制作报表，让标题行在翻页时仍然存在" class="headerlink" title="帆软制作报表，让标题行在翻页时仍然存在"></a>帆软制作报表，让标题行在翻页时仍然存在</h1><p>模版–》重复与冻结设置–》然后在重复标题从第一行到第一行出打勾即可</p>
-<h1 id="帆软制作饼状图"><a href="#帆软制作饼状图" class="headerlink" title="帆软制作饼状图"></a>帆软制作饼状图</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;帆软制作报表，让标题行在翻页时仍然存在&quot;&gt;&lt;a href=&quot;#帆软制作报表，让标题行在翻页时仍然存在&quot; class=&quot;headerlink&quot; title=&quot;帆软制作报表，让标题行在翻页时仍然存在&quot;&gt;&lt;/a&gt;帆软制作报表，让标题行在翻页时仍然存在&lt;/h1&gt;&lt;p&gt;模版
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>git使用记录</title>
     <link href="http://yoursite.com/2018/01/10/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2018/01/10/git使用记录/</id>
@@ -1080,6 +1061,29 @@
     <summary type="html">
     
       &lt;p&gt;&lt;b&gt;使用sketch过程中一些小技巧的记录&lt;/b&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>初涉angular</title>
+    <link href="http://yoursite.com/2017/11/23/%E5%88%9D%E6%B6%89angular/"/>
+    <id>http://yoursite.com/2017/11/23/初涉angular/</id>
+    <published>2017-11-23T06:43:54.000Z</published>
+    <updated>2017-12-01T01:54:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><b>AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。</b><br><a id="more"></a></p>
+<h1 id="1-AngularJS-表达式"><a href="#1-AngularJS-表达式" class="headerlink" title="1 AngularJS 表达式"></a>1 AngularJS 表达式</h1><p><b>AngularJS 使用表达式把数据绑定到HTML</b></p>
+<ol>
+<li>AngularJS 表达式写在双大括号内：,与ng-bind指令有异曲同工之妙;</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;b&gt;AngularJS 是一个 JavaScript 框架。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。&lt;/b&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
