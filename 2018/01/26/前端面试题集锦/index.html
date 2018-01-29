@@ -1,0 +1,755 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="ES5原型与原型链所有引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除‘null’以外） 所有引用类型（数组、对象、函数），都具一个proto （隐式原型）属性，属性值是一个普通对象 所有函数，都有一个prototype（显式原型）属性，属性值也是一个普通对象 所有引用类型（数组、对象、函数），proto （隐式原型）属性值指向它的构造函数的prototype（显式原型）属性值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题集锦">
+<meta property="og:url" content="http://yoursite.com/2018/01/26/前端面试题集锦/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="ES5原型与原型链所有引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除‘null’以外） 所有引用类型（数组、对象、函数），都具一个proto （隐式原型）属性，属性值是一个普通对象 所有函数，都有一个prototype（显式原型）属性，属性值也是一个普通对象 所有引用类型（数组、对象、函数），proto （隐式原型）属性值指向它的构造函数的prototype（显式原型）属性值">
+<meta property="og:updated_time" content="2018-01-26T09:42:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试题集锦">
+<meta name="twitter:description" content="ES5原型与原型链所有引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除‘null’以外） 所有引用类型（数组、对象、函数），都具一个proto （隐式原型）属性，属性值是一个普通对象 所有函数，都有一个prototype（显式原型）属性，属性值也是一个普通对象 所有引用类型（数组、对象、函数），proto （隐式原型）属性值指向它的构造函数的prototype（显式原型）属性值">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/26/前端面试题集锦/"/>
+
+
+
+
+
+  <title>前端面试题集锦 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/前端面试题集锦/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端面试题集锦</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T10:06:01+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><p>所有引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除‘null’以外） 所有引用类型（数组、对象、函数），都具一个<em>proto</em> （隐式原型）属性，属性值是一个普通对象 所有函数，都有一个prototype（显式原型）属性，属性值也是一个普通对象 所有引用类型（数组、对象、函数），<em>proto</em> （隐式原型）属性值指向它的构造函数的prototype（显式原型）属性值 当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的<em>proto</em> （即它的构造函数的prototype）中寻找。</p>
+<ol>
+<li>普通对象与函数对象<br>JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</li>
+<li>原型对象(原型prototype)<br>在JavaScript 中，每当定义一个对象（函数）时候，对象中都会包含一些预定义的属性。其中函数对象的一个属性就是显式原型prototype。注：普通对象没有prototype,但有<strong>proto</strong>属性。<br>原型对象其实就是普通对象（Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性（前面说道函数对象都有prototype属性））。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;; obj.a = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> arr = []; arr.a = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">fn.a = <span class="number">100</span>;  <span class="comment">// 所有引用类型都能拓展属性</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(obj.__proto__); <span class="comment">//constructor:f Object()</span></div><div class="line"><span class="built_in">console</span>.log(arr.__proto__); <span class="comment">//constructor:f Array()</span></div><div class="line"><span class="built_in">console</span>.log(fn.__proto__); <span class="comment">//f () &#123; [native code] &#125;</span></div><div class="line"><span class="comment">//所有引用类型都有_proto_（隐式原型）属性</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(obj.prototype); <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(arr.prototype); <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(fn.prototype); <span class="comment">//constructor: ƒ fn()</span></div><div class="line"><span class="comment">//所有函数，都有一个prototype（显式原型）属性</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype)</div><div class="line"><span class="comment">// true 引用类型_proto_（隐式原型）属性值指向它的构造函数的prototype（显式原型）属性值</span></div><div class="line"></div><div class="line"><span class="comment">//如果这个对象本身没有这个属性，那么会去它的*_proto_* （即它的构造函数的prototype）中寻找</span></div><div class="line"><span class="comment">//构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Foo.prototype.alertName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name)</div><div class="line">&#125;;</div><div class="line"><span class="comment">//创建实例</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Foo(<span class="string">'zhangsan'</span>);</div><div class="line">f.printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line">f.printName(); <span class="comment">//f自身有printName这个属性，所以直接可以调用</span></div><div class="line">f.alertName(); <span class="comment">//f自身没有alertName这个属性,所以会去它的_proto_（即它的构造函数的prototype）中寻找</span></div><div class="line"><span class="built_in">console</span>.log(f.prototype)<span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(f.__proto__)<span class="comment">//constructor:ƒ Foo(name, age)</span></div><div class="line"><span class="built_in">console</span>.log(Foo.prototype)<span class="comment">//constructor:ƒ Foo(name, age)</span></div><div class="line"><span class="built_in">console</span>.log(Foo.__proto__)<span class="comment">//ƒ () &#123; [native code] &#125;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="闭包与作用域"><a href="#闭包与作用域" class="headerlink" title="闭包与作用域"></a>闭包与作用域</h2><p>闭包是有权限访问其他函数作用域内的变量的一个函数。即函数内部的函数，当内部函数被其外部函数之外的变量引用时，才会形成闭包.<br><b>为什么其他非闭包的函数没有权限访问另一个函数的内部作用域:</b><br>函数内部可以直接读取全局变量,在函数外部无法读取函数内的局部变量.<br><b>为什么闭包有这个权限:</b><br>子函数可以读取父函数的局部变量，再将子函数作为父函数的返回值，最终我们就得到了函数内部的局部变量。<br><b>什么是函数作用域:</b><br>函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用(事实上在嵌套的作用域中也可以使用)。<br><b>闭包的用途:</b><br>可以读取函数内部的变量；让变量的值始终保持在内存中；<br><b>经典案例:</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;<span class="comment">//object.getNameFunc()是一个返回函数，没有var声明也是一个匿名函数，是全局变量，window调用</span></div><div class="line">　　alert(object.getNameFunc()());<span class="comment">//The Window</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;<span class="comment">//this为object</span></div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> that.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;<span class="comment">//that=this,this=object,so that=object;object调用</span></div><div class="line">　　alert(object.getNameFunc()());<span class="comment">//My Object</span></div></pre></td></tr></table></figure></p>
+<h2 id="作用域：词法作用域，动态作用域"><a href="#作用域：词法作用域，动态作用域" class="headerlink" title="作用域：词法作用域，动态作用域"></a>作用域：词法作用域，动态作用域</h2><p>词法作用域：函数在定义的时候决定了函数的作用域，JavaScript采用词法作用域。<br>动态作用域：函数在调用的时候决定函数的作用域，目前只有部分语言支持。</p>
+<p><b>JavaScript中函数作用域在定义的时候已经确定</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkScope</span>(<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>; </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123; </div><div class="line">        <span class="keyword">return</span> scope; </div><div class="line">    &#125; </div><div class="line">    <span class="keyword">return</span> fn(); </div><div class="line">&#125; </div><div class="line">checkScope();</div><div class="line"></div><div class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkScope</span>(<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>; </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123; </div><div class="line">        <span class="keyword">return</span> scope; </div><div class="line">    &#125; </div><div class="line">    <span class="keyword">return</span> fn; </div><div class="line">&#125; </div><div class="line">checkScope()();</div><div class="line"><span class="comment">//区别就是函数fn的在不同位置执行，但这并不影响函数作用域，所以两个都是打印"local scope"</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> value = <span class="number">10</span>; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(value); </div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> value = <span class="number">20</span>; </div><div class="line">    foo(); </div><div class="line">&#125; </div><div class="line">bar();</div></pre></td></tr></table></figure>
+<p>在词法作用域的情况下，函数foo在函数bar中调用，但其作用域在定义时已经确定，即只能访问到foo函数内部跟全局作用域,打印”10”；<br>在动态作用域的情况下，函数foo在函数bar中调用，其作用域在调用的时候确定，即只能访问到函数bar内部跟全局作用域，打印”20”。</p>
+<h2 id="ES5与ES6中的this"><a href="#ES5与ES6中的this" class="headerlink" title="ES5与ES6中的this"></a>ES5与ES6中的this</h2><p><b>ES5中的this指向:</b><br>this 是你 call 一个函数时传的 context,如果你传的 context 是null 或者 undefined，那么 window 对象就是默认的 context（严格模式下默认 context 是 undefined）</p>
+<ol>
+<li>如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window，这里需要说明的是在js的严格版中this指向的不是window，非严格模式为undefined。</li>
+<li>如果一个函数中有this，这个函数有被上一级的对象所调用，那么this指向的就是上一级的对象。</li>
+<li><p>如果一个函数中有this，这个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this指向的也只是它上一级的对象。　</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="number">10</span>,</div><div class="line">    <span class="attr">b</span>:&#123;</div><div class="line">        <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a); <span class="comment">//undefined</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">o.b.fn();<span class="comment">//因为this只会指向它的上一级对象b</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>还有一种比较特殊的情况：这里this指向的是window,this永远指向的是最后调用它的对象:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="number">10</span>,</div><div class="line">    <span class="attr">b</span>:&#123;</div><div class="line">        <span class="attr">a</span>:<span class="number">12</span>,</div><div class="line">        <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a); <span class="comment">//undefined</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//window</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> j = o.b.fn;</div><div class="line">j();   <span class="comment">//调用对象是window，this指向window</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数版this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.user = <span class="string">"Caraxiong"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Fn();</div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//Caraxiong</span></div><div class="line"><span class="comment">//new关键字可以改变this的指向，将这个this指向对象a.调用这个函数Fn的是对象a，那么this指向的自然是对象a</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>当this碰到return时:<br> 如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例,还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> &#123;&#125;;   <span class="comment">//返回一个对象</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn;  </div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;    <span class="comment">//返回一个对象</span></div><div class="line">&#125; </div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn; </div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;    <span class="comment">//返回一个对象</span></div><div class="line">&#125; <span class="keyword">var</span> a = <span class="keyword">new</span> fn; <span class="built_in">console</span>.log(a.user); <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;   <span class="comment">//非对象</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn;  </div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//Caraxiong</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;   <span class="comment">//非对象</span></div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn; </div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//Caraxiong</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">this</span>.user = <span class="string">'Caraxiong'</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn;  </div><div class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//Caraxiong</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><b>ES6中的this指向:</b></p>
+<ol>
+<li>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+<li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。</li>
+<li><p>不可以使用yield命令，因此箭头函数不能用作Generator函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timer</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.a1 = <span class="number">0</span>;</div><div class="line">  <span class="keyword">this</span>.a2 = <span class="number">0</span>;</div><div class="line">  <span class="comment">// 箭头函数</span></div><div class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.a1++, <span class="number">1000</span>);</div><div class="line">  <span class="comment">// 普通函数</span></div><div class="line">  setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.a2++;</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> timer = <span class="keyword">new</span> Timer();</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'a1: '</span>, timer.a1), <span class="number">3100</span>);</div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'a2: '</span>, timer.a2), <span class="number">3100</span>);</div><div class="line"><span class="comment">// a1: 3</span></div><div class="line"><span class="comment">// a2: 0</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码中，Timer函数内部设置了两个定时器，分别使用了箭头函数和普通函数。前者的this绑定定义时所在的作用域（即Timer函数），后者的this指向运行时所在的作用域（即全局对象）。</p>
+</li>
+<li>this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。另外，由于箭头函数没有自己的this，所以当然也就不能用call()、apply()、bind()这些方法去改变this的指向</li>
+<li>new操作符会改变函数this的指向问题，为什么this会指向a？<br><b>首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。</b></li>
+</ol>
+<h2 id="call，apply，bind-三者用法和区别"><a href="#call，apply，bind-三者用法和区别" class="headerlink" title="call，apply，bind 三者用法和区别"></a>call，apply，bind 三者用法和区别</h2><p>在js中所有的函数都是Function的实例，而且对于Function来说，它的原型即Function.prototype中含有很多东西，其中call,apply和bind方法就是Function原型中的方法，所以根据原型的规则，所有的函数都可以使用原型中属性和方法，所以来说，对于所有的函数都可以使用call，apply和bind方法。<br><b>作用:</b>改变this的指向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">sex</span>)</span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"普通函数"</span>+sex);  </div><div class="line">&#125;  </div><div class="line"><span class="keyword">var</span> person=&#123;  </div><div class="line">    <span class="attr">name</span>:<span class="string">"aa"</span>,  </div><div class="line">    <span class="attr">age</span>:<span class="number">14</span>  </div><div class="line">&#125;;  </div><div class="line">show.call(person,<span class="string">"男"</span>);  </div><div class="line"><span class="comment">//person对象并没有show方法，但是我们可以通过call方法来实现person对象来调用show方法。所以这种情况我认为就是改变了this的指向,apply和bind方法也可以实现上述的功能.</span></div></pre></td></tr></table></figure></p>
+<p><b>call,apply和bind的区别:</b><br>在功能上是没有区别的，都是改变this的指向，它们的区别主要是在于方法的实现形式和参数传递上的不同<br>函数.call(对象,arg1,arg2….)<br>函数.apply(对象，[arg1,arg2,…])<br>var ss=函数.bind(对象,arg1,arg2,….)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">sex</span>)</span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"普通函数"</span>+sex);  </div><div class="line">&#125;  </div><div class="line"><span class="keyword">var</span> person=&#123;  </div><div class="line">    <span class="attr">name</span>:<span class="string">"aa"</span>,  </div><div class="line">    <span class="attr">age</span>:<span class="number">14</span>  </div><div class="line">&#125;;  </div><div class="line">show.call(person,<span class="string">"男"</span>);  </div><div class="line">show.apply(person,[<span class="string">"女"</span>]);  </div><div class="line"><span class="comment">//对于bind来说，用法更加的灵活  </span></div><div class="line"><span class="keyword">var</span> ss=show.bind(person,<span class="string">"不明"</span>);  </div><div class="line">ss();</div></pre></td></tr></table></figure></p>
+<h2 id="js的变量提升和函数提升"><a href="#js的变量提升和函数提升" class="headerlink" title="js的变量提升和函数提升"></a>js的变量提升和函数提升</h2><p>在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。变量提升即将变量声明提升到它所在作用域的最开始的部分<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    a =<span class="number">2</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">    <span class="keyword">var</span> a;</div><div class="line">&#125;</div><div class="line">foo()<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p><b>函数提升:</b><br>js中创建函数有两种方式：函数声明式和函数字面量式。只有函数声明才存在函数提升！如:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum1</span>(<span class="params">n1,n2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> n1+n2;</div><div class="line">&#125;;<span class="comment">//函数声明</span></div><div class="line">  </div><div class="line"><span class="keyword">var</span> sum2=<span class="function"><span class="keyword">function</span>(<span class="params">n1,n2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> n1+n2;</div><div class="line">&#125;;<span class="comment">//函数表达式，又叫函数字面量</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(f1); <span class="comment">// function f1() &#123;&#125;   </span></div><div class="line"><span class="built_in">console</span>.log(f2); <span class="comment">// undefined  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="comment">//实际执行过程如下：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// 函数提升，整个代码块提升到文件的最开始&lt;br&gt;　　</span></div><div class="line"><span class="built_in">console</span>.log(f1);　　　  </div><div class="line"><span class="built_in">console</span>.log(f2);   </div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h2 id="let，const"><a href="#let，const" class="headerlink" title="let，const"></a>let，const</h2><p>let 产生块级作用域（通常配合 for 循环或者 {} 进行使用产生块级作用域），const 申明的变量是常量（内存地址不变)</p>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/25/javascript基础查漏补缺/" rel="next" title="javascript基础查漏补缺">
+                <i class="fa fa-chevron-left"></i> javascript基础查漏补缺
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES5"><span class="nav-number">1.</span> <span class="nav-text">ES5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型与原型链"><span class="nav-number">1.1.</span> <span class="nav-text">原型与原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包与作用域"><span class="nav-number">1.2.</span> <span class="nav-text">闭包与作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域：词法作用域，动态作用域"><span class="nav-number">1.3.</span> <span class="nav-text">作用域：词法作用域，动态作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5与ES6中的this"><span class="nav-number">1.4.</span> <span class="nav-text">ES5与ES6中的this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call，apply，bind-三者用法和区别"><span class="nav-number">1.5.</span> <span class="nav-text">call，apply，bind 三者用法和区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js的变量提升和函数提升"><span class="nav-number">1.6.</span> <span class="nav-text">js的变量提升和函数提升</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">2.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let，const"><span class="nav-number">2.1.</span> <span class="nav-text">let，const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">2.2.</span> <span class="nav-text">Promise</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>
