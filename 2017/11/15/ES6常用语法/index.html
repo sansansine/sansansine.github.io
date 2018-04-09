@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/15/ES6常用语法/index.html">
 <meta property="og:site_name" content="sansan.blog">
 <meta property="og:description" content="总结的es6常用的一些常用的语法和比es5优越的方面，可能只是es6新特性的10%-20%，但是开发上占了80%左右的。">
-<meta property="og:updated_time" content="2018-01-09T02:05:48.000Z">
+<meta property="og:updated_time" content="2018-01-30T06:44:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6常用语法">
 <meta name="twitter:description" content="总结的es6常用的一些常用的语法和比es5优越的方面，可能只是es6新特性的10%-20%，但是开发上占了80%左右的。">
@@ -361,6 +361,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用指数运算符**，就像+、-等操作符一样,替代calculateExponent或者Math.pow()</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">7</span>**<span class="number">3</span>);</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h1 id="for-in与for-of的区别"><a href="#for-in与for-of的区别" class="headerlink" title="for in与for of的区别"></a>for in与for of的区别</h1><ol>
+<li>推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of。</li>
+<li>for…in循环出的是key，for…of循环出的是value，即for-in循环是遍历对象的属性，for-of循环是遍历实现iterator接口的成员</li>
+<li>for…of是ES6新引入的特性。修复了ES5引入的for…in的不足<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 数组添加一个属性name:aArray.name = 'demo'</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> index <span class="keyword">in</span> aArray)&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;aArray[index]&#125;</span>`</span>);<span class="comment">// Notice!!aArray.name也被循环出来了</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> value <span class="keyword">of</span> aArray)&#123;</div><div class="line">    <span class="built_in">console</span>.log(value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>作用于数组的for-in循环除了遍历数组元素以外,还会遍历自定义属性;for…of循环不会循环对象的key，只会循环出数组的value，因此for…of不能循环遍历普通对象,对普通对象的属性遍历推荐使用for…in</p>
+<ol>
+<li>for…of不能循环普通的对象，需要通过和Object.keys()搭配使用</li>
+</ol>
 
       
     </div>
@@ -481,7 +491,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -547,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#“let”、”var”、”const”"><span class="nav-number">1.</span> <span class="nav-text">“let”、”var”、”const”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#arrow-function-箭头函数"><span class="nav-number">2.</span> <span class="nav-text">arrow function(箭头函数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#template-string（模板字符串-amp-）"><span class="nav-number">3.</span> <span class="nav-text">template string（模板字符串:&{}）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#destructuring（结构赋值）"><span class="nav-number">4.</span> <span class="nav-text">destructuring（结构赋值）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#default（函数参数的默认值）"><span class="nav-number">5.</span> <span class="nav-text">default（函数参数的默认值）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rest、Spread"><span class="nav-number">6.</span> <span class="nav-text">rest、Spread</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#export-amp-import（对应的特性就是，模块化开发）"><span class="nav-number">7.</span> <span class="nav-text">export & import（对应的特性就是，模块化开发）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用API"><span class="nav-number">8.</span> <span class="nav-text">常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-字符串"><span class="nav-number">8.1.</span> <span class="nav-text">1 字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-对象"><span class="nav-number">8.2.</span> <span class="nav-text">2 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数组"><span class="nav-number">8.3.</span> <span class="nav-text">3 数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES7仅有的2个特性"><span class="nav-number">9.</span> <span class="nav-text">ES7仅有的2个特性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#“let”、”var”、”const”"><span class="nav-number">1.</span> <span class="nav-text">“let”、”var”、”const”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#arrow-function-箭头函数"><span class="nav-number">2.</span> <span class="nav-text">arrow function(箭头函数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#template-string（模板字符串-amp-）"><span class="nav-number">3.</span> <span class="nav-text">template string（模板字符串:&{}）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#destructuring（结构赋值）"><span class="nav-number">4.</span> <span class="nav-text">destructuring（结构赋值）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#default（函数参数的默认值）"><span class="nav-number">5.</span> <span class="nav-text">default（函数参数的默认值）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rest、Spread"><span class="nav-number">6.</span> <span class="nav-text">rest、Spread</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#export-amp-import（对应的特性就是，模块化开发）"><span class="nav-number">7.</span> <span class="nav-text">export & import（对应的特性就是，模块化开发）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用API"><span class="nav-number">8.</span> <span class="nav-text">常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-字符串"><span class="nav-number">8.1.</span> <span class="nav-text">1 字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-对象"><span class="nav-number">8.2.</span> <span class="nav-text">2 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数组"><span class="nav-number">8.3.</span> <span class="nav-text">3 数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES7仅有的2个特性"><span class="nav-number">9.</span> <span class="nav-text">ES7仅有的2个特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-in与for-of的区别"><span class="nav-number">10.</span> <span class="nav-text">for in与for of的区别</span></a></li></ol></div>
             
 
           </div>

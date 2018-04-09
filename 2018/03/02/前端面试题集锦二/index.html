@@ -1,0 +1,768 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前端面试题整理二">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题集锦二">
+<meta property="og:url" content="http://yoursite.com/2018/03/02/前端面试题集锦二/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="前端面试题整理二">
+<meta property="og:updated_time" content="2018-04-09T01:52:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试题集锦二">
+<meta name="twitter:description" content="前端面试题整理二">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/02/前端面试题集锦二/"/>
+
+
+
+
+
+  <title>前端面试题集锦二 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/前端面试题集锦二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端面试题集锦二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T14:53:55+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>前端面试题整理二</b><br><a id="more"></a></p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="同源与跨域"><a href="#同源与跨域" class="headerlink" title="同源与跨域"></a>同源与跨域</h2><h3 id="浏览器的同源策略"><a href="#浏览器的同源策略" class="headerlink" title="浏览器的同源策略"></a>浏览器的同源策略</h3><p>协议相同、域名相同、端口相同（用于保护用户数据的安全，防止恶意访问）</p>
+<h2 id="如果非同源，共有三种行为受到限制"><a href="#如果非同源，共有三种行为受到限制" class="headerlink" title="如果非同源，共有三种行为受到限制"></a>如果非同源，共有三种行为受到限制</h2><p>Cookie、LocalStorage 和 IndexDB无法读取；Dom无法获取；Ajax请求。</p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><ol>
+<li>读取cookie<br><b>window.domain设置同一父域名</b><br>对于同一个页面，不同的iframe之间是可以共享window对象，只不过不能使用另一个页面window的对象的属性和方法（极少部分除外，如h5中的postMessage方法）。此时，可以使用domain将iframe设置为相同的域。<br>如有一个网页A<a href="http://w1.example.a.com，一个网页Bhttp://w2,example.b.com。只要设置相同的document.domain，两个页面就能共享数据和DOM（LocalStorage" target="_blank" rel="external">http://w1.example.a.com，一个网页Bhttp://w2,example.b.com。只要设置相同的document.domain，两个页面就能共享数据和DOM（LocalStorage</a> 和 IndexDB 无法通过这种方法传递）：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.domain = "example.com" //必须为自身 或父域</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>比如你在网页A设置一个cookie<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//网页A</div><div class="line">document.cookie ="i'm A"</div></pre></td></tr></table></figure></p>
+<p>就可以在网页B访问到这个属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//网页B</div><div class="line">document.cookie // i'm A</div></pre></td></tr></table></figure></p>
+<ol>
+<li>DOM的获取<br>如果两个窗口一级域名相同，只是二级域名不同，那么设置上一节介绍的document.domain属性，就可以规避同源政策，拿到DOM。<br><b>对于完全不同源的网站,可以采用下面三种方法:</b>window.name、跨文档通信API、片段识别符<br>2.1 window.name<br>window.name这个浏览器窗口属性最大的特点就是，只要在同一个窗口中，无论是否同源，所有页面都能共享这个属性。每个页面对window.name都有读写的权限。而且window.name可以存储容量比较大，一般有2M（不同浏览器容量不容）<br>2.2 跨文档通信API<br>H5为了解决跨源的问题，引入了一个全新的API,为window新增了一个方法window.postMessage，允许跨窗口通信，无论是否同源。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 比如在窗口'http://aaa.com'中，想要向另一个页面'http://bbb.com'发送消息。调用postMessage方法即可</div><div class="line">//aaa.com中写入</div><div class="line">var popup = window.open('http://bbb.com', 'title');</div><div class="line">popup.postMessage('Hello World!', 'http://bbb.com');</div><div class="line">// bbb中通过message事件监听消息</div><div class="line">window.addEventListener('message', function(e) &#123;</div><div class="line">  console.log(e.data);</div><div class="line">&#125;,false);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中message事件对象event提供三个属性:event.source：消息来源的地址;event.origin：消息发向的地址;event.data：消息内容<br>2.3 片段识别符<br>片段识别符指的是，URL的#号后面的部分。如果仅是识别符改变，不会导致页面刷新。父页面可以将信息写入子页面的识别符中<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var src = originURL + '#' + data;</div><div class="line">document.getElementById('myIFrame').src = src;</div></pre></td></tr></table></figure></p>
+<p>子页面通过onhashchange监听:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">window.onhashchange = checkMessage;</div><div class="line"></div><div class="line">function checkMessage() &#123;</div><div class="line">  var message = window.location.hash;</div><div class="line">  // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>子页面也可以把信息写入父页面的识别符<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parent.location.href= target + "#" + hash;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>AJAX请求的跨域<br>3.1 JSONP 只支持get请求，不支持post请求；兼容性较好<br>jsonp是利用script标签可以跨域访问资源的特性，在页面内动态插入一个script标签，向服务器发起数据的跨域请求。服务器收到请求后，将数据放在一个指定名字的回调函数中传回</li>
+</ol>
+<p>3.2 CORS 支持所有请求；不兼容老旧浏览器<br>cors请求的局限就小很多了，它是一个W3C标准，允许向跨源服务器，发起XMLHttpRequest请求。支持IE10及其以上,整个CORS通信过程，都是浏览器自动完成，不需要用户参与。实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><h2 id="for循环setTimeout500ms打印出1-10"><a href="#for循环setTimeout500ms打印出1-10" class="headerlink" title="for循环setTimeout500ms打印出1-10"></a>for循环setTimeout500ms打印出1-10</h2><p>闭包+JS加载顺序+setTimeout异步函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt; <span class="number">11</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> j = i;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(j);</div><div class="line">        &#125;,<span class="number">500</span>)</div><div class="line">    &#125;;</div><div class="line">    a();</div><div class="line">&#125;<span class="comment">// 若不用闭包，在执行setTimeout之前，i已经变成11，即会打印出十个11；</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; <span class="number">11</span>;i++)&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(i);</div><div class="line">        &#125;,<span class="number">500</span>)</div><div class="line">&#125;<span class="comment">// let</span></div></pre></td></tr></table></figure>
+<p>变量i是var命令声明的，在全局范围内都有效，所以全局只有一个变量i;let声明的变量仅在块级作用域内有效,当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量.</p>
+<h2 id="alert-1-amp-amp-2-alert-1-0"><a href="#alert-1-amp-amp-2-alert-1-0" class="headerlink" title="alert(1&amp;&amp;2),alert(1||0)"></a>alert(1&amp;&amp;2),alert(1||0)</h2><p>结果为：2，1.<br>true:1;false:0。</p>
+<ol>
+<li>只要“&amp;&amp;”前面是false，无论“&amp;&amp;”后面是true还是false，结果都将返“&amp;&amp;”前面的值;</li>
+<li>只要“&amp;&amp;”前面是true，无论“&amp;&amp;”后面是true还是false，结果都将返“&amp;&amp;”后面的值;</li>
+<li>只要“||”前面为false,不管“||”后面是true还是false，都返回“||”后面的值。</li>
+<li>只要“||”前面为true,不管“||”后面是true还是false，都返回“||”前面的值。</li>
+</ol>
+<h2 id="mouseenter和mouseover的区别"><a href="#mouseenter和mouseover的区别" class="headerlink" title="mouseenter和mouseover的区别"></a>mouseenter和mouseover的区别</h2><ol>
+<li>只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。对应mouseleave</li>
+<li>不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。对应mouseout</li>
+</ol>
+<h2 id="用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20"><a href="#用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20" class="headerlink" title="用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20"></a>用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> re=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^[a-zA-Z][a-zA-Z0-9_]&#123;9,20&#125;$"</span>);</div></pre></td></tr></table></figure>
+<h2 id="js字符串两边截取空白的trim的原型方法的实现"><a href="#js字符串两边截取空白的trim的原型方法的实现" class="headerlink" title="js字符串两边截取空白的trim的原型方法的实现"></a>js字符串两边截取空白的trim的原型方法的实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>,<span class="string">''</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* 删除左边的空格</div><div class="line">*/</div><div class="line"><span class="built_in">String</span>.prototype.trim=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)/g</span>,<span class="string">''</span>);</div><div class="line">&#125;;</div><div class="line"><span class="comment">/**</span></div><div class="line">* 删除右边的空格</div><div class="line">*/</div><div class="line"><span class="built_in">String</span>.prototype.trim=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(\s*$)/g</span>,<span class="string">''</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="经典判断输出题"><a href="#经典判断输出题" class="headerlink" title="经典判断输出题"></a>经典判断输出题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">4</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    a=<span class="number">3</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">&#125;</div><div class="line">b();<span class="comment">// 3,因为里面修改了a这个全局变量，那个function a()&#123;&#125;是用来干扰的，虽然函数声明会提升，就被a给覆盖掉了</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> baz = <span class="number">3</span>;</div><div class="line"><span class="keyword">var</span> bazz = &#123;</div><div class="line">    <span class="attr">baz</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">getbaz</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.baz</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(bazz.getbaz());<span class="comment">// 2</span></div><div class="line"><span class="keyword">var</span> g = bazz.getbaz;</div><div class="line"><span class="built_in">console</span>.log(g());<span class="comment">// 3</span></div><div class="line"><span class="comment">// this的指向,函数作为对象本身属性调用的时候this指向对象，作为普通函数调用的时候就指向全局</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">    arr[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        alert(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">arr[<span class="number">3</span>]();<span class="comment">// 5,闭包,alert(i)的i为全局变量i</span></div></pre></td></tr></table></figure>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="css选择器-和"><a href="#css选择器-和" class="headerlink" title="css选择器+和 ~"></a>css选择器+和 ~</h2><h2 id="写出position不同值和区别"><a href="#写出position不同值和区别" class="headerlink" title="写出position不同值和区别"></a>写出position不同值和区别</h2><ol>
+<li>absolute: 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。(不占位)</li>
+<li>relative: 生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。（占位）</li>
+<li>static:   默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）inherit：规定应该从父元素继承 position 属性的值。</li>
+<li>fixed:    生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</li>
+<li>inherit:     规定应该从父元素继承 position 属性的值。  </li>
+</ol>
+<h2 id="写一个div-css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定"><a href="#写一个div-css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定" class="headerlink" title="写一个div+css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定"></a>写一个div+css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/logo.png"</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>esProc represents a broad category of OLAP tools especially for complicated structured data processing. It restores the true meaning of OLAP, which is reflected in the following aspects: First, it does not require pre-data-modeling for your analysis goal, breaking the limitations of traditional OLAP and allows users to freely conduct bound-free data analysis. Besides, esProc can conveniently reference <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="reflow和repaint的理解"><a href="#reflow和repaint的理解" class="headerlink" title="reflow和repaint的理解"></a>reflow和repaint的理解</h2><p>repaint就是重绘，reflow就是回流。repaint主要是针对某一个DOM元素进行的重绘，reflow则是回流，针对整个页面的重排,在性能优先的前提下，性能消耗 reflow大于repaint。如果渲染树的结点发生了结构性变化，例如宽度、高度或者位置上的变化时，那么会触发Reflow(回流)的逻辑。我们第一次进入一个页面时便会至少触发一次这个逻辑。如果渲染树结点发生了非结构性变化，例如背景色等的变化时，那么会触发Repaint(重绘)的逻辑。<br><b>常见触发场景：</b></p>
+<ol>
+<li>触发repaint：<br>1.1  color的修改，如color=#ddd；<br>1.2  text-align的修改，如text-align=center；<br>1.3  a:hover也会造成重绘。<br>1.4  :hover引起的颜色等不导致页面回流的style变动。</li>
+<li>触发reflow：<br>2.1  width/height/border/margin/padding的修改，如width=778px；<br>2.2  动画，:hover等伪类引起的元素表现改动，display=none等造成页面回流；<br>2.3  appendChild等DOM元素操作；<br>2.4  font类style的修改；<br>2.5  background的修改，注意着字面上可能以为是重绘，但是浏览器确实回流了，经过浏览器厂家的优化，部分background的修改只触发repaint，当然IE不用考虑；<br>2.6  scroll页面，这个不可避免；<br>2.7  resize页面，桌面版本的进行浏览器大小的缩放，移动端的话，还没玩过能拖动程序，resize程序窗口大小的多窗口操作系统。<br>2.8  读取元素的属性（这个无法理解，但是技术达人是这么说的，那就把它当做定理吧）：读取元素的某些属性（offsetLeft、offsetTop、offsetHeight、offsetWidth、scrollTop/Left/Width/Height、clientTop/Left/Width/Height、getComputedStyle()、currentStyle(in IE))；<br><b>避免和最小化影响:</b></li>
+<li>尽可能在DOM末梢通过改变class来修改元素的style属性：尽可能的减少受影响的DOM元素。</li>
+<li>避免设置多项内联样式：使用常用的class的方式进行设置样式，以避免设置样式时访问DOM的低效率。</li>
+<li>设置动画元素position属性为fixed或者absolute：由于当前元素从DOM流中独立出来，因此受影响的只有当前元素，元素repaint。</li>
+<li>牺牲平滑度满足性能：动画精度太强，会造成更多次的repaint/reflow，牺牲精度，能满足性能的损耗，获取性能和平滑度的平衡。</li>
+<li>避免使用table进行布局：table的每个元素的大小以及内容的改动，都会导致整个table进行重新计算，造成大幅度的repaint或者reflow。改用div则可以进行针对性的repaint和避免不必要的reflow。</li>
+<li>避免在CSS中使用运算式：学习CSS的时候就知道，这个应该避免，不应该加深到这一层再去了解，因为这个的后果确实非常严重，一旦存在动画性的repaint/reflow，那么每一帧动画都会进行计算，性能消耗不容小觑。</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/26/初涉react-重点记录/" rel="next" title="初涉react-重点记录">
+                <i class="fa fa-chevron-left"></i> 初涉react-重点记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/webpack-配置记录/" rel="prev" title="webpack4.X 配置记录">
+                webpack4.X 配置记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源与跨域"><span class="nav-number">1.1.</span> <span class="nav-text">同源与跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的同源策略"><span class="nav-number">1.1.1.</span> <span class="nav-text">浏览器的同源策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果非同源，共有三种行为受到限制"><span class="nav-number">1.2.</span> <span class="nav-text">如果非同源，共有三种行为受到限制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域"><span class="nav-number">1.2.1.</span> <span class="nav-text">跨域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS"><span class="nav-number">2.</span> <span class="nav-text">JS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环setTimeout500ms打印出1-10"><span class="nav-number">2.1.</span> <span class="nav-text">for循环setTimeout500ms打印出1-10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alert-1-amp-amp-2-alert-1-0"><span class="nav-number">2.2.</span> <span class="nav-text">alert(1&&2),alert(1||0)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mouseenter和mouseover的区别"><span class="nav-number">2.3.</span> <span class="nav-text">mouseenter和mouseover的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20"><span class="nav-number">2.4.</span> <span class="nav-text">用正则表达式匹配字符串，以字母开头，后面是数字、字符串或者下划线，长度为9-20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js字符串两边截取空白的trim的原型方法的实现"><span class="nav-number">2.5.</span> <span class="nav-text">js字符串两边截取空白的trim的原型方法的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典判断输出题"><span class="nav-number">2.6.</span> <span class="nav-text">经典判断输出题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">3.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#css选择器-和"><span class="nav-number">3.1.</span> <span class="nav-text">css选择器+和 ~</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写出position不同值和区别"><span class="nav-number">3.2.</span> <span class="nav-text">写出position不同值和区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个div-css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定"><span class="nav-number">3.3.</span> <span class="nav-text">写一个div+css布局，左边图片右边文字，文字环绕图片，外面容器固定宽度，文字不固定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reflow和repaint的理解"><span class="nav-number">3.4.</span> <span class="nav-text">reflow和repaint的理解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>

@@ -1,0 +1,776 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS 网格布局(Grid Layout) 是CSS中最强大的布局系统。 这是一个二维系统，这意味着它可以同时处理列和行，不像 flexbox 那样主要是一维系统。 你可以通过将CSS规则应用于父元素（成为网格容器）和该元素的子元素（网格元素），来使用网格布局。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grid布局">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/Grid布局/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="CSS 网格布局(Grid Layout) 是CSS中最强大的布局系统。 这是一个二维系统，这意味着它可以同时处理列和行，不像 flexbox 那样主要是一维系统。 你可以通过将CSS规则应用于父元素（成为网格容器）和该元素的子元素（网格元素），来使用网格布局。">
+<meta property="og:image" content="http://yoursite.com/2018/03/07/Grid布局/grid.png">
+<meta property="og:updated_time" content="2018-03-07T06:37:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Grid布局">
+<meta name="twitter:description" content="CSS 网格布局(Grid Layout) 是CSS中最强大的布局系统。 这是一个二维系统，这意味着它可以同时处理列和行，不像 flexbox 那样主要是一维系统。 你可以通过将CSS规则应用于父元素（成为网格容器）和该元素的子元素（网格元素），来使用网格布局。">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/07/Grid布局/grid.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/Grid布局/"/>
+
+
+
+
+
+  <title>Grid布局 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/Grid布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Grid布局</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T11:04:01+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>CSS 网格布局(Grid Layout) 是CSS中最强大的布局系统。 这是一个二维系统，这意味着它可以同时处理列和行，不像 flexbox 那样主要是一维系统。 你可以通过将CSS规则应用于父元素（成为网格容器）和该元素的子元素（网格元素），来使用网格布局。</b><br><a id="more"></a></p>
+<h1 id="父容器-Grid-Container-的属性"><a href="#父容器-Grid-Container-的属性" class="headerlink" title="父容器(Grid Container)的属性"></a>父容器(Grid Container)的属性</h1><h2 id="display"><a href="#display" class="headerlink" title="display"></a>display</h2><p>将元素定义为 grid contaienr，并为其内容建立新的网格格式化上下文(grid formatting context)。<b>注意</b>：column, float, clear, 以及 vertical-align 对一个 grid container 没有影响</p>
+<ol>
+<li>grid - 生成一个块级(block-level)网格</li>
+<li>inline-grid - 生成一个行级(inline-level)网格</li>
+<li>subgrid - 如果你的 grid container 本身就是一个 grid item（即,嵌套网格），你可以使用这个属性来表示你想从它的父节点获取它的行/列的大小，而不是指定它自己的大小。</li>
+</ol>
+<h2 id="grid-template-columns-grid-template-rows"><a href="#grid-template-columns-grid-template-rows" class="headerlink" title="grid-template-columns / grid-template-rows"></a>grid-template-columns / grid-template-rows</h2><p>使用以空格分隔的多个值来定义网格的列和行。这些值表示轨道大小(track size)，它们之间的空格代表表格线(grid line)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">  grid-template-columns: <span class="tag">&lt;<span class="name">track-size</span>&gt;</span> ... | <span class="tag">&lt;<span class="name">line-name</span>&gt;</span> <span class="tag">&lt;<span class="name">track-size</span>&gt;</span> ...;</div><div class="line">  grid-template-rows: <span class="tag">&lt;<span class="name">track-size</span>&gt;</span> ... | <span class="tag">&lt;<span class="name">line-name</span>&gt;</span> <span class="tag">&lt;<span class="name">track-size</span>&gt;</span> ...;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>轨道值之间仅仅有空格时，网格线会被自动分配数字名称:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">40px</span> <span class="number">50px</span> auto <span class="number">50px</span> <span class="number">40px</span>;</div><div class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">25%</span> <span class="number">100px</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>定义中包含重复的部分，则可以使用repeat() 符号来简化写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(3, 20px [col-start]) <span class="number">5%</span>;</div><div class="line">&#125;<span class="comment">/* 等价于 */</span></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20px</span> [col-start] <span class="number">20px</span> [col-start] <span class="number">20px</span> [col-start] <span class="number">5%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>“fr”单位允许您将轨道大小设置为网格容器自由空间的一部分。 例如，下面的代码会将每个 grid item 为 grid container 宽度的三分之一：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>自由空间是在排除所有不可伸缩的 grid item 之后计算得到的。 在下面的示例中，fr单位可用的自由空间总量不包括50px:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">50px</span> <span class="number">1</span>fr <span class="number">1</span>fr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a>grid-template-areas</h2><p>通过引用 grid-area属性指定的网格区域的名称来定义网格模板。 重复网格区域的名称导致内容扩展到这些单元格。 点号表示一个空单元格。 语法本身提供了网格结构的可视化。</p>
+<ol>
+<li><grid-area-name> - 使用 grid-area 属性设置的网格区域的名称</grid-area-name></li>
+<li>. - 点号代表一个空网格单元</li>
+<li>none - 没有定义网格区域<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.item-a</span> &#123;</div><div class="line">  <span class="attribute">grid-area</span>: header;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item-b</span> &#123;</div><div class="line">  <span class="attribute">grid-area</span>: main;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item-c</span> &#123;</div><div class="line">  <span class="attribute">grid-area</span>: sidebar;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item-d</span> &#123;</div><div class="line">  <span class="attribute">grid-area</span>: footer;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span>;</div><div class="line">  <span class="attribute">grid-template-rows</span>: auto;</div><div class="line">  <span class="attribute">grid-template-areas</span>: </div><div class="line">    <span class="string">"header header header header"</span></div><div class="line">    <span class="string">"main main . sidebar"</span></div><div class="line">    <span class="string">"footer footer footer footer"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/2018/03/07/Grid布局/grid.png" alt="grid"></p>
+<h2 id="grid-template"><a href="#grid-template" class="headerlink" title="grid-template"></a>grid-template</h2><p>在单个声明中定义 grid-template-rows、grid-template-columns、grid-template-areas 的简写。</p>
+<ol>
+<li>none - 将三个属性都设置为其初始值</li>
+<li>subgrid - 把 grid-template-rows 和 grid-template-columns 设置为 subgrid, 并且 grid-template-areas 设置为初始值</li>
+<li>grid-template-rows / &lt;grid-template-columns - 把 grid-template-columns 和 grid-template-rows 设置为指定值, 与此同时, 设置 grid-template-areas 为 none<h2 id="grid-column-gap-grid-row-gap"><a href="#grid-column-gap-grid-row-gap" class="headerlink" title="grid-column-gap / grid-row-gap"></a>grid-column-gap / grid-row-gap</h2>指定网格线的大小，你可以把它想象为设置列/行之间的间距的宽度。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">50px</span> <span class="number">100px</span>;</div><div class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">80px</span> auto <span class="number">80px</span>; </div><div class="line">  <span class="attribute">grid-column-gap</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">grid-row-gap</span>: <span class="number">15px</span>;</div><div class="line">&#125;<span class="comment">/* 只能在列/行之间创建缝隙，而不是在外部边缘创建 */</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="grid-gap"><a href="#grid-gap" class="headerlink" title="grid-gap"></a>grid-gap</h2><p>grid-row-gap 和 grid-column-gap 的缩写<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">50px</span> <span class="number">100px</span>;</div><div class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">80px</span> auto <span class="number">80px</span>; </div><div class="line">   <span class="attribute">grid-gap</span>: <span class="number">10px</span> <span class="number">15px</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="justify-items"><a href="#justify-items" class="headerlink" title="justify-items"></a>justify-items</h2><p>沿着行轴对齐网格内的内容（与之对应的是 align-items, 即沿着列轴对齐），该值适用于容器内的所有的 grid items。</p>
+<ol>
+<li>start: 内容与网格区域的左端对齐</li>
+<li>end: 内容与网格区域的右端对齐</li>
+<li>center: 内容位于网格区域的中间位置</li>
+<li>stretch: 内容宽度占据整个网格区域空间(这是默认值)</li>
+</ol>
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><p>沿着列轴对齐grid item 里的内容（与之对应的是使用 justify-items 设置沿着行轴对齐），该值适用于容器内的所有 grid items。</p>
+<ol>
+<li>start: 内容与网格区域的顶端对齐</li>
+<li>end: 内容与网格区域的底部对齐</li>
+<li>center: 内容位于网格区域的垂直中心位置</li>
+<li>stretch: 内容高度占据整个网格区域空间(这是默认值)<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2>有时，网格的总大小可能小于其网格容器的大小。如果你的所有 grid items 都使用像px这样的非弹性单位来设置大小，则可能发生这种情况。此时，你可以设置网格容器内的网格的对齐方式。 此属性沿着行轴对齐网格（与之对应的是 align-content, 沿着列轴对齐）。</li>
+<li>start - 网格与网格容器的左边对齐</li>
+<li>end - 网格与网格容器的右边对齐</li>
+<li>center - 网格与网格容器的中间对齐</li>
+<li>stretch - 调整g rid item 的大小，让宽度填充整个网格容器</li>
+<li>space-around - 在 grid item 之间设置均等宽度的空白间隙，其外边缘间隙大小为中间空白间隙宽度的一半</li>
+<li>space-between - 在 grid item 之间设置均等宽度空白间隙，其外边缘无间隙</li>
+<li>space-evenly - 在每个 grid item 之间设置均等宽度的空白间隙，包括外边缘<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2>有时，网格的总大小可能小于其网格容器的大小。如果你的所有 grid items 都使用像px这样的非弹性单位来设置大小，则可能发生这种情况。此时，你可以设置网格容器内的网格的对齐方式。 此属性沿着列轴对齐网格（与之对应的是 justify-content, 即沿着行轴对齐）。</li>
+<li>start - 网格与网格容器的顶部对齐</li>
+<li>end - 网格与网格容器的底部对齐</li>
+<li>center - 网格与网格容器的中间对齐</li>
+<li>stretch - 调整 grid item 的大小，让高度填充整个网格容器</li>
+<li>space-around - 在 grid item 之间设置均等宽度的空白间隙，其外边缘间隙大小为中间空白间隙宽度的一半</li>
+<li>space-between - 在 grid item 之间设置均等宽度空白间隙，其外边缘无间隙</li>
+<li>space-evenly - 在每个 grid item 之间设置均等宽度的空白间隙，包括外边缘<h2 id="grid-auto-columns-grid-auto-rows"><a href="#grid-auto-columns-grid-auto-rows" class="headerlink" title="grid-auto-columns / grid-auto-rows"></a>grid-auto-columns / grid-auto-rows</h2>指定自动生成的网格轨道（又名隐式网格轨道）的大小。 隐式网格轨道在你显式的定位超出指定网格范围的行或列（使用 grid-template-rows/grid-template-columns）时被创建。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">grid-auto-columns</span>: <span class="number">60px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="grid-auto-flow"><a href="#grid-auto-flow" class="headerlink" title="grid-auto-flow"></a>grid-auto-flow</h2><p>如果你存在没有显示指明放置在网格上的 grid item，则自动放置算法会自动放置这些项目。 而该属性则用于控制自动布局算法的工作方式。</p>
+<ol>
+<li>row - 告诉自动布局算法依次填充每行，根据需要添加新行</li>
+<li>column - 告诉自动布局算法依次填充每列，根据需要添加新列</li>
+<li>dense - 告诉自动布局算法，如果后面出现较小的 grid item，则尝试在网格中填充空洞</li>
+</ol>
+<p><a href="https://segmentfault.com/a/1190000012889793" target="_blank" rel="external">更多参看可以查看</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/webpack-配置记录/" rel="next" title="webpack4.X 配置记录">
+                <i class="fa fa-chevron-left"></i> webpack4.X 配置记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/npm使用注意/" rel="prev" title="npm使用注意">
+                npm使用注意 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#父容器-Grid-Container-的属性"><span class="nav-number">1.</span> <span class="nav-text">父容器(Grid Container)的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#display"><span class="nav-number">1.1.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-template-columns-grid-template-rows"><span class="nav-number">1.2.</span> <span class="nav-text">grid-template-columns / grid-template-rows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-template-areas"><span class="nav-number">1.3.</span> <span class="nav-text">grid-template-areas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-template"><span class="nav-number">1.4.</span> <span class="nav-text">grid-template</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-column-gap-grid-row-gap"><span class="nav-number">1.5.</span> <span class="nav-text">grid-column-gap / grid-row-gap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-gap"><span class="nav-number">1.6.</span> <span class="nav-text">grid-gap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-items"><span class="nav-number">1.7.</span> <span class="nav-text">justify-items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items"><span class="nav-number">1.8.</span> <span class="nav-text">align-items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content"><span class="nav-number">1.9.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-content"><span class="nav-number">1.10.</span> <span class="nav-text">align-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-auto-columns-grid-auto-rows"><span class="nav-number">1.11.</span> <span class="nav-text">grid-auto-columns / grid-auto-rows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-auto-flow"><span class="nav-number">1.12.</span> <span class="nav-text">grid-auto-flow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>

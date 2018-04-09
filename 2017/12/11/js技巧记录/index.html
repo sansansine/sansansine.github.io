@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/11/js技巧记录/index.html">
 <meta property="og:site_name" content="sansan.blog">
 <meta property="og:description" content="在工作过程中遇见的一些常用的JavaScript技巧记录">
-<meta property="og:updated_time" content="2017-12-18T02:45:39.000Z">
+<meta property="og:updated_time" content="2018-04-03T09:10:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js技巧记录">
 <meta name="twitter:description" content="在工作过程中遇见的一些常用的JavaScript技巧记录">
@@ -322,8 +322,8 @@
 
       
         <p><b>在工作过程中遇见的一些常用的JavaScript技巧记录</b><br><a id="more"></a></p>
-<h1 id="1、jQuery给动态添加的元素绑定事件"><a href="#1、jQuery给动态添加的元素绑定事件" class="headerlink" title="1、jQuery给动态添加的元素绑定事件"></a>1、jQuery给动态添加的元素绑定事件</h1><p>jquery 1.7版以后使用on动态绑定事件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#testdiv ul"</span>).on(<span class="string">"click"</span>,<span class="string">"li"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="comment">//do something here</span></div><div class="line"> &#125;);</div></pre></td></tr></table></figure></p>
-<h1 id="2、JQuery中html、append、after、before、empty、remove"><a href="#2、JQuery中html、append、after、before、empty、remove" class="headerlink" title="2、JQuery中html、append、after、before、empty、remove"></a>2、JQuery中html、append、after、before、empty、remove</h1><ul>
+<h1 id="jQuery给动态添加的元素绑定事件"><a href="#jQuery给动态添加的元素绑定事件" class="headerlink" title="jQuery给动态添加的元素绑定事件"></a>jQuery给动态添加的元素绑定事件</h1><p>jquery 1.7版以后使用on动态绑定事件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#testdiv ul"</span>).on(<span class="string">"click"</span>,<span class="string">"li"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="comment">//do something here</span></div><div class="line"> &#125;);</div></pre></td></tr></table></figure></p>
+<h1 id="JQuery中html、append、after、before、empty、remove"><a href="#JQuery中html、append、after、before、empty、remove" class="headerlink" title="JQuery中html、append、after、before、empty、remove"></a>JQuery中html、append、after、before、empty、remove</h1><ul>
 <li>xx.html(content):给元素添加html代码或者清空html代码(xx.html());<br>作用原理首先是移除目标元素内部的html代码，然后将新代码添加到目标元素.</li>
 <li>xx.append(content):append的内容添加到了选中内容的内部，并且对其原有的内容不影响;<br>作用原理是在被选元素的结尾（仍然在内部）插入指定内容.</li>
 <li>$(content).appendTo(xx):appendTo()和append效果相同，只是写法不同.</li>
@@ -332,7 +332,7 @@
 <li>xx.empty():被选中的元素中的html内容都被清除，但元素本身还存在.</li>
 <li>xx.remove():被选中的整个元素包括其内部的子元素都被移除了(remove方法将目标元素整个的从DOM中移除).</li>
 </ul>
-<h1 id="3、获取html5的data-属性"><a href="#3、获取html5的data-属性" class="headerlink" title="3、获取html5的data-*属性"></a>3、获取html5的data-*属性</h1><ul>
+<h1 id="获取html5的data-属性"><a href="#获取html5的data-属性" class="headerlink" title="获取html5的data-*属性"></a>获取html5的data-*属性</h1><ul>
 <li><p>通过dataset属性访问</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> appId = $(<span class="string">"#myDiv"</span>).dataset.appid;<span class="comment">//获取data-appid的值</span></div></pre></td></tr></table></figure>
 </li>
@@ -386,6 +386,9 @@
 <p>browserify entry.js &gt; bundle.js</p>
 </blockquote>
 <p>编译好的 js可以直接拿到浏览器使用<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="数组去重方法合集"><a href="#数组去重方法合集" class="headerlink" title="数组去重方法合集"></a>数组去重方法合集</h1><ol>
+<li>使用Set + Array</li>
+</ol>
 
       
     </div>
@@ -506,7 +509,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、jQuery给动态添加的元素绑定事件"><span class="nav-number">1.</span> <span class="nav-text">1、jQuery给动态添加的元素绑定事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、JQuery中html、append、after、before、empty、remove"><span class="nav-number">2.</span> <span class="nav-text">2、JQuery中html、append、after、before、empty、remove</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、获取html5的data-属性"><span class="nav-number">3.</span> <span class="nav-text">3、获取html5的data-*属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-toggleClass"><span class="nav-number">4.</span> <span class="nav-text">jQuery-toggleClass()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简洁的JS解决tab跳转"><span class="nav-number">5.</span> <span class="nav-text">简洁的JS解决tab跳转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断dom是否有class的值"><span class="nav-number">6.</span> <span class="nav-text">判断dom是否有class的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组去重"><span class="nav-number">7.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深浅拷贝"><span class="nav-number">8.</span> <span class="nav-text">深浅拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#push-apply合并数组"><span class="nav-number">9.</span> <span class="nav-text">push.apply合并数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓存变量"><span class="nav-number">10.</span> <span class="nav-text">缓存变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将参数转成数组"><span class="nav-number">11.</span> <span class="nav-text">将参数转成数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何避免“回调地狱”"><span class="nav-number">12.</span> <span class="nav-text">如何避免“回调地狱”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Browserify简单使用"><span class="nav-number">13.</span> <span class="nav-text">Browserify简单使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery给动态添加的元素绑定事件"><span class="nav-number">1.</span> <span class="nav-text">jQuery给动态添加的元素绑定事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery中html、append、after、before、empty、remove"><span class="nav-number">2.</span> <span class="nav-text">JQuery中html、append、after、before、empty、remove</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取html5的data-属性"><span class="nav-number">3.</span> <span class="nav-text">获取html5的data-*属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-toggleClass"><span class="nav-number">4.</span> <span class="nav-text">jQuery-toggleClass()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简洁的JS解决tab跳转"><span class="nav-number">5.</span> <span class="nav-text">简洁的JS解决tab跳转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断dom是否有class的值"><span class="nav-number">6.</span> <span class="nav-text">判断dom是否有class的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组去重"><span class="nav-number">7.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深浅拷贝"><span class="nav-number">8.</span> <span class="nav-text">深浅拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#push-apply合并数组"><span class="nav-number">9.</span> <span class="nav-text">push.apply合并数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓存变量"><span class="nav-number">10.</span> <span class="nav-text">缓存变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将参数转成数组"><span class="nav-number">11.</span> <span class="nav-text">将参数转成数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何避免“回调地狱”"><span class="nav-number">12.</span> <span class="nav-text">如何避免“回调地狱”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Browserify简单使用"><span class="nav-number">13.</span> <span class="nav-text">Browserify简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组去重方法合集"><span class="nav-number">14.</span> <span class="nav-text">数组去重方法合集</span></a></li></ol></div>
             
 
           </div>

@@ -1,0 +1,791 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sansan.blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在前端的日常开发上，经常会使用到chrome浏览器的开发者工具，在下面对chrome开发者工具各个面板的功能做了简单的整理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chrome开发者工具整理">
+<meta property="og:url" content="http://yoursite.com/2018/04/03/chrome开发者工具整理/index.html">
+<meta property="og:site_name" content="sansan.blog">
+<meta property="og:description" content="在前端的日常开发上，经常会使用到chrome浏览器的开发者工具，在下面对chrome开发者工具各个面板的功能做了简单的整理。">
+<meta property="og:updated_time" content="2018-04-09T01:40:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chrome开发者工具整理">
+<meta name="twitter:description" content="在前端的日常开发上，经常会使用到chrome浏览器的开发者工具，在下面对chrome开发者工具各个面板的功能做了简单的整理。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/03/chrome开发者工具整理/"/>
+
+
+
+
+
+  <title>chrome开发者工具整理 | sansan.blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sansan.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/03/chrome开发者工具整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sansan.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">chrome开发者工具整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T14:06:30+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>在前端的日常开发上，经常会使用到chrome浏览器的开发者工具，在下面对chrome开发者工具各个面板的功能做了简单的整理。</b><br><a id="more"></a></p>
+<h1 id="element"><a href="#element" class="headerlink" title="element"></a>element</h1><p>切图调整样式的时候经常用到：</p>
+<ol>
+<li>快速选择元素</li>
+<li>移动端适配模式，适配各种机型</li>
+<li>快速查看被选择元素的所有的涉及样式</li>
+<li>快速查找被选择元素的事件</li>
+<li>元素状态筛选：hover、focus、active、visited</li>
+<li>css3动画曲线调试</li>
+</ol>
+<h1 id="console"><a href="#console" class="headerlink" title="console"></a>console</h1><p>JS调试代码时经常需要console输出变量或者节点：</p>
+<ol>
+<li>console.log输出变量（console.info,console.warn,console.error）</li>
+<li><p>console.time和console.timeEnd<br>主要是检测一段代码的执行时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time();</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">10000</span>;i++)&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.timeEnd();</div></pre></td></tr></table></figure>
+</li>
+<li><p>console.table<br>更直观的显示对象或数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="built_in">console</span>.table(arr1)</div></pre></td></tr></table></figure>
+</li>
+<li><p>console.count<br>在调试代码时，判断一个代码的执行次数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.count()</div><div class="line">    &#125;;</div><div class="line">    fn();</div><div class="line">    fn();</div></pre></td></tr></table></figure>
+</li>
+<li><p>console.assert<br>console.assert接收两个参数，第一个参数为判断条件，第二个参数是提示信息，当条件为false时，提示错误信息！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> flag = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.assert(flag, <span class="string">'error'</span>);</div><div class="line"><span class="keyword">let</span> flags = <span class="literal">false</span>;</div><div class="line"><span class="built_in">console</span>.assert(flags, <span class="string">'success'</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>console.group和console.groupEnd</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.group(<span class="string">"1"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"1模块的信息 11111111..."</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"1模块的信息 11111111..."</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"1模块的信息 11111111..."</span>);</div><div class="line"><span class="built_in">console</span>.groupEnd();</div></pre></td></tr></table></figure>
+</li>
+<li><p>$(浏览器自带的API)</p>
+</li>
+</ol>
+<ul>
+<li>$:返回第一个符合条件的元素，相当于document.querySelector<br>在浏览器的console上输入：$(‘button’)</li>
+<li>$$:返回所有符合条件的元素，相当于document.querySelectorAll<br>在浏览器的console上输入：$(‘li’)</li>
+</ul>
+<ol>
+<li>查找和监控事件</li>
+</ol>
+<ul>
+<li><p>getEventListeners作用就是查找并获取选定元素的事件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getEventListeners($(<span class="string">'#one'</span>));</div></pre></td></tr></table></figure>
+</li>
+<li><p>monitorEvents作用是监控你所选元素关联的所有事件，事件触发时，在控制台打印它们:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">monitorEvents($(<span class="string">'#one'</span>));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="network"><a href="#network" class="headerlink" title="network"></a>network</h1><p>每当有请求发送的时候，都会被这里记录,可以查看请求的详细信息。</p>
+<h1 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h1><ol>
+<li>断点调试<br>打开文件，在任意一行的行号，点击就会出现一个断点</li>
+<li>debugger调试<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">debugger</span>;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>调试栏的六个按钮作用分别为：<br>1、停止当前的断点调试<br>2、继续执行下一行代码，（1.这个方式不会进入函数，2.这个方式快捷键是f10）<br>3、跳入函数中去（这个方式快捷键是f11）<br>4、跳出当前的函数<br>5、禁用所有的断点，停止任何调试<br>6、程序运行时遇到异常时是否中断调试</p>
+<ol>
+<li>调试中查看值<br>鼠标移到上方即可查看变量值</li>
+<li>查找和切换文件<br>ctrl+p和enter快捷键</li>
+<li>格式化代码<br>左下角的{}</li>
+</ol>
+<h1 id="performance-timeline"><a href="#performance-timeline" class="headerlink" title="performance(timeline)"></a>performance(timeline)</h1><p>这个面板后期优化的时候，会经常使用。</p>
+<ol>
+<li>FPS：绿色的柱越高， FPS 值也越高，用户看着就越流畅，体验就越好。如果太小，用户看着会有卡顿的感觉</li>
+<li>CPU：这个面积图(area chart)表明了哪种事件在消耗 CPU 资源。</li>
+<li>NET：某一个时刻页面的表现形式（以某一个时刻的画面展示）！把鼠标移动到FPS，CPU或者NET区域任意的位置，就会展示这个时间节点面的截图。左右移动鼠标，可以重发当时的屏幕录像，利用这个可以用来分析各个动画的各个细节，或者是页面加载的快慢！</li>
+<li>Flame Chart：蓝色(Loading)：网络请求和HTML解析 黄色(Scripting)：JavaScript编译和执行紫色(Rendering)：样式解析，计算，渲染。绿色(Painting)：重排，重绘 灰色(other)：其它资源花费加载的时间白色(Idle)：空闲等待时间</li>
+</ol>
+<h1 id="application"><a href="#application" class="headerlink" title="application"></a>application</h1><ol>
+<li>cookie</li>
+<li>localstorage和localsession</li>
+<li>缓存</li>
+<li>IndexedDB</li>
+<li>Frames:将页面上的资源按frame类别进行组织显示。顶级的top是一个主文档，在top下面是主文档的Fonts、Images、Scripts、Stylesheets等资源。最后一个就是主文件自身。</li>
+</ol>
+<h1 id="插件集"><a href="#插件集" class="headerlink" title="插件集"></a>插件集</h1><ol>
+<li>HostAdmin：管理host的一个工具</li>
+<li>JSON Editor/JSON Viewer：json格式化的工具</li>
+<li>QR码发生器：把当前页面的url转成二维码，使用场景就是当要使用手机测试的时候，懒得在手机上输入整个网址，直接扫码就可在手机访问。</li>
+<li>vue-devtools：使用vue开发</li>
+<li>WEB前端助手(FeHelper)</li>
+<li>Performance-Analyser：网页性能分析工具</li>
+<li>划词翻译</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/30/对JS中事件委托的理解/" rel="next" title="对JS中事件委托的理解">
+                <i class="fa fa-chevron-left"></i> 对JS中事件委托的理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/08/各种页面常见布局整理/" rel="prev" title="各种页面常见布局整理">
+                各种页面常见布局整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三三" />
+          <p class="site-author-name" itemprop="name">三三</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sansansine" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sansansine" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#element"><span class="nav-number">1.</span> <span class="nav-text">element</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#console"><span class="nav-number">2.</span> <span class="nav-text">console</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#network"><span class="nav-number">3.</span> <span class="nav-text">network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sources"><span class="nav-number">4.</span> <span class="nav-text">Sources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#performance-timeline"><span class="nav-number">5.</span> <span class="nav-text">performance(timeline)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#application"><span class="nav-number">6.</span> <span class="nav-text">application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件集"><span class="nav-number">7.</span> <span class="nav-text">插件集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-三三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 个人
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>
